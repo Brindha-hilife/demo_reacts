@@ -1,0 +1,45 @@
+.product_uploadbtn {
+    border:1px solid #b97df0 !important;
+    border-radius: 7px !important;
+    width: 159px !important;
+    font-size: 11px !important;
+    color: #7009ab !important;
+    font-weight: 600 !important;
+}
+.product_uploadbtn:hover {
+    background-color: #7009ab !important;
+    color: #fff !important;
+}
+.product_tablehd {
+    background-color: #7009ab !important;
+    font-size: 20px !important;
+    color: #fff !important;
+}
+.product_saveadd {
+    border: 1px solid #7009ab !important;
+    color: #7009ab !important;
+    margin-right: 5px !important;
+    height: 40px !important;
+    padding: 10px !important;
+    font-weight: 600 !important;
+    border-radius: 7px !important;
+}
+.product_save {
+    border: 1px solid #7009ab !important;
+    color: #7009ab !important;
+    height: 40px !important;
+    /* padding: 10px !important; */
+    font-weight: 600 !important;
+    border-radius: 7px !important;
+    width: 80px;
+}
+.product_saveadd:hover {
+    background-color: #7009ab !important; 
+    border: 0px !important;
+    color: #fff !important;
+}
+.product_save:hover {
+    background-color: #7009ab !important; 
+    border: 0px !important;
+    color: #fff !important;
+}

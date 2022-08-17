@@ -1,0 +1,138 @@
+.productadd_container_main {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin: 10px;
+    padding: 0px;
+    /* display: grid; */
+}
+
+.productadd_head {
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    /* margin-left: 50px; */
+
+}
+
+.productadd_container_sub {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #000000ae;
+    border-top: 4px solid #f875aa;
+    display: grid;
+    overflow: hidden;
+}
+
+.productadd_input {
+    height: 25px;
+    /* width: 100%; */
+    margin-left: -7px;
+
+}
+
+.productadd_input:focus {
+    border-color: #e93b81;
+    box-shadow: none;
+}
+
+.productadd_formselects {
+    height: 25px;
+    width: 100%;
+    font-size: 12px;
+    padding: 3px;
+}
+
+.productadd-labels {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.productadd_butn {
+    background-color: #f875aa;
+    border: none;
+    color: white;
+
+}
+
+.productadd_iconplus {
+    color: #e93b81;
+}
+
+.productadd_iconinfo {
+    color: #e93b81;
+    font-size: 12px;
+}
+
+.productadd_butnsave {
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    /* width: 50%; */
+}
+
+.productadd_butnclose {
+    color: white;
+    background-color: gray;
+    /* width: 30%; */
+}
+
+.productadd_tooltp {
+    background-color: #f875aa;
+    font-size: 11px;
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+}
+
+.productadd_tbhead {
+    background-color: #69F0AE;
+}
+
+
+@media ((max-width:1300px)) {
+    .productadd_container_main {
+        /* display: inline-block; */
+        width: 100%;
+        font-size: 12px !important;
+    }
+
+    .productadd_container_sub {
+        /* flex-direction: column; */
+        width: 100%;
+        font-size: 10px !important;
+        padding: 20px;
+        margin: auto;
+    }
+
+    .productadd_input {
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .productadd_formselects {
+        height: 20px;
+        font-size: 10px;
+        padding: 2px;
+    }
+
+    .productadd-labels {
+        font-size: 10px;
+    }
+
+    /* .rdw-editor-toolbar {
+        min-width: 500px !important;
+        font-size: 10px !important;
+        padding: 20px;
+    } */
+
+}
+
+.Test {
+    display: flex;
+   }
