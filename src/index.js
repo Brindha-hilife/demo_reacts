@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter,Routes, Route} from "react-router-dom";
 import './index.css';
 import App from './App';
-
+import Roles from './Roles';
+import Salescomn from './Salescomn';
+// import Useradd from './Useradd';
+// import Useredit from './Useredit';
+// import Roleadd from './Roleadd';
+// import Roleedit from './Roleedit'
+// import Useradd from './Useradd';
+// import Useredit from './Useredit';
 
 // import Forgetcapcha from './Components/Forgetcaptcha';
 
@@ -20,12 +27,20 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+ 
   <BrowserRouter>
-    <App />
-    
-    {/* <Forgetcapcha /> */}
+  <App />
+  <Routes>
+    <Route path="/" element={<App />} />
+    <Route path="role" element={<Roles />} />
+    <Route path="salescomn" element={<Salescomn />} />
+    {/* <Route path="forgetVerifyPwd" element={<ForgetVerifyPwd />} />
+    <Route path="forgetOtp" element={<ForgetOtp />} />
+    <Route path="signup" element={<Signup />} /> */}
+  </Routes>
+</BrowserRouter>
    
-  </BrowserRouter>
+  
 );
 
 

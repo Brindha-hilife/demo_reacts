@@ -14,7 +14,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 function Productadd() {
 
-    // Unit Modal
+    // Modal
     const BootstrapDialog = styled(Dialog)(({ theme }) => ({
         '& .MuiDialogContent-root': {
             padding: theme.spacing(2),
@@ -587,7 +587,6 @@ function Productadd() {
             {/************* Modal *************/}
             {/************* Unit Modal *************/}
             <div>
-
                 <BootstrapDialog
                     onClose={handleClose1}
                     aria-labelledby="customized-dialog-title1"
@@ -657,7 +656,7 @@ function Productadd() {
                     </DialogActions>
                 </BootstrapDialog>
             </div>
-
+                                            
             {/************* Brand Modal *************/}
             <div >
                 <BootstrapDialog

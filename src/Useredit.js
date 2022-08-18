@@ -4,7 +4,9 @@ import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem,
     Typography, FormGroup, FormControlLabel, Checkbox, Button, TextareaAutosize, 
 } from '@mui/material';
-
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { FcInfo } from "react-icons/fc";
 
 function Useradd() {
@@ -54,16 +56,16 @@ function Useradd() {
         setConfirmpassword(event.target.value);
     };
     //Role
-    const [role, setRole] = React.useState('');
-
-    const handleChange8 = (event) => {
-        setRole(event.target.value);
-    };
-    //Sales Commission Percentage
     const [salescomnper, setSalescomnper] = React.useState('');
 
-    const handleChange9 = (event) => {
+    const handleChange8 = (event) => {
         setSalescomnper(event.target.value);
+    };
+    //Sales Commission Percentage
+    const [role, setRole] = React.useState('');
+
+    const handleChange9 = (event) => {
+        setRole(event.target.value);
     };
     //Max sales discount percent
     const [maxsale, setMaxsale] = React.useState('');
@@ -93,10 +95,10 @@ function Useradd() {
 
     return (
         <Box>
-            <form action=''>
+            <form>
                 <Container sx={{ paddingTop: '10px' }}>
                     <Grid display="flex">
-                        <Typography variant="h6">Add user</Typography>
+                        <Typography variant="h6">Edit user</Typography>
                     </Grid>
                 </Container><br />
                 <Container sx={{
@@ -256,6 +258,11 @@ function Useradd() {
                                 <Grid>
                                     <FormGroup>
                                         <FormControlLabel control={<Checkbox />} label="yyy" />
+                                    </FormGroup>
+                                </Grid>
+                                <Grid>
+                                    <FormGroup>
+                                        <FormControlLabel control={<Checkbox />} label="zzz" />
                                     </FormGroup>
                                 </Grid>
                             </Grid>
@@ -563,7 +570,7 @@ function Useradd() {
                             </FormControl>
                         </Grid>
                     </Grid>
-                    <hr  />              
+                    <hr />
                     <Grid display="flex" >
                         <Typography variant="h6" >Bank Details</Typography>
                     </Grid>
@@ -643,7 +650,7 @@ function Useradd() {
                 </Container><br />
                 <Grid container sx={{ marginTop: '20px', marginBottom: '20px', justifyContent: 'center' }}>
                     <Grid >
-                        <Button className='users_addbtn'>Save</Button>
+                        <Button className='users_addbtn'>Update</Button>
                     </Grid>
                 </Grid>
             </form>

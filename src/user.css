@@ -67,3 +67,7 @@
     padding-left: 10px !important;
     margin-top: 5px !important;
 }
+.user_linkbtn {
+    text-decoration: none !important;
+    color: #fff !important;
+}

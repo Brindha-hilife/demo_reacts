@@ -5,6 +5,9 @@ import AddIcon from '@mui/icons-material/Add';
 import { AiFillFileExcel } from "react-icons/ai";
 import { FaFileCsv, FaPrint, FaFilePdf, FaEdit, FaEye, FaTrash } from "react-icons/fa";
 import $ from 'jquery';
+// import Useradd from './Useradd';
+// import Useredit form './Useredit';
+import { Link } from 'react-router-dom';
 
 function Users() {
 
@@ -45,7 +48,7 @@ function Users() {
                         <Typography variant="h6" >All users</Typography>
                     </Grid>
                     <Grid item md={6} sm={6} xs={6} >
-                        <Button className="users_addbtn" ><AddIcon /> Add</Button>
+                        <Button className="users_addbtn" ><Link to="" className='user_linkbtn'><AddIcon /> Add</Link></Button>
                     </Grid>
                 </Grid>
                 <Grid container sx={{ marginTop: '20px', marginBottom: '20px', justifyContent: 'center' }}>
@@ -82,7 +85,7 @@ function Users() {
                                     <TableCell >{row.carbs}</TableCell>
                                     <TableCell >
                                         <Grid>
-                                            <Button className='users_tbtnedit'><FaEdit />&ensp;Edit</Button>
+                                            <Button className='users_tbtnedit'><Link to="/useredit" className='user_linkbtn'><FaEdit />&ensp;Edit</Link></Button>
                                             <Button className='users_tbtnview'><FaEye />&ensp;View</Button>
                                             <Button className='users_tbtndelt'><FaTrash />&ensp;Delete</Button>
                                         </Grid>
