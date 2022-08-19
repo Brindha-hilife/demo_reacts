@@ -11,9 +11,9 @@ import React from 'react';
 // import Productview from './Productview';
 // import Demo from './Demo';
 // import { Modal } from 'react-bootstrap';
-import Users from './Users';
-
-
+// import Users from './Users';
+import Roles from './Roles';
+// import Salescomn from './Salescomn';
 // import Footer from './Footer';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import ListComponent from './ListComponent'
@@ -31,13 +31,13 @@ function App() {
         {/* <Productadd /> */}
         {/* <Productedit /> */}
         {/* <Productview /> */}
-       <Users />
-        {/* <Roles />
-        <Salescomn />
-        <Useradd />
-        <Useredit/>
-        <Roleadd />
-        <Roleedit /> */}
+       {/* <Users /> */}
+        <Roles />
+         {/* <Salescomn /> */}
+        {/* <Useradd /> */}
+        {/* <Useredit/> */}
+         {/* <Roleadd /> */}
+         {/* <Roleedit />  */}
 
         {/* <Demo /> */}
         

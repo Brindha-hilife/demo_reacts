@@ -1,12 +1,11 @@
 import * as React from 'react';
-import './user.css';
-import {Box, Container, Grid, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button} from '@mui/material';
+import {commonstyle} from './Commonstyle';
+import { styled } from '@mui/material/styles';
+import {Box, Container, Grid, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, tableCellClasses} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { AiFillFileExcel } from "react-icons/ai";
 import { FaFileCsv, FaPrint, FaFilePdf, FaEdit, FaEye, FaTrash } from "react-icons/fa";
 import $ from 'jquery';
-// import Useradd from './Useradd';
-// import Useredit form './Useredit';
 import { Link } from 'react-router-dom';
 
 function Users() {
@@ -21,9 +20,31 @@ function Users() {
         }, 1000);
     });
 
+    // Table Style
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+          backgroundColor: theme.palette.common.white,
+          color: theme.palette.common.black,
+        },
+        [`&.${tableCellClasses.body}`]: {
+          fontSize: 14,
+        },
+      }));
+      
+      const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+          backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+          border: 0,
+        },
+      }));
+
+
     // ****** Table Data ****** //
-    function createData(name, calories, fat, carbs, protein) {
-        return { name, calories, fat, carbs, protein };
+    function createData(username, name, role, email, action) {
+        return { username, name, role, email, action };
     }
 
     const rows = [
@@ -33,64 +54,61 @@ function Users() {
     return (
         <Box>
             <Container sx={{ paddingTop: '10px' }}>
-
                 <Grid display="flex">
                     <Typography variant="h5" >Users</Typography>
                     <Typography variant='body2' sx={{ marginLeft: '10px', marginTop: '10px' }}>Manage users</Typography>
                 </Grid>
             </Container><br />
-            <Container sx={{
-                bgcolor: '#fff', height: '400px', borderTop: '5px solid #7009ab;', borderLeft: '0px',
-                borderRight: '0px', borderBottom: '0px', borderRadius: '10px', boxShadow: '6px 6px 6px 9px #dedbdbae'
-            }}>
+            <Container sx={commonstyle.container}>
                 <Grid container spacing={10} sx={{ paddingTop: '30px' }}>
                     <Grid item md={6} sm={6} xs={6}>
                         <Typography variant="h6" >All users</Typography>
                     </Grid>
                     <Grid item md={6} sm={6} xs={6} >
-                        <Button className="users_addbtn" ><Link to="" className='user_linkbtn'><AddIcon /> Add</Link></Button>
+                        <Button sx={commonstyle.button_add} ><Link to="useradd"  style={commonstyle.button_linkadd}><AddIcon /> Add</Link></Button>
                     </Grid>
                 </Grid>
-                <Grid container sx={{ marginTop: '20px', marginBottom: '20px', justifyContent: 'center' }}>
-                    <Grid >
-                        <Button className='users_btngrp'><FaFileCsv />&ensp;Export to CSV</Button>
-                        <Button className='users_btngrp'><AiFillFileExcel />&ensp;Export to Excel</Button>
-                        <Button className='users_btngrp'><FaPrint />&ensp;Print</Button>
-                        <Button className='users_btngrp'><FaFilePdf />&ensp;Export to PDF</Button>
+                <TableContainer component={Paper} style={{boxShadow:"none",padding: '20px'}}>
+                    <Grid container sx={commonstyle.grid_container}>
+                        <Grid >
+                            <Button sx={commonstyle.button_grp}><FaFileCsv />&ensp;Export to CSV</Button>
+                            <Button sx={commonstyle.button_grp}><AiFillFileExcel />&ensp;Export to Excel</Button>
+                            <Button sx={commonstyle.button_grp}><FaPrint />&ensp;Print</Button>
+                            <Button sx={commonstyle.button_grp}><FaFilePdf />&ensp;Export to PDF</Button>
+                        </Grid>
                     </Grid>
-
-                </Grid>
-                <TableContainer component={Paper}  >
-                    <Table sx={{ padding: '20px' }} aria-label="simple table" id="usertable">
+                    <Table  aria-label="simple table" id="usertable" 
+                     
+                    >
                         <TableHead align="left">
                             <TableRow>
-                                <TableCell>Username</TableCell>
-                                <TableCell >Name</TableCell>
-                                <TableCell >Role</TableCell>
-                                <TableCell >Email</TableCell>
-                                <TableCell >Action</TableCell>
+                                <StyledTableCell>Username</StyledTableCell>
+                                <StyledTableCell >Name</StyledTableCell>
+                                <StyledTableCell >Role</StyledTableCell>
+                                <StyledTableCell >Email</StyledTableCell>
+                                <StyledTableCell >Action</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody align="left">
                             {rows.map((row) => (
-                                <TableRow
+                                <StyledTableRow
                                     key={row.name}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
-                                    <TableCell component="th" scope="row">
-                                        {row.name}
-                                    </TableCell>
-                                    <TableCell >{row.calories}</TableCell>
-                                    <TableCell >{row.fat}</TableCell>
-                                    <TableCell >{row.carbs}</TableCell>
-                                    <TableCell >
+                                    <StyledTableCell component="th" scope="row">
+                                     Styled   {row.username}
+                                    </StyledTableCell>
+                                    <StyledTableCell >{row.name}</StyledTableCell>
+                                    <StyledTableCell >{row.role}</StyledTableCell>
+                                    <StyledTableCell >{row.email}</StyledTableCell>
+                                    <StyledTableCell >
                                         <Grid>
-                                            <Button className='users_tbtnedit'><Link to="/useredit" className='user_linkbtn'><FaEdit />&ensp;Edit</Link></Button>
-                                            <Button className='users_tbtnview'><FaEye />&ensp;View</Button>
-                                            <Button className='users_tbtndelt'><FaTrash />&ensp;Delete</Button>
+                                            <Button sx={commonstyle.button_edit}><Link to="/useredit" style={commonstyle.button_linkadd}><FaEdit />&ensp;Edit</Link></Button>
+                                            <Button sx={commonstyle.button_view}><FaEye />&ensp;View</Button>
+                                            <Button sx={commonstyle.button_delete}><FaTrash />&ensp;Delete</Button>
                                         </Grid>
-                                    </TableCell>
-                                </TableRow>
+                                    </StyledTableCell>
+                                </StyledTableRow>
                             ))}
                         </TableBody>
                     </Table>

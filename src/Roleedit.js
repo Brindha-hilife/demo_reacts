@@ -1,14 +1,20 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import './user.css';
-import { userstyle } from './Userstyle'
+import { commonstyle } from './Commonstyle';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput,
-    Typography, FormGroup, FormControlLabel, Checkbox, Radio, Divider, Button
+    Typography, FormGroup, FormControlLabel, Checkbox, Radio, Divider, Button, Tooltip, IconButton
 } from '@mui/material';
-
 import { FcInfo } from "react-icons/fc";
 
-function Roleadd() {
+function Roleedit() {
+
+     // ****** Text Field ****** //
+    
+     const [roleeditform, setRoleeditform] = useState({    
+        rolename:"", 
+    });
+
     return (
         <Box>
             <form action=''>
@@ -17,7 +23,7 @@ function Roleadd() {
                         <Typography variant="h5" >Edit Role</Typography>
                     </Grid>
                 </Container><br />
-                <Container sx={userstyle.container}>
+                <Container sx={commonstyle.container}>
                     <Grid container spacing={2} sx={{
                         padding: '40px 20px',
 
@@ -30,7 +36,8 @@ function Roleadd() {
                                 <InputLabel htmlFor="component-outlined">Role Name *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={roleeditform.rolename}
+                                    onChange={(e)=> { setRoleeditform({...roleeditform, Rolename: e.target.value})}}
                                     label="Role Name *"
                                     type="text"
                                 />
@@ -42,7 +49,11 @@ function Roleadd() {
                         </Grid>
                         <Grid item md={8}>
                             <FormGroup>
-                                <span> <FormControlLabel control={<Checkbox />} label="Service staff" /><FcInfo /></span>
+                                <span> <FormControlLabel control={<Checkbox />} label="Service staff" /><Tooltip title="Delete">
+                                <IconButton>
+                                    <FcInfo />
+                                    </IconButton>
+                                </Tooltip></span>
                             </FormGroup>
                         </Grid>
                         <Grid item md={12}>
@@ -155,7 +166,11 @@ function Roleadd() {
                         </Grid>
                         <Divider sx={{ my: 2 }} />
                         <Grid item md={2}>
-                            <Typography variant="body1" >Customer <FcInfo /></Typography>
+                            <Typography variant="body1" >Customer <Tooltip title="Delete">
+                                <IconButton>
+                                    <FcInfo />
+                                    </IconButton>
+                                </Tooltip></Typography>
                         </Grid>
                         <Grid item md={2}>
                             <FormGroup>
@@ -249,7 +264,11 @@ function Roleadd() {
                                 </Grid>
                                 <Grid>
                                     <FormGroup>
-                                        <span><FormControlLabel control={<Checkbox />} label="View Purchase price" /><FcInfo /></span>
+                                        <span><FormControlLabel control={<Checkbox />} label="View Purchase price" /><Tooltip title="Delete">
+                                <IconButton>
+                                    <FcInfo />
+                                    </IconButton>
+                                </Tooltip></span>
                                     </FormGroup>
                                 </Grid>
                             </Grid><hr />
@@ -292,7 +311,11 @@ function Roleadd() {
                                 </Grid>
                                 <Grid>
                                     <FormGroup>
-                                        <span><FormControlLabel control={<Checkbox />} label="Add/Edit/Delete Payments" /><FcInfo /></span>
+                                        <span><FormControlLabel control={<Checkbox />} label="Add/Edit/Delete Payments" /><Tooltip title="Delete">
+                                <IconButton>
+                                    <FcInfo />
+                                    </IconButton>
+                                </Tooltip></span>
                                     </FormGroup>
                                 </Grid>
                                 <Grid>
@@ -352,7 +375,11 @@ function Roleadd() {
                         </Grid>
                         <Divider sx={{ my: 2 }} />
                         <Grid item md={2}>
-                            <Typography variant="body1" >Sell <FcInfo /></Typography>
+                            <Typography variant="body1" >Sell <Tooltip title="Delete">
+                                <IconButton>
+                                    <FcInfo />
+                                    </IconButton>
+                                </Tooltip></Typography>
                         </Grid>
                         <Grid item md={2}>
                             <FormGroup>
@@ -413,7 +440,11 @@ function Roleadd() {
                                 </Grid>
                                 <Grid>
                                     <FormGroup>
-                                        <span><FormControlLabel control={<Checkbox />} label=" Add/Edit/Delete Payments " /><FcInfo /></span>
+                                        <span><FormControlLabel control={<Checkbox />} label=" Add/Edit/Delete Payments " /><Tooltip title="Delete">
+                                <IconButton>
+                                    <FcInfo />
+                                    </IconButton>
+                                </Tooltip></span>
                                     </FormGroup>
                                 </Grid>
                                 <Grid>
@@ -848,7 +879,7 @@ function Roleadd() {
                         </Grid>
                         <Divider sx={{ my: 2 }} />
                         <Grid item md={4}>
-                            <Typography variant="body1" >Home <FcInfo /></Typography>
+                            <Typography variant="body1" >Home </Typography>
                         </Grid>
                         <Grid item md={8}>
                             <FormGroup>
@@ -907,7 +938,7 @@ function Roleadd() {
                             </FormGroup>
                         </Grid>
                         <Grid item md={12} sm={6} xs={6} >
-                            <Button className="users_addbtn" >Update</Button>
+                            <Button sx={commonstyle.button_add} >Update</Button>
                         </Grid>
                     </Grid>
                 </Container>
@@ -916,4 +947,4 @@ function Roleadd() {
     );
 }
 
-export default Roleadd;
+export default Roleedit;

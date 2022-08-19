@@ -1,113 +1,36 @@
-import * as React from 'react';
-import './user.css';
+import  React, {useState} from 'react';
+import { commonstyle } from './Commonstyle';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem,
     Typography, FormGroup, FormControlLabel, Checkbox, Button, TextareaAutosize, 
 } from '@mui/material';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { FcInfo } from "react-icons/fc";
 
-function Useradd() {
-    // const [value, setValue] = React.useState(null);
+
+function Useredit() {
+  
 
     // ****** Text Field ****** //
-    //Prefix
-    const [prefix, setPrefix] = React.useState('');
-
-    const handleChange1 = (event) => {
-        setPrefix(event.target.value);
-    };
-    //First Name
-    const [firstname, setFirstname] = React.useState('');
-
-    const handleChange2 = (event) => {
-        setFirstname(event.target.value);
-    };
-    //Last Name
-    const [lastname, setLastname] = React.useState('');
-
-    const handleChange3 = (event) => {
-        setLastname(event.target.value);
-    };
-    //Email
-    const [email, setEmail] = React.useState('');
-
-    const handleChange4 = (event) => {
-        setEmail(event.target.value);
-    };
-    //Username
-    const [username, setUsername] = React.useState('');
-
-    const handleChange5 = (event) => {
-        setUsername(event.target.value);
-    };
-    //password
-    const [password, setPassword] = React.useState('');
-
-    const handleChange6 = (event) => {
-        setPassword(event.target.value);
-    };
-    //Confirm Password
-    const [confirmpassword, setConfirmpassword] = React.useState('');
-
-    const handleChange7 = (event) => {
-        setConfirmpassword(event.target.value);
-    };
-    //Role
-    const [salescomnper, setSalescomnper] = React.useState('');
-
-    const handleChange8 = (event) => {
-        setSalescomnper(event.target.value);
-    };
-    //Sales Commission Percentage
-    const [role, setRole] = React.useState('');
-
-    const handleChange9 = (event) => {
-        setRole(event.target.value);
-    };
-    //Max sales discount percent
-    const [maxsale, setMaxsale] = React.useState('');
-
-    const handleChange10 = (event) => {
-        setMaxsale(event.target.value);
-    };
-    //Gender
-    const [gender, setGender] = React.useState('');
-
-    const handleChange11 = (event) => {
-        setGender(event.target.value);
-    };
-    //Marital Status
-    const [maritalstatus, setMaritalstatus] = React.useState('');
-
-    const handleChange12 = (event) => {
-        setMaritalstatus(event.target.value);
-    };
-    //Blood Group
-    const [bloodgroup, setBloodgroup] = React.useState('');
-
-    const handleChange13 = (event) => {
-        setBloodgroup(event.target.value);
-    };
-
+    
+    const [usereditform, setUsereditform] = useState({ 
+        prefix:"", firstname:"", lastname:"", email:"", username:"", password:"", confirmpassword:"", 
+        role:"", salescomnper:"", maxsale:"", gender:"", maritalstatus:"", bloodgroup:"", mobilenumber:"",
+        alternative:"", familycontact:"", facebooklink:"", twiterlink:"", media1:"", media2:"", custom1:"",
+        custom2:"", custom3:"", custom4:"", guardianname:"", proofname:"", proofnumber:"", permanentadd:"",
+        currentadd:"", accountholder:"", accountnumber:"", bankname:"", bankcode:"", branch:"", taxpayerid:"",
+    });
 
     return (
         <Box>
-            <form>
+            <form action=''>
                 <Container sx={{ paddingTop: '10px' }}>
                     <Grid display="flex">
                         <Typography variant="h6">Edit user</Typography>
                     </Grid>
                 </Container><br />
-                <Container sx={{
-                    bgcolor: '#fff', height: 'auto', borderTop: '5px solid #7009ab;', borderLeft: '0px',
-                    borderRight: '0px', borderBottom: '0px', borderRadius: '10px', boxShadow: '6px 6px 6px 9px #dedbdbae'
-                }}>
+                <Container sx={commonstyle.container}>
                     <Grid container spacing={4} sx={{
-                        padding: '40px 20px',
-
+                        padding: '40px 20px', 
                         '& .MuiOutlinedInput-notchedOutline': {
                             border: '1px solid #b97df0',
                         },
@@ -117,8 +40,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined" >Prefix</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={prefix}
-                                    onChange={handleChange1}
+                                    value={usereditform.prefix}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Prefix: e.target.value})}}
                                     label="Prefix"
                                     type="text"
                                 />
@@ -129,8 +52,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">First Name *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={firstname}
-                                    onChange={handleChange2}
+                                    value={usereditform.firstname}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Firstname: e.target.value})}}
                                     label="First Name *"
                                     type="text"
                                 />
@@ -141,8 +64,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Last Name</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={lastname}
-                                    onChange={handleChange3}
+                                    value={usereditform.lastname}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Lastname: e.target.value})}}
                                     label="Last Name"
                                     type="text"
                                 />
@@ -153,8 +76,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Email *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={email}
-                                    onChange={handleChange4}
+                                    value={usereditform.email}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Email: e.target.value})}}
                                     label="Email *"
                                     type="email"
                                 />
@@ -162,21 +85,17 @@ function Useradd() {
                         </Grid>
                         <Grid item md={7} sm={6} xs={12}>
                             <FormGroup>
-                                <span>  <FormControlLabel control={<Checkbox defaultChecked />} label="Is active ?" /><FcInfo /></span>
+                                <span><FormControlLabel control={<Checkbox defaultChecked />} label="Is active ?" /><FcInfo /></span>
                             </FormGroup>
                         </Grid>
                     </Grid>
                 </Container>
-                <Container sx={{
-                    bgcolor: '#fff', height: 'auto', borderLeft: '0px', paddingTop: '10px',
-                    borderRight: '0px', borderBottom: '0px', borderRadius: '5px', boxShadow: '6px 6px 6px 9px #dedbdbae', marginTop: '50px'
-                }}>
+                <Container sx={commonstyle.sub_container}>
                     <Grid display="flex" >
                         <Typography variant="h6" >Roles and Permissions</Typography>
                     </Grid>
                     <Grid container spacing={4} sx={{
                         padding: '40px 20px',
-
                         '& .MuiOutlinedInput-notchedOutline': {
                             border: '1px solid #b97df0',
                         },
@@ -191,8 +110,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined" >Username</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={username}
-                                    onChange={handleChange5}
+                                    value={usereditform.username}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Username: e.target.value})}}
                                     label="Username"
                                     type="text"
                                 />
@@ -204,8 +123,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Password *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={password}
-                                    onChange={handleChange6}
+                                    value={usereditform.password}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Password: e.target.value})}}
                                     label="Password *"
                                     type="password"
                                 />
@@ -216,8 +135,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Confirm Password *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={confirmpassword}
-                                    onChange={handleChange7}
+                                    value={usereditform.confirmpassword}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Confirmpassword: e.target.value})}}
                                     label="Confirm Password *"
                                     type="password"
                                 />
@@ -229,9 +148,9 @@ function Useradd() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={role}
+                                    value={usereditform.role}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Role: e.target.value})}}
                                     label="Role *"
-                                    onChange={handleChange8}
                                 >
                                     <MenuItem value="">Admin</MenuItem>
                                     <MenuItem value={1}>Cashier</MenuItem>
@@ -260,19 +179,11 @@ function Useradd() {
                                         <FormControlLabel control={<Checkbox />} label="yyy" />
                                     </FormGroup>
                                 </Grid>
-                                <Grid>
-                                    <FormGroup>
-                                        <FormControlLabel control={<Checkbox />} label="zzz" />
-                                    </FormGroup>
-                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
                 </Container>
-                <Container sx={{
-                    bgcolor: '#fff', height: 'auto', borderLeft: '0px', paddingTop: '10px',
-                    borderRight: '0px', borderBottom: '0px', borderRadius: '5px', boxShadow: '6px 6px 6px 9px #dedbdbae', marginTop: '50px'
-                }}>
+                <Container sx={commonstyle.sub_container}>
                     <Grid display="flex" >
                         <Typography variant="h6" >Sales</Typography>
                     </Grid>
@@ -287,8 +198,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Sales Commission Percentage (%)</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={salescomnper}
-                                    onChange={handleChange9}
+                                    value={usereditform.salescomnper}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Salescomnper: e.target.value})}}
                                     label="Sales Commission Percentage (%) *"
                                     type="number"
                                 />
@@ -299,8 +210,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Max sales discount percent </InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={maxsale}
-                                    onChange={handleChange10}
+                                    value={usereditform.maxsale}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Maxsale: e.target.value})}}
                                     label="Max sales discount percent"
                                     type="number"
                                 />
@@ -314,10 +225,7 @@ function Useradd() {
                         </Grid>
                     </Grid>
                 </Container>
-                <Container sx={{
-                    bgcolor: '#fff', height: 'auto', borderLeft: '0px', paddingTop: '10px',
-                    borderRight: '0px', borderBottom: '0px', borderRadius: '5px', boxShadow: '6px 6px 6px 9px #dedbdbae', marginTop: '50px'
-                }}>
+                <Container sx={commonstyle.sub_container}>
                     <Grid display="flex" >
                         <Typography variant="h6" >More Informations</Typography>
                     </Grid>
@@ -328,17 +236,7 @@ function Useradd() {
                         },
                     }}>
                         <Grid item md={3} sm={6} xs={12}>
-                            {/* <FormControl size="small" fullWidth>
-                    <InputLabel id="demo-select-small">Date of birth</InputLabel>
-                      <DatePicker
-          label="Date of birth"
-          value={1}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-        </FormControl> */}
+                            {/* *********************************************** */}
 
                         </Grid>
                         <Grid item md={3} sm={6} xs={12}>
@@ -347,9 +245,9 @@ function Useradd() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={gender}
+                                    value={usereditform.gender}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Gender: e.target.value})}}
                                     label="Gender"
-                                    onChange={handleChange11}
                                 >
                                     <MenuItem value=""><em>Please Select</em></MenuItem>
                                     <MenuItem value={1}>Male</MenuItem>
@@ -364,10 +262,10 @@ function Useradd() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={maritalstatus}
+                                    value={usereditform.maritalstatus}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Maritalstatus: e.target.value})}}
                                     label="Marital Status"
-                                    onChange={handleChange12}
-                                >
+                                    >
                                     <MenuItem value=""><em>Marital Status</em></MenuItem>
                                     <MenuItem value={1}>Married</MenuItem>
                                     <MenuItem value={2}>Unmarried</MenuItem>
@@ -380,8 +278,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Blood Group</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={bloodgroup}
-                                    onChange={handleChange13}
+                                    value={usereditform.bloodgroup}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Bloodgroup: e.target.value})}}
                                     label="Blood Group"
                                     type="text"
                                 />
@@ -392,7 +290,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Mobile Number</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.mobilenumber}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Mobilenumber: e.target.value})}}
                                     label="Mobile Number"
                                     type="number"
                                 />
@@ -403,7 +302,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Alternate contact number</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.alternative}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Alternative: e.target.value})}}
                                     label="Alternate contact number"
                                     type="number"
                                 />
@@ -414,7 +314,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Family contact number</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.familycontact} 
+                                    onChange={(e)=> { setUsereditform({...usereditform, Familycontact: e.target.value})}}   
                                     label="Family contact number"
                                     type="number"
                                 />
@@ -425,7 +326,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Facebook Link</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.facebooklink}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Facebooklink: e.target.value})}}
                                     label="Facebook Link"
                                     type="text"
                                 />
@@ -436,7 +338,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Twitter Link</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.twiterlink}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Twiterlink: e.target.value})}}
                                     label="Twitter Link"
                                     type="text"
                                 />
@@ -447,7 +350,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Social Media 1</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.media1}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Media1: e.target.value})}}
                                     label="Social Media 1"
                                     type="text"
                                 />
@@ -464,7 +368,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Social Media 2</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.media2}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Media2: e.target.value})}}
                                     label="Social Media 2"
                                     type="text"
                                 />
@@ -475,7 +380,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Custom field 1</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.custom1}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Custom1: e.target.value})}}
                                     label="Custom field 1"
                                     type="text"
                                 />
@@ -486,7 +392,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Custom field 2</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.custom2}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Custom2: e.target.value})}}
                                     label="Custom field 2"
                                     type="text"
                                 />
@@ -497,7 +404,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Custom field 3</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.custom3}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Custom3: e.target.value})}}
                                     label="Custom field 3"
                                     type="text"
                                 />
@@ -508,7 +416,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Custom field 4</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.custom4}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Custom4: e.target.value})}}
                                     label="Custom field 4"
                                     type="text"
                                 />
@@ -519,7 +428,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Guardian Name</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.guardianname}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Guardianname: e.target.value})}}
                                     label="Guardian Name"
                                     type="text"
                                 />
@@ -530,7 +440,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">ID proof name</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.proofname}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Proofnumber: e.target.value})}}
                                     label="ID proof name"
                                     type="text"
                                 />
@@ -541,7 +452,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">ID proof number</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.proofnumber}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Proofnumber: e.target.value})}}
                                     label="ID proof number"
                                     type="text"
                                 />
@@ -555,6 +467,8 @@ function Useradd() {
                                     minRows={3}
                                     placeholder="Permanent Address"
                                     className='users_txtarea'
+                                    value={usereditform.permanentadd}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Permanentadd: e.target.value})}}
                                 />
                             </FormControl>
                         </Grid>
@@ -566,11 +480,13 @@ function Useradd() {
                                     minRows={3}
                                     placeholder="Current Address"
                                     className='users_txtarea'
+                                    value={usereditform.currentadd}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Currentadd: e.target.value})}}
                                 />
                             </FormControl>
                         </Grid>
                     </Grid>
-                    <hr />
+                    <hr  />              
                     <Grid display="flex" >
                         <Typography variant="h6" >Bank Details</Typography>
                     </Grid>
@@ -585,7 +501,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Account Holder's Name</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.accountholder}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Accountholder: e.target.value})}}
                                     label="Account Holder's Name"
                                     type="text"
                                 />
@@ -596,7 +513,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Account Number</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.accountnumber}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Accountnumber: e.target.value})}}
                                     label="Account Number"
                                     type="text"
                                 />
@@ -607,7 +525,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Bank Name</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.bankname}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Bankname: e.target.value})}}
                                     label="Bank Name"
                                     type="text"
                                 />
@@ -618,7 +537,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Bank Identifier Code</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.bankcode}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Bankcode: e.target.value})}}
                                     label="Bank Identifier Code"
                                     type="text"
                                 />
@@ -629,7 +549,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Branch</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.branch}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Branch: e.target.value})}}
                                     label="Branch"
                                     type="text"
                                 />
@@ -640,7 +561,8 @@ function Useradd() {
                                 <InputLabel htmlFor="component-outlined">Tax Payer ID</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-
+                                    value={usereditform.taxpayerid}
+                                    onChange={(e)=> { setUsereditform({...usereditform, Taxpayerid: e.target.value})}}
                                     label="Tax Payer ID"
                                     type="text"
                                 />
@@ -650,7 +572,7 @@ function Useradd() {
                 </Container><br />
                 <Grid container sx={{ marginTop: '20px', marginBottom: '20px', justifyContent: 'center' }}>
                     <Grid >
-                        <Button className='users_addbtn'>Update</Button>
+                        <Button sx={commonstyle.button_add}>Save</Button>
                     </Grid>
                 </Grid>
             </form>
@@ -658,4 +580,4 @@ function Useradd() {
     );
 }
 
-export default Useradd;
+export default Useredit;
