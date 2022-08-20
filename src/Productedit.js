@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import './product.css';
+import { prodStyle } from './Prodstyle.js';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem,
     Typography, Autocomplete, TextField, FormGroup, FormControlLabel, Checkbox,
@@ -83,7 +83,7 @@ function Productedit() {
     }
 
     //Text field
-    const [productEdit, setProductEdd] = useState({
+    const [productEdit, setProductEdit] = useState({
         producteditname: "", producteditsku: "", producteditbarcode: "", producteditunit: "",
         producteditbrand: "", producteditcategory: "", producteditsubcat: "", producteditbusinessloc: "",
         producteditalert: "", producteditapplicable: "", producteditsellingtax: "", producteditproducttype: "",
@@ -91,44 +91,20 @@ function Productedit() {
 
     });
 
-
-
     // ************* Modal ************* //
     // ****** Unit Modal ****** //
-    // Product Name
-    const [modproductname, setModproductname] = React.useState('');
 
-    const handleChange19 = (event) => {
-        setModproductname(event.target.value);
-    };
-    // Short name
-    const [modshortname, setModshortname] = React.useState('');
-
-    const handleChange20 = (event) => {
-        setModshortname(event.target.value);
-    };
-    // Allow decimal
-    const [modallowdes, setModallowdes] = React.useState('');
-
-    const handleChange21 = (event) => {
-        setModallowdes(event.target.value);
-    };
-
+    const[productEditUnitMod, setProductEditUnitMod] = useState({
+        producteditunitprodname:"", producteditunitshortname:"", producteditunitallow:""
+    });
 
 
     // ****** Brand Modal ****** //
-    // Brand Name
-    const [modbrandname, setModbrandname] = React.useState('');
+  
+    const[productEditBrandMod, setProductEditBrandMod] = useState({
+        prodeditBrdModBrdName:"", prodeditBrdModShortDes:"",
+    });
 
-    const handleChange17 = (event) => {
-        setModbrandname(event.target.value);
-    };
-    //Short Description
-    const [shortdes, setShortdes] = React.useState('');
-
-    const handleChange18 = (event) => {
-        setShortdes(event.target.value);
-    };
 
     // ****** Multi Select ****** //
     const top100Films = [
@@ -146,14 +122,11 @@ function Productedit() {
             <form action=''>
                 <Container sx={{ paddingTop: '10px' }}>
                     <Grid display="flex">
-                        <Typography variant="h6">Edit Product</Typography>
+                        <Typography variant="h6">Edit Product</Typography>&ensp;
                         <Typography variant='body2' sx={{ marginLeft: '10px', marginTop: '5px' }}>Products | Edit product</Typography>
                     </Grid>
                 </Container><br />
-                <Container sx={{
-                    bgcolor: '#fff', height: 'auto', borderTop: '5px solid #7009ab;', borderLeft: '0px',
-                    borderRight: '0px', borderBottom: '0px', borderRadius: '10px', boxShadow: '6px 6px 6px 9px #dedbdbae'
-                }}>
+                <Container sx={prodStyle.prod_container}>
                     <Grid container spacing={2} sx={{
                         padding: '40px 20px',
                         '& .MuiOutlinedInput-notchedOutline': {
@@ -196,14 +169,13 @@ function Productedit() {
                         </Grid>
                         <Grid item md={3} sm={6} xs={12}>
                             <FormControl size="small" fullWidth
-
                             >
                                 <InputLabel id="demo-select-small">Barcode type</InputLabel>
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productAdd.productaddbarcode}
-                                    onChange={(e) => { setProductAdd({ ...productAdd, Productaddbarcode: e.target.value }) }}
+                                    value={productEdit.producteditbarcode}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditbarcode: e.target.value }) }}
                                     label="Barcode type"
                                 >
                                     <MenuItem value="">
@@ -224,8 +196,8 @@ function Productedit() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productAdd.productaddunit}
-                                        onChange={(e) => { setProductAdd({ ...productAdd, Productaddunit: e.target.value }) }} label="Unit *"
+                                        value={productEdit.producteditunit}
+                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditunit: e.target.value }) }} label="Unit *"
                                         fullWidth
                                     >
                                         <MenuItem value="">
@@ -245,8 +217,8 @@ function Productedit() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productAdd.productaddbrand}
-                                        onChange={(e) => { setProductAdd({ ...productAdd, Productaddbrand: e.target.value }) }} label="Brand"
+                                        value={productEdit.producteditbrand}
+                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditbrand: e.target.value }) }} label="Brand"
                                         fullWidth
                                     >
                                         <MenuItem value="">
@@ -264,8 +236,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productAdd.productaddcategory}
-                                    onChange={(e) => { setProductAdd({ ...productAdd, Productaddcategory: e.target.value }) }} label="Category"
+                                    value={productEdit.producteditcategory}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditcategory: e.target.value }) }} label="Category"
                                 >
                                     <MenuItem value="">
                                         <em>Please Select</em>
@@ -281,8 +253,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productAdd.productaddsubcat}
-                                    onChange={(e) => { setProductAdd({ ...productAdd, Productaddsubcat: e.target.value }) }}
+                                    value={productEdit.producteditsubcat}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditsubcat: e.target.value }) }}
                                     label="Sub Category"
                                 >
                                     <MenuItem value="">
@@ -334,8 +306,8 @@ function Productedit() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productAdd.productaddalert}
-                                                    onChange={(e) => { setProductAdd({ ...productAdd, Productaddalert: e.target.value }) }}
+                                                    value={productEdit.producteditalert}
+                                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditalert: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -350,7 +322,7 @@ function Productedit() {
                             <FormControl size="small" fullWidth>
                                 <Button
                                     component="label"
-                                    className='product_uploadbtn'
+                                    sx={prodStyle.prod_uploadbtn}
                                 >
                                     Upload Image
                                     <input
@@ -368,7 +340,7 @@ function Productedit() {
                         <Grid item md={3} sm={12} xs={12}>
                             <FormControl size="small" fullWidth>
                                 <Button
-                                    className='product_uploadbtn'
+                                    sx={prodStyle.prod_uploadbtn}
                                 >
                                     Upload File
                                     <input
@@ -388,8 +360,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productAdd.productaddapplicable}
-                                    onChange={(e) => { setProductAdd({ ...productAdd, Productaddapplicable: e.target.value }) }}
+                                    value={productEdit.producteditapplicable}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditapplicable: e.target.value }) }}
                                     label="Applicable Tax"
                                 >
                                     <MenuItem value="">
@@ -406,8 +378,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productAdd.productaddsellingtax}
-                                    onChange={(e) => { setProductAdd({ ...productAdd, Productaddsellingtax: e.target.value }) }}
+                                    value={productEdit.producteditsellingtax}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditsellingtax: e.target.value }) }}
                                     label="Selling Price Tax Type"
                                 >
                                     <MenuItem value="">
@@ -430,8 +402,8 @@ function Productedit() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productAdd.productaddproducttype}
-                                                    onChange={(e) => { setProductAdd({ ...productAdd, Productaddproducttype: e.target.value }) }}
+                                                    value={productEdit.producteditproducttype}
+                                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditproducttype: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -447,8 +419,8 @@ function Productedit() {
                                 <Table aria-label="simple table " sx={{ borderBlock: '1px solid #b97fd0' }} fullWidth>
                                     <TableHead fullWidth>
                                         <TableRow fullWidth>
-                                            <TableCell className='product_tablehd' align="center" colSpan={2} fullWidth>Default Purchase Price</TableCell>
-                                            <TableCell className='product_tablehd' align="center" fullWidth>x Margin (%)
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" colSpan={2} fullWidth>Default Purchase Price</TableCell>
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" fullWidth>x Margin (%)
                                                 <Tooltip sx={{ zIndex: '1' }} title="Single product: Product with no variations.
                 Variable product: Product with variations such as size, color etc.
                 Combo product: A combination of multiple products, also called bundle product" placement="top">
@@ -457,8 +429,8 @@ function Productedit() {
                                                     </IconButton>
                                                 </Tooltip>
                                             </TableCell>
-                                            <TableCell className='product_tablehd' align="center" fullWidth>Default Selling Price</TableCell>
-                                            <TableCell className='product_tablehd' align="center" fullWidth>Product image</TableCell>
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" fullWidth>Default Selling Price</TableCell>
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" fullWidth>Product image</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody fullWidth>
@@ -468,8 +440,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productAdd.productaddexc}
-                                                        onChange={(e) => { setProductAdd({ ...productAdd, Productaddexc: e.target.value }) }}
+                                                        value={productEdit.producteditexc}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditexc: e.target.value }) }}
                                                         label="Exc. tax *"
                                                     />
                                                 </FormControl>
@@ -479,8 +451,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productAdd.productaddinc}
-                                                        onChange={(e) => { setProductAdd({ ...productAdd, Productaddinc: e.target.value }) }}
+                                                        value={productEdit.producteditinc}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditinc: e.target.value }) }}
                                                         label="Inc. tax *"
                                                     />
                                                 </FormControl>
@@ -490,8 +462,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined"></InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productAdd.productaddmarg}
-                                                        onChange={(e) => { setProductAdd({ ...productAdd, Productaddmarg: e.target.value }) }}
+                                                        value={productEdit.producteditmarg}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditmarg: e.target.value }) }}
                                                         label="Marg"
                                                     />
                                                 </FormControl>
@@ -501,8 +473,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productAdd.productaddexctax}
-                                                        onChange={(e) => { setProductAdd({ ...productAdd, Productaddexctax: e.target.value }) }}
+                                                        value={productEdit.producteditexctax}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditexctax: e.target.value }) }}
                                                         label="Exc. tax *"
                                                     />
                                                 </FormControl>
@@ -510,15 +482,15 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productAdd.productaddinctax}
-                                                        onChange={(e) => { setProductAdd({ ...productAdd, Productaddinctax: e.target.value }) }}
+                                                        value={productEdit.producteditinctax}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditinctax: e.target.value }) }}
                                                         label="Inc. tax *"
                                                     />
                                                 </FormControl>
                                             </TableCell>
                                             <TableCell align="center" fullWidth>
                                                 <Button
-                                                    className='product_uploadbtn'
+                                                    sx={prodStyle.prod_uploadbtn}
                                                 >
                                                     Upload Image
                                                     <input
@@ -533,11 +505,12 @@ function Productedit() {
                                 </Table>
                             </TableContainer>
                         </Grid>
-                        <Grid item md={4} sm={1} xs={1}></Grid>
-                        <Grid item md={7} sm={10} xs={12}>
-                            <Button className='product_saveadd'>Save And Add Another </Button><Button className='product_save'>Save</Button>
+                        <Grid container sx={prodStyle.prod_grid_container}>
+                            <Grid >
+                                <Button sx={prodStyle.prod_saveadd}>Save And Add Another </Button>
+                                <Button sx={prodStyle.prod_save}>Save</Button>
+                            </Grid>
                         </Grid>
-                        <Grid item md={1} sm={1} xs={1}></Grid>
                     </Grid>
                 </Container>
             </form>
@@ -569,8 +542,8 @@ function Productedit() {
                                     <InputLabel htmlFor="component-outlined">Product Name *</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={modproductname}
-                                        onChange={handleChange19}
+                                        value={productEditUnitMod.producteditunitprodname}
+                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, Producteditunitprodname: e.target.value }) }}
                                         label="Product Name"
                                     />
                                 </FormControl>
@@ -580,8 +553,8 @@ function Productedit() {
                                     <InputLabel htmlFor="component-outlined">Short Name</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={modshortname}
-                                        onChange={handleChange20}
+                                        value={productEditUnitMod.producteditunitshortname}
+                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, Producteditshortprodname: e.target.value }) }}
                                         label="Short Name"
                                     />
                                 </FormControl>
@@ -592,9 +565,9 @@ function Productedit() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={modallowdes}
+                                        value={productEditUnitMod.producteditunitallow}
+                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, Producteditunitallow: e.target.value }) }}
                                         label="Allow decimal"
-                                        onChange={handleChange21}
                                     >
                                         <MenuItem value="">
                                             <em>Please Select</em>
@@ -641,8 +614,8 @@ function Productedit() {
                                     <InputLabel htmlFor="component-outlined">Brand Name *</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={modbrandname}
-                                        onChange={handleChange17}
+                                        value={productEditBrandMod.prodeditBrdModBrdName}
+                                        onChange={(e) => { setProductEditBrandMod({ ...productEditBrandMod, ProdeditBrdModBrdName: e.target.value }) }}
                                         label="Brand Name *"
                                     />
                                 </FormControl>
@@ -652,8 +625,8 @@ function Productedit() {
                                     <InputLabel htmlFor="component-outlined">Short Description</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={shortdes}
-                                        onChange={handleChange18}
+                                        value={productEditBrandMod.prodeditBrdModShortDes}
+                                        onChange={(e) => { setProductEditBrandMod({ ...productEditBrandMod, ProdeditBrdModShortDes: e.target.value }) }}
                                         label="Short Description"
                                     />
                                 </FormControl>

@@ -1,4 +1,4 @@
-export const commonstyle = {
+export const userStyle = {
     container : {
         bgcolor: '#fff', 
         height: 'max-content', 
@@ -33,8 +33,8 @@ export const commonstyle = {
         '&:hover' : {
             backgroundColor: '#fff !important',
             border: '1px solid #7009ab !important',
-            color: '#7009ab ',
-        }
+            color: '#7009ab !important',
+        },
     },
     button_grp : {
         backgroundColor: '#FBF2FF !important',
@@ -90,15 +90,4 @@ export const commonstyle = {
         marginBottom: '20px',
         justifyContent: 'center',
     },
-    button_linkadd : {
-        textDecoration: 'none',
-            color:'#fff',
-        '&:hover' : {
-            color: '#7009ab !important',
-        }
-    },
-
-    
-   
-
 }

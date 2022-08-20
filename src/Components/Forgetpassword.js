@@ -1,6 +1,7 @@
 import { FaHeart, FaEyeSlash } from 'react-icons/fa';
 import logo from '../images/logo.png';
 import { useNavigate } from 'react-router-dom';
+import '../App.css';
 export function Forgetpassword() {
   const navigate = useNavigate();
 

@@ -1,5 +1,5 @@
 import  React, {useState} from 'react';
-import { commonstyle } from './Commonstyle';
+import { userStyle } from './Userstyle';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem,
     Typography, FormGroup, FormControlLabel, Checkbox, Button, TextareaAutosize, 
@@ -28,7 +28,7 @@ function Useredit() {
                         <Typography variant="h6">Edit user</Typography>
                     </Grid>
                 </Container><br />
-                <Container sx={commonstyle.container}>
+                <Container sx={userStyle.container}>
                     <Grid container spacing={4} sx={{
                         padding: '40px 20px', 
                         '& .MuiOutlinedInput-notchedOutline': {
@@ -90,7 +90,7 @@ function Useredit() {
                         </Grid>
                     </Grid>
                 </Container>
-                <Container sx={commonstyle.sub_container}>
+                <Container sx={userStyle.sub_container}>
                     <Grid display="flex" >
                         <Typography variant="h6" >Roles and Permissions</Typography>
                     </Grid>
@@ -183,7 +183,7 @@ function Useredit() {
                         </Grid>
                     </Grid>
                 </Container>
-                <Container sx={commonstyle.sub_container}>
+                <Container sx={userStyle.sub_container}>
                     <Grid display="flex" >
                         <Typography variant="h6" >Sales</Typography>
                     </Grid>
@@ -225,7 +225,7 @@ function Useredit() {
                         </Grid>
                     </Grid>
                 </Container>
-                <Container sx={commonstyle.sub_container}>
+                <Container sx={userStyle.sub_container}>
                     <Grid display="flex" >
                         <Typography variant="h6" >More Informations</Typography>
                     </Grid>
@@ -572,7 +572,7 @@ function Useredit() {
                 </Container><br />
                 <Grid container sx={{ marginTop: '20px', marginBottom: '20px', justifyContent: 'center' }}>
                     <Grid >
-                        <Button sx={commonstyle.button_add}>Save</Button>
+                        <Button sx={userStyle.button_add}>Save</Button>
                     </Grid>
                 </Grid>
             </form>

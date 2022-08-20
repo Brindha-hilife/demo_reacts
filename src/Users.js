@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {commonstyle} from './Commonstyle';
+import {userStyle} from './Userstyle';
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, tableCellClasses} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -59,22 +59,22 @@ function Users() {
                     <Typography variant='body2' sx={{ marginLeft: '10px', marginTop: '10px' }}>Manage users</Typography>
                 </Grid>
             </Container><br />
-            <Container sx={commonstyle.container}>
+            <Container sx={userStyle.container}>
                 <Grid container spacing={10} sx={{ paddingTop: '30px' }}>
                     <Grid item md={6} sm={6} xs={6}>
                         <Typography variant="h6" >All users</Typography>
                     </Grid>
                     <Grid item md={6} sm={6} xs={6} >
-                        <Button sx={commonstyle.button_add} ><Link to="useradd"  style={commonstyle.button_linkadd}><AddIcon /> Add</Link></Button>
+                        <Button sx={userStyle.button_add} ><Link to="useradd"  style={{textDecoration:'none', color: '#a5becc'}}><AddIcon /> Add</Link></Button>
                     </Grid>
                 </Grid>
                 <TableContainer component={Paper} style={{boxShadow:"none",padding: '20px'}}>
-                    <Grid container sx={commonstyle.grid_container}>
+                    <Grid container sx={userStyle.grid_container}>
                         <Grid >
-                            <Button sx={commonstyle.button_grp}><FaFileCsv />&ensp;Export to CSV</Button>
-                            <Button sx={commonstyle.button_grp}><AiFillFileExcel />&ensp;Export to Excel</Button>
-                            <Button sx={commonstyle.button_grp}><FaPrint />&ensp;Print</Button>
-                            <Button sx={commonstyle.button_grp}><FaFilePdf />&ensp;Export to PDF</Button>
+                            <Button sx={userStyle.button_grp}><FaFileCsv />&ensp;Export to CSV</Button>
+                            <Button sx={userStyle.button_grp}><AiFillFileExcel />&ensp;Export to Excel</Button>
+                            <Button sx={userStyle.button_grp}><FaPrint />&ensp;Print</Button>
+                            <Button sx={userStyle.button_grp}><FaFilePdf />&ensp;Export to PDF</Button>
                         </Grid>
                     </Grid>
                     <Table  aria-label="simple table" id="usertable" 
@@ -103,9 +103,9 @@ function Users() {
                                     <StyledTableCell >{row.email}</StyledTableCell>
                                     <StyledTableCell >
                                         <Grid>
-                                            <Button sx={commonstyle.button_edit}><Link to="/useredit" style={commonstyle.button_linkadd}><FaEdit />&ensp;Edit</Link></Button>
-                                            <Button sx={commonstyle.button_view}><FaEye />&ensp;View</Button>
-                                            <Button sx={commonstyle.button_delete}><FaTrash />&ensp;Delete</Button>
+                                            <Button sx={userStyle.button_edit}><Link to="/useredit" style={userStyle.button_linkadd}><FaEdit />&ensp;Edit</Link></Button>
+                                            <Button sx={userStyle.button_view}><FaEye />&ensp;View</Button>
+                                            <Button sx={userStyle.button_delete}><FaTrash />&ensp;Delete</Button>
                                         </Grid>
                                     </StyledTableCell>
                                 </StyledTableRow>

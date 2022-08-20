@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { commonstyle } from './Commonstyle';
+import { userStyle } from './Userstyle';
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, tableCellClasses} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -57,13 +57,13 @@ function Roles() {
                     <Typography variant='body2' sx={{ marginLeft: '10px', marginTop: '10px' }}>Manage roles</Typography>
                 </Grid>
             </Container><br />
-            <Container sx={commonstyle.container}>
+            <Container sx={userStyle.container}>
                 <Grid container spacing={10} sx={{ paddingTop: '30px' }}>
                     <Grid item md={6} sm={6} xs={6}>
                         <Typography variant="h6" >All roles</Typography>
                     </Grid>
                     <Grid item md={6} sm={6} xs={6} >
-                        <Button sx={commonstyle.button_add}><Link to="roleadd" style={commonstyle.button_linkadd}><AddIcon /> Add</Link></Button>
+                        <Button sx={userStyle.button_add}><Link to="roleadd" style={userStyle.button_linkadd}><AddIcon /> Add</Link></Button>
                     </Grid>
                 </Grid>
                 <TableContainer component={Paper} style={{boxShadow:"none",padding: '20px'}} >
@@ -85,8 +85,8 @@ function Roles() {
                                     </StyledTableCell>                              
                                     <StyledTableCell >
                                         <Grid>
-                                            <Button sx={commonstyle.button_edit}><Link to="roleedit" style={commonstyle.button_linkadd}><FaEdit />&ensp;Edit</Link></Button>
-                                            <Button sx={commonstyle.button_delete}><FaTrash />&ensp;Delete</Button>
+                                            <Button sx={userStyle.button_edit}><Link to="roleedit" style={userStyle.button_linkadd}><FaEdit />&ensp;Edit</Link></Button>
+                                            <Button sx={userStyle.button_delete}><FaTrash />&ensp;Delete</Button>
                                         </Grid>
                                     </StyledTableCell>
                                 </StyledTableRow>

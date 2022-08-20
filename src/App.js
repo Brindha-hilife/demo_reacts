@@ -3,8 +3,8 @@ import React from 'react';
 // import './product.css';
 // import logo from './images/logo.png';
 // import {Routes, Route, useNavigate} from 'react-router-dom';
-// import Forgetcaptcha from './Components/Forgetcaptcha';
-// import Forgetpassword from './Components/Forgetpassword';
+import Forgetcaptcha from './Components/Forgetcaptcha';
+import Forgetpassword from './Components/Forgetpassword';
 // import Forgetotp  from './Components/Forgetotp';
 // import Productadd from './Productadd';
 // import Productedit from './Productedit';
@@ -12,7 +12,7 @@ import React from 'react';
 // import Demo from './Demo';
 // import { Modal } from 'react-bootstrap';
 // import Users from './Users';
-import Roles from './Roles';
+// import Roles from './Roles';
 // import Salescomn from './Salescomn';
 // import Footer from './Footer';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -27,12 +27,13 @@ function App() {
  
   return (
     <div>
-       
+       <Forgetpassword/>
+       <Forgetcaptcha/>
         {/* <Productadd /> */}
         {/* <Productedit /> */}
         {/* <Productview /> */}
        {/* <Users /> */}
-        <Roles />
+        {/* <Roles /> */}
          {/* <Salescomn /> */}
         {/* <Useradd /> */}
         {/* <Useredit/> */}

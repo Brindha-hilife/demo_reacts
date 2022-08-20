@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './user.css';
 import { styled } from '@mui/material/styles';
-import { commonstyle } from './Commonstyle';
+import { userStyle } from './Userstyle';
 import {Box, Container, Grid, FormControl, InputLabel, OutlinedInput,
     Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button,
     Dialog, DialogTitle, DialogContent, DialogActions, IconButton, TextareaAutosize, tableCellClasses
@@ -97,7 +97,7 @@ function Salescomn() {
 
     // ****** Sales Modal Textfield ****** //
     // ****** Add Modal ****** //
-    const [salesmodaladd, setSalesmodaladd] = React.useState(false);
+    const [salesmodaladd, setSalesmodaladd] = useState(false);
 
     const handleClickOpenadd = () => {
         setSalesmodaladd(true);
@@ -112,7 +112,7 @@ function Salescomn() {
 
     
     // ****** Edit Modal ****** //
-    const [salesmodaledit, setSalesmodaledit] = React.useState(false);
+    const [salesmodaledit, setSalesmodaledit] = useState(false);
 
     const handleClickOpenedit = () => {
         setSalesmodaledit(true);
@@ -136,20 +136,20 @@ function Salescomn() {
                     <Typography variant="h5" >Sales Commission Agents</Typography>
                 </Grid>
             </Container><br />
-            <Container sx={commonstyle.container}>
+            <Container sx={userStyle.container}>
                 <Grid container spacing={10} sx={{ paddingTop: '30px' }}>
                     <Grid item md={6} sm={6} xs={6} ></Grid>
                     <Grid item md={6} sm={6} xs={6} >
-                        <Button sx={commonstyle.button_add} onClick={handleClickOpenadd} ><AddIcon /> Add</Button>
+                        <Button sx={userStyle.button_add} onClick={handleClickOpenadd} ><AddIcon /> Add</Button>
                     </Grid>
                 </Grid>
                 <TableContainer component={Paper} style={{boxShadow:"none",padding: '20px'}} >
-                    <Grid container sx={commonstyle.grid_container}>
+                    <Grid container sx={userStyle.grid_container}>
                         <Grid >
-                            <Button sx={commonstyle.button_grp}><FaFileCsv />&ensp;Export to CSV</Button>
-                            <Button sx={commonstyle.button_grp}><AiFillFileExcel />&ensp;Export to Excel</Button>
-                            <Button sx={commonstyle.button_grp}><FaPrint />&ensp;Print</Button>
-                            <Button sx={commonstyle.button_grp}><FaFilePdf />&ensp;Export to PDF</Button>
+                            <Button sx={userStyle.button_grp}><FaFileCsv />&ensp;Export to CSV</Button>
+                            <Button sx={userStyle.button_grp}><AiFillFileExcel />&ensp;Export to Excel</Button>
+                            <Button sx={userStyle.button_grp}><FaPrint />&ensp;Print</Button>
+                            <Button sx={userStyle.button_grp}><FaFilePdf />&ensp;Export to PDF</Button>
                         </Grid>
                     </Grid>
                     <Table sx={{ padding: '20px' }} aria-label="simple table" id="salestable">
@@ -178,9 +178,9 @@ function Salescomn() {
                                     <StyledTableCell>{row.sales_comm}</StyledTableCell>
                                     <StyledTableCell >
                                         <Grid>
-                                            <Button sx={commonstyle.button_edit} onClick={handleClickOpenedit}><FaEdit />&ensp;Edit</Button>
-                                            <Button sx={commonstyle.button_view}><FaEye />&ensp;View</Button>
-                                            <Button sx={commonstyle.button_delete}><FaTrash />&ensp;Delete</Button>
+                                            <Button sx={userStyle.button_edit} onClick={handleClickOpenedit}><FaEdit />&ensp;Edit</Button>
+                                            <Button sx={userStyle.button_view}><FaEye />&ensp;View</Button>
+                                            <Button sx={userStyle.button_delete}><FaTrash />&ensp;Delete</Button>
                                         </Grid>
                                     </StyledTableCell>
                                 </StyledTableRow>

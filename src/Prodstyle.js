@@ -1,0 +1,61 @@
+export const prodStyle = {
+    prod_container : {
+        bgcolor: '#fff', 
+        height: 'max-content', 
+        borderTop: '5px solid #7009ab;', 
+        borderLeft: '0px',
+        borderRight: '0px', 
+        borderBottom: '0px',
+        borderRadius: '10px', 
+        boxShadow: '6px 6px 6px 9px #dedbdbae',
+    },
+    prod_uploadbtn : {
+        border:'1px solid #b97df0 !important',
+        borderRadius: '7px !important',
+        width: '159px !important',
+        fontSize: '11px !important',
+        color: '#7009ab !important',
+        fontWeight: '600 !important',
+            '&:hover' : {
+                backgroundColor: '#7009ab !important',
+                color: '#fff !important',
+            },
+    },
+    prod_tablehd : {
+        backgroundColor: '#7009ab !important',
+        fontSize: '20px !important',
+        color: '#fff !important',
+    },
+    prod_saveadd : {
+        border: '1px solid #7009ab !important',
+        color: '#7009ab !important',
+        marginRight: '5px !important',
+        height: '40px !important',
+        padding: '10px !important',
+        fontWeight: '600 !important',
+        borderRadius: '7px !important',
+        '&:hover' : {
+            backgroundColor: '#7009ab !important', 
+            border: '0px !important',
+            color: '#fff !important',
+        },
+    },
+    prod_save : {
+        border: '1px solid #7009ab !important',
+        color: '#7009ab !important',
+        height: '40px !important',
+        fontWeight: '600 !important',
+        borderRadius: '7px !important',
+        width: '80px', 
+        '&:hover' : {
+            backgroundColor: '#7009ab !important', 
+            border: '0px !important',
+            color: '#fff !important',
+        },
+    },
+    prod_grid_container : {
+        marginTop: '10px', 
+        marginBottom: '10px',
+        justifyContent: 'center',
+    },
+}

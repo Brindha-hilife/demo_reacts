@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './user.css';
-import { commonstyle } from './Commonstyle';
+import { userStyle } from './Userstyle';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput,
     Typography, FormGroup, FormControlLabel, Checkbox, Radio, Divider, Button, Tooltip, IconButton
@@ -23,7 +23,7 @@ function Roleadd() {
                         <Typography variant="h5" >Add Role</Typography>
                     </Grid>
                 </Container><br />
-                <Container sx={commonstyle.container}>
+                <Container sx={userStyle.container}>
                     <Grid container spacing={2} sx={{
                         padding: '40px 20px',
                         '& .MuiOutlinedInput-notchedOutline': {
@@ -947,7 +947,7 @@ function Roleadd() {
                             </FormGroup>
                         </Grid>
                         <Grid item md={12} sm={6} xs={6} >
-                            <Button sx={commonstyle.button_add}>Save</Button>
+                            <Button sx={userStyle.button_add}>Save</Button>
                         </Grid>
                     </Grid>
                 </Container>

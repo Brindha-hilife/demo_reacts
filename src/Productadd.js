@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import './product.css';
+import { prodStyle } from'./Prodstyle.js';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem,
     Typography, Autocomplete, TextField, FormGroup, FormControlLabel, Checkbox,
@@ -95,40 +95,19 @@ function Productadd() {
 
     // ************* Modal ************* //
     // ****** Unit Modal ****** //
-    // Product Name
-    const [modproductname, setModproductname] = React.useState('');
 
-    const handleChange19 = (event) => {
-        setModproductname(event.target.value);
-    };
-    // Short name
-    const [modshortname, setModshortname] = React.useState('');
-
-    const handleChange20 = (event) => {
-        setModshortname(event.target.value);
-    };
-    // Allow decimal
-    const [modallowdes, setModallowdes] = React.useState('');
-
-    const handleChange21 = (event) => {
-        setModallowdes(event.target.value);
-    };
-
+    const[productAddUnitMod, setProductAddUnitMod] = useState({
+        productaddunitprodname:"", productaddunitshortname:"", productaddunitallow:""
+    });
 
 
     // ****** Brand Modal ****** //
-    // Brand Name
-    const [modbrandname, setModbrandname] = React.useState('');
+  
+    const[productAddBrandMod, setProductAddBrandMod] = useState({
+        prodaddBrdModBrdName:"", prodaddBrdModShortDes:"",
+    });
 
-    const handleChange17 = (event) => {
-        setModbrandname(event.target.value);
-    };
-    //Short Description
-    const [shortdes, setShortdes] = React.useState('');
 
-    const handleChange18 = (event) => {
-        setShortdes(event.target.value);
-    };
 
     // ****** Multi Select ****** //
     const top100Films = [
@@ -146,14 +125,11 @@ function Productadd() {
             <form action=''>
                 <Container sx={{ paddingTop: '10px' }}>
                     <Grid display="flex">
-                        <Typography variant="h6">Create Product</Typography>
+                        <Typography variant="h6">Create Product</Typography>&ensp;
                         <Typography variant='body2' sx={{ marginLeft: '10px', marginTop: '5px' }}>Products | Create product</Typography>
                     </Grid>
                 </Container><br />
-                <Container sx={{
-                    bgcolor: '#fff', height: 'auto', borderTop: '5px solid #7009ab;', borderLeft: '0px',
-                    borderRight: '0px', borderBottom: '0px', borderRadius: '10px', boxShadow: '6px 6px 6px 9px #dedbdbae'
-                }}>
+                <Container sx={prodStyle.prod_container}>
                     <Grid container spacing={2} sx={{
                         padding: '40px 20px',
                         '& .MuiOutlinedInput-notchedOutline': {
@@ -350,7 +326,7 @@ function Productadd() {
                             <FormControl size="small" fullWidth>
                                 <Button
                                     component="label"
-                                    className='product_uploadbtn'
+                                    sx={prodStyle.prod_uploadbtn}
                                 >
                                     Upload Image
                                     <input
@@ -368,7 +344,7 @@ function Productadd() {
                         <Grid item md={3} sm={12} xs={12}>
                             <FormControl size="small" fullWidth>
                                 <Button
-                                    className='product_uploadbtn'
+                                    sx={prodStyle.prod_uploadbtn}
                                 >
                                     Upload File
                                     <input
@@ -447,8 +423,8 @@ function Productadd() {
                                 <Table aria-label="simple table " sx={{ borderBlock: '1px solid #b97fd0' }} fullWidth>
                                     <TableHead fullWidth>
                                         <TableRow fullWidth>
-                                            <TableCell className='product_tablehd' align="center" colSpan={2} fullWidth>Default Purchase Price</TableCell>
-                                            <TableCell className='product_tablehd' align="center" fullWidth>x Margin (%)
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" colSpan={2} fullWidth>Default Purchase Price</TableCell>
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" fullWidth>x Margin (%)
                                                 <Tooltip sx={{ zIndex: '1' }} title="Single product: Product with no variations.
                 Variable product: Product with variations such as size, color etc.
                 Combo product: A combination of multiple products, also called bundle product" placement="top">
@@ -457,8 +433,8 @@ function Productadd() {
                                                     </IconButton>
                                                 </Tooltip>
                                             </TableCell>
-                                            <TableCell className='product_tablehd' align="center" fullWidth>Default Selling Price</TableCell>
-                                            <TableCell className='product_tablehd' align="center" fullWidth>Product image</TableCell>
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" fullWidth>Default Selling Price</TableCell>
+                                            <TableCell sx={prodStyle.prod_tablehd} align="center" fullWidth>Product image</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody fullWidth>
@@ -518,7 +494,7 @@ function Productadd() {
                                             </TableCell>
                                             <TableCell align="center" fullWidth>
                                                 <Button
-                                                    className='product_uploadbtn'
+                                                    sx={prodStyle.prod_uploadbtn}
                                                 >
                                                     Upload Image
                                                     <input
@@ -532,12 +508,13 @@ function Productadd() {
                                     </TableBody>
                                 </Table>
                             </TableContainer>
+                        </Grid> 
+                        <Grid container sx={prodStyle.prod_grid_container}>
+                            <Grid >
+                                <Button sx={prodStyle.prod_saveadd}>Save And Add Another </Button>
+                                <Button sx={prodStyle.prod_save}>Save</Button>
+                            </Grid>
                         </Grid>
-                        <Grid item md={4} sm={1} xs={1}></Grid>
-                        <Grid item md={7} sm={10} xs={12}>
-                            <Button className='product_saveadd'>Save And Add Another </Button><Button className='product_save'>Save</Button>
-                        </Grid>
-                        <Grid item md={1} sm={1} xs={1}></Grid>
                     </Grid>
                 </Container>
             </form>
@@ -569,8 +546,8 @@ function Productadd() {
                                     <InputLabel htmlFor="component-outlined">Product Name *</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={modproductname}
-                                        onChange={handleChange19}
+                                        value={productAddUnitMod.productaddunitprodname}
+                                        onChange={(e) => { setProductAddUnitMod({ ...productAddUnitMod, Productaddunitprodname: e.target.value }) }}
                                         label="Product Name"
                                     />
                                 </FormControl>
@@ -580,8 +557,8 @@ function Productadd() {
                                     <InputLabel htmlFor="component-outlined">Short Name</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={modshortname}
-                                        onChange={handleChange20}
+                                        value={productAddUnitMod.productaddunitshortname}
+                                        onChange={(e) => { setProductAddUnitMod({ ...productAddUnitMod, Productaddshortprodname: e.target.value }) }}
                                         label="Short Name"
                                     />
                                 </FormControl>
@@ -592,9 +569,9 @@ function Productadd() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={modallowdes}
+                                        value={productAddUnitMod.productaddunitallow}
+                                        onChange={(e) => { setProductAddUnitMod({ ...productAddUnitMod, Productaddunitallow: e.target.value }) }}
                                         label="Allow decimal"
-                                        onChange={handleChange21}
                                     >
                                         <MenuItem value="">
                                             <em>Please Select</em>
@@ -641,8 +618,8 @@ function Productadd() {
                                     <InputLabel htmlFor="component-outlined">Brand Name *</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={modbrandname}
-                                        onChange={handleChange17}
+                                        value={productAddBrandMod.prodaddBrdModBrdName}
+                                        onChange={(e) => { setProductAddBrandMod({ ...productAddBrandMod, ProdaddBrdModBrdName: e.target.value }) }}
                                         label="Brand Name *"
                                     />
                                 </FormControl>
@@ -652,8 +629,8 @@ function Productadd() {
                                     <InputLabel htmlFor="component-outlined">Short Description</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={shortdes}
-                                        onChange={handleChange18}
+                                        value={productAddBrandMod.prodaddBrdModShortDes}
+                                        onChange={(e) => { setProductAddBrandMod({ ...productAddBrandMod, ProdaddBrdModShortDes: e.target.value }) }}
                                         label="Short Description"
                                     />
                                 </FormControl>
