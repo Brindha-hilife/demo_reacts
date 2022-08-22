@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './user.css';
+import '../user.css';
 import { styled } from '@mui/material/styles';
 import { userStyle } from '../Userstyle';
 import {Box, Container, Grid, FormControl, InputLabel, OutlinedInput,

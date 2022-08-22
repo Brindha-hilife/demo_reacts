@@ -5,10 +5,10 @@ import './index.css';
 import App from './App';
 // import Roles from './Roles';
 // import Salescomn from './Salescomn';
-import Useradd from './Useradd';
-import Useredit from './Useredit';
-import Roleadd from './Roleadd';
-import Roleedit from './Roleedit'
+import Useradd from './Usermanagement/Users/Useradd';
+import Useredit from './Usermanagement/Users/Useredit';
+import Roleadd from './Usermanagement/Roles/Roleadd';
+import Roleedit from './Usermanagement/Roles/Roleedit';
 
 
 // import Forgetcapcha from './Components/Forgetcaptcha';
