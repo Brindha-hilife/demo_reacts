@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { userStyle } from './Userstyle';
+import { userStyle } from '../Userstyle';
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, tableCellClasses} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -63,7 +63,7 @@ function Roles() {
                         <Typography variant="h6" >All roles</Typography>
                     </Grid>
                     <Grid item md={6} sm={6} xs={6} >
-                        <Button sx={userStyle.button_add}><Link to="roleadd" style={userStyle.button_linkadd}><AddIcon /> Add</Link></Button>
+                        <Button sx={userStyle.button_add}><Link to="roleadd" style={{textDecoration:'none', color: '#a5becc'}}><AddIcon /> Add</Link></Button>
                     </Grid>
                 </Grid>
                 <TableContainer component={Paper} style={{boxShadow:"none",padding: '20px'}} >
@@ -85,7 +85,7 @@ function Roles() {
                                     </StyledTableCell>                              
                                     <StyledTableCell >
                                         <Grid>
-                                            <Button sx={userStyle.button_edit}><Link to="roleedit" style={userStyle.button_linkadd}><FaEdit />&ensp;Edit</Link></Button>
+                                            <Button sx={userStyle.button_edit}><Link to="roleedit" style={{textDecoration:'none', color:'#fff'}}><FaEdit />&ensp;Edit</Link></Button>
                                             <Button sx={userStyle.button_delete}><FaTrash />&ensp;Delete</Button>
                                         </Grid>
                                     </StyledTableCell>

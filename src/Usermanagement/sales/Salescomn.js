@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './user.css';
 import { styled } from '@mui/material/styles';
-import { userStyle } from './Userstyle';
+import { userStyle } from '../Userstyle';
 import {Box, Container, Grid, FormControl, InputLabel, OutlinedInput,
     Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button,
     Dialog, DialogTitle, DialogContent, DialogActions, IconButton, TextareaAutosize, tableCellClasses

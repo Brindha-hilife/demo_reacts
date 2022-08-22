@@ -3,8 +3,8 @@ import React from 'react';
 // import './product.css';
 // import logo from './images/logo.png';
 // import {Routes, Route, useNavigate} from 'react-router-dom';
-import Forgetcaptcha from './Components/Forgetcaptcha';
-import Forgetpassword from './Components/Forgetpassword';
+// import Forgetcaptcha from './Components/Forgetcaptcha';
+// import Forgetpassword from './Components/Forgetpassword';
 // import Forgetotp  from './Components/Forgetotp';
 // import Productadd from './Productadd';
 // import Productedit from './Productedit';
@@ -27,8 +27,8 @@ function App() {
  
   return (
     <div>
-       <Forgetpassword/>
-       <Forgetcaptcha/>
+       {/* <Forgetpassword/> */}
+       {/* <Forgetcaptcha/> */}
         {/* <Productadd /> */}
         {/* <Productedit /> */}
         {/* <Productview /> */}

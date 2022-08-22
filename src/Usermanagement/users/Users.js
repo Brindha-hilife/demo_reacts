@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {userStyle} from './Userstyle';
+import {userStyle} from '../Userstyle';
 import { styled } from '@mui/material/styles';
 import {Box, Container, Grid, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, tableCellClasses} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -103,7 +103,7 @@ function Users() {
                                     <StyledTableCell >{row.email}</StyledTableCell>
                                     <StyledTableCell >
                                         <Grid>
-                                            <Button sx={userStyle.button_edit}><Link to="/useredit" style={userStyle.button_linkadd}><FaEdit />&ensp;Edit</Link></Button>
+                                            <Button sx={userStyle.button_edit}><Link to="/useredit" style={{textDecoration:'none', color:'#fff'}}><FaEdit />&ensp;Edit</Link></Button>
                                             <Button sx={userStyle.button_view}><FaEye />&ensp;View</Button>
                                             <Button sx={userStyle.button_delete}><FaTrash />&ensp;Delete</Button>
                                         </Grid>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import { prodStyle } from'./Prodstyle.js';
+import { prodStyle } from './Prodstyle.js';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem,
     Typography, Autocomplete, TextField, FormGroup, FormControlLabel, Checkbox,
@@ -96,15 +96,15 @@ function Productadd() {
     // ************* Modal ************* //
     // ****** Unit Modal ****** //
 
-    const[productAddUnitMod, setProductAddUnitMod] = useState({
-        productaddunitprodname:"", productaddunitshortname:"", productaddunitallow:""
+    const [productAddUnitMod, setProductAddUnitMod] = useState({
+        productaddunitprodname: "", productaddunitshortname: "", productaddunitallow: ""
     });
 
 
     // ****** Brand Modal ****** //
-  
-    const[productAddBrandMod, setProductAddBrandMod] = useState({
-        prodaddBrdModBrdName:"", prodaddBrdModShortDes:"",
+
+    const [productAddBrandMod, setProductAddBrandMod] = useState({
+        prodaddBrdModBrdName: "", prodaddBrdModShortDes: "",
     });
 
 
@@ -344,6 +344,7 @@ function Productadd() {
                         <Grid item md={3} sm={12} xs={12}>
                             <FormControl size="small" fullWidth>
                                 <Button
+                                    component="label"
                                     sx={prodStyle.prod_uploadbtn}
                                 >
                                     Upload File
@@ -494,6 +495,7 @@ function Productadd() {
                                             </TableCell>
                                             <TableCell align="center" fullWidth>
                                                 <Button
+                                                    component="label"
                                                     sx={prodStyle.prod_uploadbtn}
                                                 >
                                                     Upload Image
@@ -508,7 +510,7 @@ function Productadd() {
                                     </TableBody>
                                 </Table>
                             </TableContainer>
-                        </Grid> 
+                        </Grid>
                         <Grid container sx={prodStyle.prod_grid_container}>
                             <Grid >
                                 <Button sx={prodStyle.prod_saveadd}>Save And Add Another </Button>

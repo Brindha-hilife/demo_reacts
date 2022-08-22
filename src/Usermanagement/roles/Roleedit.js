@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import './user.css';
-import { userStyle } from './Userstyle';
+import { userStyle } from '../Userstyle';
 import {
     Box, Container, Grid, FormControl, InputLabel, OutlinedInput,
     Typography, FormGroup, FormControlLabel, Checkbox, Radio, Divider, Button, Tooltip, IconButton
 } from '@mui/material';
 import { FcInfo } from "react-icons/fc";
 
-function Roleadd() {
+function Roleedit() {
 
     // ****** Text Field ****** //
-    
-     const [roleaddform, setRoleaddform] = useState({    
-        rolename:"", 
+
+    const [roleeditform, setRoleeditform] = useState({
+        rolename: "",
     });
 
     return (
@@ -20,12 +20,13 @@ function Roleadd() {
             <form action=''>
                 <Container sx={{ paddingTop: '10px' }}>
                     <Grid display="flex">
-                        <Typography variant="h5" >Add Role</Typography>
+                        <Typography variant="h5" >Edit Role</Typography>
                     </Grid>
                 </Container><br />
                 <Container sx={userStyle.container}>
                     <Grid container spacing={2} sx={{
                         padding: '40px 20px',
+
                         '& .MuiOutlinedInput-notchedOutline': {
                             border: '1px solid #b97df0',
                         },
@@ -35,8 +36,8 @@ function Roleadd() {
                                 <InputLabel htmlFor="component-outlined">Role Name *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={roleaddform.rolename}
-                                    onChange={(e)=> { setRoleaddform({...roleaddform, Rolename: e.target.value})}}
+                                    value={roleeditform.rolename}
+                                    onChange={(e) => { setRoleeditform({ ...roleeditform, Rolename: e.target.value }) }}
                                     label="Role Name *"
                                     type="text"
                                 />
@@ -48,12 +49,12 @@ function Roleadd() {
                         </Grid>
                         <Grid item md={8}>
                             <FormGroup>
-                                <span> <FormControlLabel control={<Checkbox />} label="Service staff"/>
-                                <Tooltip title="Delete">
-                                <IconButton>
-                                    <FcInfo />
-                                    </IconButton>
-                                </Tooltip>
+                                <span> <FormControlLabel control={<Checkbox />} label="Service staff" />
+                                    <Tooltip title="Person who provides the designated service to customers Example: Waiting Staff in restaurants, Hairdressers in salon">
+                                        <IconButton>
+                                            <FcInfo />
+                                        </IconButton>
+                                    </Tooltip>
                                 </span>
                             </FormGroup>
                         </Grid>
@@ -167,11 +168,11 @@ function Roleadd() {
                         </Grid>
                         <Divider sx={{ my: 2 }} />
                         <Grid item md={2}>
-                            <Typography variant="body1" >Customer<Tooltip title="Delete">
+                            <Typography variant="body1" >Customer <Tooltip title="To view all customers with no sell from a specific time <b>View all customer permission is required otherwise it will filter with only cusromers created by the logged in user">
                                 <IconButton>
                                     <FcInfo />
-                                    </IconButton>
-                                </Tooltip></Typography>
+                                </IconButton>
+                            </Tooltip></Typography>
                         </Grid>
                         <Grid item md={2}>
                             <FormGroup>
@@ -265,13 +266,11 @@ function Roleadd() {
                                 </Grid>
                                 <Grid>
                                     <FormGroup>
-                                        <span><FormControlLabel control={<Checkbox />} label="View Purchase price" />
-                                        <Tooltip title="Delete">
-                                <IconButton>
-                                    <FcInfo />
-                                    </IconButton>
-                                </Tooltip>
-                                        </span>
+                                        <span><FormControlLabel control={<Checkbox />} label="View Purchase price" /><Tooltip title="Permission to view purchase price in product details">
+                                            <IconButton>
+                                                <FcInfo />
+                                            </IconButton>
+                                        </Tooltip></span>
                                     </FormGroup>
                                 </Grid>
                             </Grid><hr />
@@ -314,13 +313,11 @@ function Roleadd() {
                                 </Grid>
                                 <Grid>
                                     <FormGroup>
-                                        <span><FormControlLabel control={<Checkbox />} label="Add/Edit/Delete Payments" />
-                                        <Tooltip title="Delete">
-                                <IconButton>
-                                    <FcInfo />
-                                    </IconButton>
-                                </Tooltip>
-                                        </span>
+                                        <span><FormControlLabel control={<Checkbox />} label="Add/Edit/Delete Payments" /><Tooltip title="Permission to Add/Edit/Delete Payments in List Purchases.">
+                                            <IconButton>
+                                                <FcInfo />
+                                            </IconButton>
+                                        </Tooltip></span>
                                     </FormGroup>
                                 </Grid>
                                 <Grid>
@@ -380,11 +377,11 @@ function Roleadd() {
                         </Grid>
                         <Divider sx={{ my: 2 }} />
                         <Grid item md={2}>
-                            <Typography variant="body1" >Sell <Tooltip title="Delete">
+                            <Typography variant="body1" >Sell <Tooltip title="To view sells on the basis of payment status <b> View all sell permission is required otherwise it will filter with only sells created by the logged in user">
                                 <IconButton>
                                     <FcInfo />
-                                    </IconButton>
-                                </Tooltip></Typography>
+                                </IconButton>
+                            </Tooltip></Typography>
                         </Grid>
                         <Grid item md={2}>
                             <FormGroup>
@@ -445,11 +442,11 @@ function Roleadd() {
                                 </Grid>
                                 <Grid>
                                     <FormGroup>
-                                        <span><FormControlLabel control={<Checkbox />} label=" Add/Edit/Delete Payments " /><Tooltip title="Delete">
-                                <IconButton>
-                                    <FcInfo />
-                                    </IconButton>
-                                </Tooltip></span>
+                                        <span><FormControlLabel control={<Checkbox />} label=" Add/Edit/Delete Payments " /><Tooltip title="Permission to Add/Edit/Delete Payments in List Sells / List POS screen.">
+                                            <IconButton>
+                                                <FcInfo />
+                                            </IconButton>
+                                        </Tooltip></span>
                                     </FormGroup>
                                 </Grid>
                                 <Grid>
@@ -884,11 +881,7 @@ function Roleadd() {
                         </Grid>
                         <Divider sx={{ my: 2 }} />
                         <Grid item md={4}>
-                            <Typography variant="body1" >Home <Tooltip title="Delete">
-                                <IconButton>
-                                    <FcInfo />
-                                    </IconButton>
-                                </Tooltip></Typography>
+                            <Typography variant="body1" >Home </Typography>
                         </Grid>
                         <Grid item md={8}>
                             <FormGroup>
@@ -947,7 +940,7 @@ function Roleadd() {
                             </FormGroup>
                         </Grid>
                         <Grid item md={12} sm={6} xs={6} >
-                            <Button sx={userStyle.button_add}>Save</Button>
+                            <Button sx={userStyle.button_add} >Update</Button>
                         </Grid>
                     </Grid>
                 </Container>
@@ -956,4 +949,4 @@ function Roleadd() {
     );
 }
 
-export default Roleadd;
+export default Roleedit;
