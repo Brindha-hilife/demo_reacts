@@ -93,5 +93,8 @@ export const sellStyle = {
     tableHead : {
         fontSize: '16px !important',
         fontWeight: '600 !important',
-    }
+    },
+    filterHead : {
+        color: '#7009ab',
+    },
 }

@@ -171,9 +171,7 @@ function Productadd() {
                             </FormControl>
                         </Grid>
                         <Grid item md={3} sm={6} xs={12}>
-                            <FormControl size="small" fullWidth
-
-                            >
+                            <FormControl size="small" fullWidth>
                                 <InputLabel id="demo-select-small">Barcode type</InputLabel>
                                 <Select
                                     labelId="demo-select-small"

@@ -16,7 +16,8 @@ import React from 'react';
 // import Salescomn from './Usermanagement/Sales/Salescomn';
 // import Importsales from './Sell/Import/Importlist';
 // import Supscriptionlist from './Sell/Supscription/Supcriptionlist';
-
+// import Discountlist from './Sell/Discount/List';
+import Shipments from './Sell/Shipments/Filter';
 // import Forgot from './Forgot/Forgotpwd';
 // import Forgotcaptcha from './Forgot/Forgotcaptcha';
 // import Forgotpassword from './Forgot/Forgotpassword';
@@ -48,6 +49,8 @@ function App() {
          {/* <Roleedit />  */}
       {/* <Importsales/> */}
       {/* <Supscriptionlist/> */}
+      {/* <Discountlist /> */}
+      <Shipments />
         {/* <Demo /> */}
 {/* <Footer/> */}
         {/* <Forgot /> */}
