@@ -83,11 +83,11 @@ function Productedit() {
     }
 
     //Text field
-    const [productEdit, setProductEdit] = useState({
-        producteditname: "", producteditsku: "", producteditbarcode: "", producteditunit: "",
-        producteditbrand: "", producteditcategory: "", producteditsubcat: "", producteditbusinessloc: "",
-        producteditalert: "", producteditapplicable: "", producteditsellingtax: "", producteditproducttype: "",
-        producteditexc: "", producteditinc: "", producteditmarg: "", producteditexctax: "", producteditinctax: ""
+    const [productEdit, setProductEdit] = useState ({
+        productEditname: "", productEditsku: "", productEditbarcode: "", productEditunit: "",
+        productEditbrand: "", productEditcategory: "", productEditsubcat: "", productEditbusinessloc: "",
+        productEditalert: "", productEditapplicable: "", productEditsellingtax: "", productEditproducttype: "",
+        productEditexc: "", productEditinc: "", productEditmarg: "", productEditexctax: "", productEditinctax: "",
 
     });
 
@@ -95,7 +95,7 @@ function Productedit() {
     // ****** Unit Modal ****** //
 
     const[productEditUnitMod, setProductEditUnitMod] = useState({
-        producteditunitprodname:"", producteditunitshortname:"", producteditunitallow:""
+        productEditunitprodname:"", productEditunitshortname:"", productEditunitallow:""
     });
 
 
@@ -138,8 +138,8 @@ function Productedit() {
                                 <InputLabel htmlFor="component-outlined" >Product Name *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={productEdit.producteditname}
-                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditname: e.target.value }) }}
+                                    value={productEdit.productEditname}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditname: e.target.value }) }}
                                     label="Product Name *"
                                 />
                             </FormControl>
@@ -155,8 +155,8 @@ function Productedit() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productEdit.producteditsku}
-                                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditsku: e.target.value }) }}
+                                                    value={productEdit.productEditsku}
+                                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditsku: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -174,8 +174,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productEdit.producteditbarcode}
-                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditbarcode: e.target.value }) }}
+                                    value={productEdit.productEditbarcode}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditbarcode: e.target.value }) }}
                                     label="Barcode type"
                                 >
                                     <MenuItem value="">
@@ -196,8 +196,8 @@ function Productedit() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productEdit.producteditunit}
-                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditunit: e.target.value }) }} label="Unit *"
+                                        value={productEdit.productEditunit}
+                                        onChange={(e) => { setProductEdit({ ...productEdit, productEditunit: e.target.value }) }} label="Unit *"
                                         fullWidth
                                     >
                                         <MenuItem value="">
@@ -217,8 +217,8 @@ function Productedit() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productEdit.producteditbrand}
-                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditbrand: e.target.value }) }} label="Brand"
+                                        value={productEdit.productEditbrand}
+                                        onChange={(e) => { setProductEdit({ ...productEdit, productEditbrand: e.target.value }) }} label="Brand"
                                         fullWidth
                                     >
                                         <MenuItem value="">
@@ -236,8 +236,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productEdit.producteditcategory}
-                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditcategory: e.target.value }) }} label="Category"
+                                    value={productEdit.productEditcategory}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditcategory: e.target.value }) }} label="Category"
                                 >
                                     <MenuItem value="">
                                         <em>Please Select</em>
@@ -253,8 +253,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productEdit.producteditsubcat}
-                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditsubcat: e.target.value }) }}
+                                    value={productEdit.productEditsubcat}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditsubcat: e.target.value }) }}
                                     label="Sub Category"
                                 >
                                     <MenuItem value="">
@@ -306,8 +306,8 @@ function Productedit() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productEdit.producteditalert}
-                                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditalert: e.target.value }) }}
+                                                    value={productEdit.productEditalert}
+                                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditalert: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -360,8 +360,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productEdit.producteditapplicable}
-                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditapplicable: e.target.value }) }}
+                                    value={productEdit.productEditapplicable}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditapplicable: e.target.value }) }}
                                     label="Applicable Tax"
                                 >
                                     <MenuItem value="">
@@ -378,8 +378,8 @@ function Productedit() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productEdit.producteditsellingtax}
-                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditsellingtax: e.target.value }) }}
+                                    value={productEdit.productEditsellingtax}
+                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditsellingtax: e.target.value }) }}
                                     label="Selling Price Tax Type"
                                 >
                                     <MenuItem value="">
@@ -402,8 +402,8 @@ function Productedit() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productEdit.producteditproducttype}
-                                                    onChange={(e) => { setProductEdit({ ...productEdit, Producteditproducttype: e.target.value }) }}
+                                                    value={productEdit.productEditproducttype}
+                                                    onChange={(e) => { setProductEdit({ ...productEdit, productEditproducttype: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -440,8 +440,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productEdit.producteditexc}
-                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditexc: e.target.value }) }}
+                                                        value={productEdit.productEditexc}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, productEditexc: e.target.value }) }}
                                                         label="Exc. tax *"
                                                     />
                                                 </FormControl>
@@ -451,8 +451,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productEdit.producteditinc}
-                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditinc: e.target.value }) }}
+                                                        value={productEdit.productEditinc}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, productEditinc: e.target.value }) }}
                                                         label="Inc. tax *"
                                                     />
                                                 </FormControl>
@@ -462,8 +462,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined"></InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productEdit.producteditmarg}
-                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditmarg: e.target.value }) }}
+                                                        value={productEdit.productEditmarg}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, productEditmarg: e.target.value }) }}
                                                         label="Marg"
                                                     />
                                                 </FormControl>
@@ -473,8 +473,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productEdit.producteditexctax}
-                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditexctax: e.target.value }) }}
+                                                        value={productEdit.productEditexctax}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, productEditexctax: e.target.value }) }}
                                                         label="Exc. tax *"
                                                     />
                                                 </FormControl>
@@ -482,8 +482,8 @@ function Productedit() {
                                                     <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productEdit.producteditinctax}
-                                                        onChange={(e) => { setProductEdit({ ...productEdit, Producteditinctax: e.target.value }) }}
+                                                        value={productEdit.productEditinctax}
+                                                        onChange={(e) => { setProductEdit({ ...productEdit, productEditinctax: e.target.value }) }}
                                                         label="Inc. tax *"
                                                     />
                                                 </FormControl>
@@ -542,8 +542,8 @@ function Productedit() {
                                     <InputLabel htmlFor="component-outlined">Product Name *</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={productEditUnitMod.producteditunitprodname}
-                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, Producteditunitprodname: e.target.value }) }}
+                                        value={productEditUnitMod.productEditunitprodname}
+                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, productEditunitprodname: e.target.value }) }}
                                         label="Product Name"
                                     />
                                 </FormControl>
@@ -553,8 +553,8 @@ function Productedit() {
                                     <InputLabel htmlFor="component-outlined">Short Name</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={productEditUnitMod.producteditunitshortname}
-                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, Producteditshortprodname: e.target.value }) }}
+                                        value={productEditUnitMod.productEditunitshortname}
+                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, productEditshortprodname: e.target.value }) }}
                                         label="Short Name"
                                     />
                                 </FormControl>
@@ -565,8 +565,8 @@ function Productedit() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productEditUnitMod.producteditunitallow}
-                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, Producteditunitallow: e.target.value }) }}
+                                        value={productEditUnitMod.productEditunitallow}
+                                        onChange={(e) => { setProductEditUnitMod({ ...productEditUnitMod, productEditunitallow: e.target.value }) }}
                                         label="Allow decimal"
                                     >
                                         <MenuItem value="">

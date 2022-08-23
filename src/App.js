@@ -11,9 +11,16 @@ import React from 'react';
 // import Productview from './Productview';
 // import Demo from './Demo';
 // import { Modal } from 'react-bootstrap';
-import Users from './Usermanagement/Users/Users';
-import Roles from './Usermanagement/Roles/Roles';
-import Salescomn from './Usermanagement/Sales/Salescomn';
+// import Users from './Usermanagement/Users/Users';
+// import Roles from './Usermanagement/Roles/Roles';
+// import Salescomn from './Usermanagement/Sales/Salescomn';
+// import Importsales from './Sell/Import/Importlist';
+// import Supscriptionlist from './Sell/Supscription/Supcriptionlist';
+
+// import Forgot from './Forgot/Forgotpwd';
+// import Forgotcaptcha from './Forgot/Forgotcaptcha';
+// import Forgotpassword from './Forgot/Forgotpassword';
+// import Forgototp from './Forgot/Forgototp';
 // import Footer from './Footer';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import ListComponent from './ListComponent'
@@ -32,15 +39,21 @@ function App() {
         {/* <Productadd /> */}
         {/* <Productedit /> */}
         {/* <Productview /> */}
-       <Users />
-        <Roles />
-         <Salescomn />
+       {/* <Users /> */}
+        {/* <Roles /> */}
+         {/* <Salescomn /> */}
         {/* <Useradd /> */}
         {/* <Useredit/> */}
          {/* <Roleadd /> */}
          {/* <Roleedit />  */}
-
+      {/* <Importsales/> */}
+      {/* <Supscriptionlist/> */}
         {/* <Demo /> */}
+{/* <Footer/> */}
+        {/* <Forgot /> */}
+        {/* <Forgotcaptcha /> */}
+        {/* <Forgotpassword/> */}
+
         
         {/* <ListComponent/>   */}
         {/* <CustomizedTables /> */}

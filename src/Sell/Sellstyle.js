@@ -1,4 +1,4 @@
-export const userStyle = {
+export const sellStyle = {
     container : {
         bgcolor: '#fff', 
         height: 'max-content', 
@@ -9,18 +9,18 @@ export const userStyle = {
         borderRadius: '10px', 
         boxShadow: '6px 6px 6px 9px #dedbdbae',
     },
-    sub_container : {
+    subContainer : {
         bgcolor: '#fff',
-        height: 'auto',
+        height: 'max-content',
         borderLeft: '0px', 
-        paddingTop: '10px',
+        padding: '20px',
         borderRight: '0px', 
         borderBottom: '0px', 
         borderRadius: '5px', 
         boxShadow: '6px 6px 6px 9px #dedbdbae', 
-        marginTop: '50px',
+        marginTop: '10px',
     },
-    button_add: {
+    buttonAdd: {
         backgroundColor: '#7009ab !important',
         color: '#a5becc',
         marginRight: '5px !important',
@@ -36,7 +36,7 @@ export const userStyle = {
             color: '#a5becc !important',
         },
     },
-    button_grp : {
+    buttonGrp : {
         backgroundColor: '#FBF2FF !important',
         color: '#7009AB !important',
         borderColor: '#ddd !important',
@@ -46,7 +46,7 @@ export const userStyle = {
         justifyContent: 'center',
         fontSize: '12px !important',
     },
-    button_edit : {
+    buttonEdit : {
         backgroundColor: '#1572e8 !important',
         borderColor: '#1367d1 !important',
         color: '#fff !important',
@@ -59,7 +59,7 @@ export const userStyle = {
         fontSize: '12px !important',
         fontWeight: '750 !important',
     },
-    button_view : {
+    buttonView : {
         background: '#11cdef !important',
         borderColor: '#0fb9d8 !important',
         color: '#fff !important',
@@ -72,7 +72,7 @@ export const userStyle = {
         fontSize: '12px !important',
         fontWeight: '750 !important',
     },
-    button_delete : {
+    buttonDelete : {
         background: '#f5365c !important',
         borderColor: '#f41e48 !important',
         color: '#fff !important',
@@ -85,9 +85,13 @@ export const userStyle = {
         fontSize: '12px !important',
         fontWeight: '750 !important',
     },
-    grid_container : {
+    gridContainer : {
         marginTop: '50px', 
         marginBottom: '20px',
         justifyContent: 'center',
     },
+    tableHead : {
+        fontSize: '16px !important',
+        fontWeight: '600 !important',
+    }
 }

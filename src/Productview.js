@@ -84,10 +84,10 @@ function Productview() {
 
     //Text field
     const [productView, setProductView] = useState({
-        productviewname: "", productviewsku: "", productviewbarcode: "", productviewunit: "",
-        productviewbrand: "", productviewcategory: "", productviewsubcat: "", productviewbusinessloc: "",
-        productviewalert: "", productviewapplicable: "", productviewsellingtax: "", productviewproducttype: "",
-        productviewexc: "", productviewinc: "", productviewmarg: "", productviewexctax: "", productviewinctax: ""
+        productViewname: "", productViewsku: "", productViewbarcode: "", productViewunit: "",
+        productViewbrand: "", productViewcategory: "", productViewsubcat: "", productViewbusinessloc: "",
+        productViewalert: "", productViewapplicable: "", productViewsellingtax: "", productViewproducttype: "",
+        productViewexc: "", productViewinc: "", productViewmarg: "", productViewexctax: "", productViewinctax: "",
 
     });
 
@@ -95,7 +95,7 @@ function Productview() {
     // ****** Unit Modal ****** //
 
     const[productViewUnitMod, setProductViewUnitMod] = useState({
-        productviewunitprodname:"", productviewunitshortname:"", productviewunitallow:""
+        productViewunitprodname:"", productViewunitshortname:"", productViewunitallow:""
     });
 
 
@@ -137,8 +137,8 @@ function Productview() {
                                 <InputLabel htmlFor="component-outlined" >Product Name *</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={productView.productviewname}
-                                    onChange={(e) => { setProductView({ ...productView, Productviewname: e.target.value }) }}
+                                    value={productView.productViewname}
+                                    onChange={(event) => { setProductView({ ...productView, productViewname: event.target.value }) }}
                                     label="Product Name *"
                                 />
                             </FormControl>
@@ -154,8 +154,8 @@ function Productview() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productView.productviewsku}
-                                                    onChange={(e) => { setProductView({ ...productView, Productviewsku: e.target.value }) }}
+                                                    value={productView.productViewsku}
+                                                    onChange={(e) => { setProductView({ ...productView, productViewsku: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -174,8 +174,8 @@ function Productview() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productView.productviewbarcode}
-                                    onChange={(e) => { setProductView({ ...productView, Productviewbarcode: e.target.value }) }}
+                                    value={productView.productViewbarcode}
+                                    onChange={(e) => { setProductView({ ...productView, productViewbarcode: e.target.value }) }}
                                     label="Barcode type"
                                 >
                                     <MenuItem value="">
@@ -196,8 +196,8 @@ function Productview() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productView.productviewunit}
-                                        onChange={(e) => { setProductView({ ...productView, Productviewunit: e.target.value }) }}
+                                        value={productView.productViewunit}
+                                        onChange={(e) => { setProductView({ ...productView, productViewunit: e.target.value }) }}
                                         label="Unit *"
                                         fullWidth
                                     >
@@ -218,8 +218,8 @@ function Productview() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productView.productviewbrand}
-                                        onChange={(e) => { setProductView({ ...productView, Productviewbrand: e.target.value }) }}
+                                        value={productView.productViewbrand}
+                                        onChange={(e) => { setProductView({ ...productView, productViewbrand: e.target.value }) }}
                                         label="Brand"
                                         fullWidth
                                     >
@@ -238,8 +238,8 @@ function Productview() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productView.productviewcategory}
-                                    onChange={(e) => { setProductView({ ...productView, Productviewcategory: e.target.value }) }} label="Category"
+                                    value={productView.productViewcategory}
+                                    onChange={(e) => { setProductView({ ...productView, productViewcategory: e.target.value }) }} label="Category"
                                 >
                                     <MenuItem value="">
                                         <em>Please Select</em>
@@ -255,8 +255,8 @@ function Productview() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productView.productviewsubcat}
-                                    onChange={(e) => { setProductView({ ...productView, Productviewsubcat: e.target.value }) }}
+                                    value={productView.productViewsubcat}
+                                    onChange={(e) => { setProductView({ ...productView, productViewsubcat: e.target.value }) }}
                                     label="Sub Category"
                                 >
                                     <MenuItem value="">
@@ -308,8 +308,8 @@ function Productview() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productView.productviewalert}
-                                                    onChange={(e) => { setProductView({ ...productView, Productviewalert: e.target.value }) }}
+                                                    value={productView.productViewalert}
+                                                    onChange={(e) => { setProductView({ ...productView, productViewalert: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -362,8 +362,8 @@ function Productview() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productView.productviewapplicable}
-                                    onChange={(e) => { setProductView({ ...productView, Productviewapplicable: e.target.value }) }}
+                                    value={productView.productViewapplicable}
+                                    onChange={(e) => { setProductView({ ...productView, productViewapplicable: e.target.value }) }}
                                     label="Applicable Tax"
                                 >
                                     <MenuItem value="">
@@ -380,8 +380,8 @@ function Productview() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={productView.productviewsellingtax}
-                                    onChange={(e) => { setProductView({ ...productView, Productviewsellingtax: e.target.value }) }}
+                                    value={productView.productViewsellingtax}
+                                    onChange={(e) => { setProductView({ ...productView, productViewsellingtax: e.target.value }) }}
                                     label="Selling Price Tax Type"
                                 >
                                     <MenuItem value="">
@@ -404,8 +404,8 @@ function Productview() {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    value={productView.productviewproducttype}
-                                                    onChange={(e) => { setProductView({ ...productView, Productviewproducttype: e.target.value }) }}
+                                                    value={productView.productViewproducttype}
+                                                    onChange={(e) => { setProductView({ ...productView, productViewproducttype: e.target.value }) }}
                                                 >
                                                     <FcInfo />
                                                 </IconButton>
@@ -442,8 +442,8 @@ function Productview() {
                                                     <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productView.productviewexc}
-                                                        onChange={(e) => { setProductView({ ...productView, Productviewexc: e.target.value }) }}
+                                                        value={productView.productViewexc}
+                                                        onChange={(e) => { setProductView({ ...productView, productViewexc: e.target.value }) }}
                                                         label="Exc. tax *"
                                                     />
                                                 </FormControl>
@@ -453,8 +453,8 @@ function Productview() {
                                                     <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productView.productviewinc}
-                                                        onChange={(e) => { setProductView({ ...productView, Productviewinc: e.target.value }) }}
+                                                        value={productView.productViewinc}
+                                                        onChange={(e) => { setProductView({ ...productView, productViewinc: e.target.value }) }}
                                                         label="Inc. tax *"
                                                     />
                                                 </FormControl>
@@ -464,8 +464,8 @@ function Productview() {
                                                     <InputLabel htmlFor="component-outlined"></InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productView.productviewmarg}
-                                                        onChange={(e) => { setProductView({ ...productView, Productviewmarg: e.target.value }) }}
+                                                        value={productView.productViewmarg}
+                                                        onChange={(e) => { setProductView({ ...productView, productViewmarg: e.target.value }) }}
                                                         label="Marg"
                                                     />
                                                 </FormControl>
@@ -475,8 +475,8 @@ function Productview() {
                                                     <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productView.productviewexctax}
-                                                        onChange={(e) => { setProductView({ ...productView, Productviewexctax: e.target.value }) }}
+                                                        value={productView.productViewexctax}
+                                                        onChange={(e) => { setProductView({ ...productView, productViewexctax: e.target.value }) }}
                                                         label="Exc. tax *"
                                                     />
                                                 </FormControl>
@@ -484,8 +484,8 @@ function Productview() {
                                                     <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={productView.productviewinctax}
-                                                        onChange={(e) => { setProductView({ ...productView, Productviewinctax: e.target.value }) }}
+                                                        value={productView.productViewinctax}
+                                                        onChange={(e) => { setProductView({ ...productView, productViewinctax: e.target.value }) }}
                                                         label="Inc. tax *"
                                                     />
                                                 </FormControl>
@@ -544,8 +544,8 @@ function Productview() {
                                     <InputLabel htmlFor="component-outlined">Product Name *</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={productViewUnitMod.productviewunitprodname}
-                                        onChange={(e) => { setProductViewUnitMod({ ...productViewUnitMod, Productviewunitprodname: e.target.value }) }}
+                                        value={productViewUnitMod.productViewunitprodname}
+                                        onChange={(e) => { setProductViewUnitMod({ ...productViewUnitMod, productViewunitprodname: e.target.value }) }}
                                         label="Product Name"
                                     />
                                 </FormControl>
@@ -555,8 +555,8 @@ function Productview() {
                                     <InputLabel htmlFor="component-outlined">Short Name</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={productViewUnitMod.productviewunitshortname}
-                                        onChange={(e) => { setProductViewUnitMod({ ...productViewUnitMod, Productviewshortprodname: e.target.value }) }}
+                                        value={productViewUnitMod.productViewunitshortname}
+                                        onChange={(e) => { setProductViewUnitMod({ ...productViewUnitMod, productViewshortprodname: e.target.value }) }}
                                         label="Short Name"
                                     />
                                 </FormControl>
@@ -567,8 +567,8 @@ function Productview() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productViewUnitMod.productviewunitallow}
-                                        onChange={(e) => { setProductViewUnitMod({ ...productViewUnitMod, Productviewunitallow: e.target.value }) }}
+                                        value={productViewUnitMod.productViewunitallow}
+                                        onChange={(e) => { setProductViewUnitMod({ ...productViewUnitMod, productViewunitallow: e.target.value }) }}
                                         label="Allow decimal"
                                     >
                                         <MenuItem value="">

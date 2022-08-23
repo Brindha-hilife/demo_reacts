@@ -68,7 +68,7 @@ function Users() {
                         <Button sx={userStyle.button_add} ><Link to="useradd"  style={{textDecoration:'none', color: '#a5becc'}}><AddIcon /> Add</Link></Button>
                     </Grid>
                 </Grid>
-                <TableContainer component={Paper} style={{boxShadow:"none",padding: '20px'}}>
+                <TableContainer component={Paper} style={{boxShadow:"none",}}>
                     <Grid container sx={userStyle.grid_container}>
                         <Grid >
                             <Button sx={userStyle.button_grp}><FaFileCsv />&ensp;Export to CSV</Button>
@@ -112,7 +112,7 @@ function Users() {
                             ))}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </TableContainer><br/><br />
             </Container>
         </Box>
     );
