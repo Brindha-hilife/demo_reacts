@@ -17,7 +17,13 @@ import React from 'react';
 // import Importsales from './Sell/Import/Importlist';
 // import Supscriptionlist from './Sell/Supscription/Supcriptionlist';
 // import Discountlist from './Sell/Discount/List';
-import Shipments from './Sell/Shipments/Filter';
+// import List from './Sell/Shipments/List';
+// import Sellreturnlist from './Sell/Sellreturn/List';
+// import Listquotationslist from './Sell/Listquotations/List';
+// import Draftslist from './Sell/Drafts/List';
+// import Poslist from './Sell/Pos/List';
+import Salescreate from './Sell/Allsales/Create';
+// import Saleslist from './Sell/Allsales/List';
 // import Forgot from './Forgot/Forgotpwd';
 // import Forgotcaptcha from './Forgot/Forgotcaptcha';
 // import Forgotpassword from './Forgot/Forgotpassword';
@@ -50,7 +56,16 @@ function App() {
       {/* <Importsales/> */}
       {/* <Supscriptionlist/> */}
       {/* <Discountlist /> */}
-      <Shipments />
+     
+{/* <List /> */}
+{/* <Sellreturnlist /> */}
+{/* <Listquotationslist/> */}
+{/* <Draftslist /> */}
+{/* <Poslist /> */}
+{/* <Saleslist /> */}
+<Salescreate/>
+
+
         {/* <Demo /> */}
 {/* <Footer/> */}
         {/* <Forgot /> */}

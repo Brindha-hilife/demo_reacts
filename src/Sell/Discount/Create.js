@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles';
 import { Grid, FormControl, InputLabel, OutlinedInput, Button, Dialog, DialogTitle, DialogContent, DialogActions, IconButton, Checkbox,
     Select, MenuItem, Tooltip, InputAdornment, FormGroup, FormControlLabel  } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import AddIcon from '@mui/icons-material/Add';
 import {FcInfo} from 'react-icons/fc';
 
 
@@ -72,7 +71,7 @@ const [disAddForm, setDisAddForm] = useState({
     return (
         <>
             <>
-                <Button sx={sellStyle.buttonAdd} onClick={disAddOpen} ><AddIcon /> Add</Button>
+                <Button sx={sellStyle.buttonAdd} onClick={disAddOpen} >Add</Button>
             </>
 
             <form action=''>

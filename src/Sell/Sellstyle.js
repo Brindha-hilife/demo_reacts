@@ -1,28 +1,26 @@
 export const sellStyle = {
     container : {
-        bgcolor: '#fff', 
-        height: 'max-content', 
-        borderTop: '5px solid #7009ab;', 
-        borderLeft: '0px',
-        borderRight: '0px', 
-        borderBottom: '0px',
-        borderRadius: '10px', 
+        bgcolor: '#fff',
+        height: 'max-content',
+        borderTop: '5px solid #7009AB;',
+        borderRadius: '10px',
+        margin:'20px',
+        padding:'30px',
         boxShadow: '6px 6px 6px 9px #dedbdbae',
     },
     subContainer : {
         bgcolor: '#fff',
         height: 'max-content',
-        borderLeft: '0px', 
-        padding: '20px',
+        borderLeft: '0px',
         borderRight: '0px', 
         borderBottom: '0px', 
         borderRadius: '5px', 
         boxShadow: '6px 6px 6px 9px #dedbdbae', 
-        marginTop: '10px',
+        margin: '20px',
     },
     buttonAdd: {
         backgroundColor: '#7009ab !important',
-        color: '#a5becc',
+        color: 'white',
         marginRight: '5px !important',
         height: '40px !important',
         padding: '10px !important',
@@ -36,15 +34,18 @@ export const sellStyle = {
             color: '#a5becc !important',
         },
     },
-    buttonGrp : {
+    exportBtnText : {
         backgroundColor: '#FBF2FF !important',
         color: '#7009AB !important',
-        borderColor: '#ddd !important',
         margin: '1px !important',
-        alignItems: 'center',
-        textAlign: 'center',
-        justifyContent: 'center',
+        alignItems: 'center !important',
+        textAlign: 'center !important',
+        justifyContent: 'center !important',
         fontSize: '12px !important',
+        borderRadius:" 3px !important",
+        padding: "0",
+        border:"1px solid #ddd !important",
+        textTransform:'Capitalize',
     },
     buttonEdit : {
         backgroundColor: '#1572e8 !important',
@@ -58,6 +59,7 @@ export const sellStyle = {
         height: '30px !important',
         fontSize: '12px !important',
         fontWeight: '750 !important',
+        textTransform: 'Capitalize',
     },
     buttonView : {
         background: '#11cdef !important',
@@ -71,6 +73,7 @@ export const sellStyle = {
         height: '30px !important',
         fontSize: '12px !important',
         fontWeight: '750 !important',
+        textTransform: 'Capitalize',
     },
     buttonDelete : {
         background: '#f5365c !important',
@@ -84,6 +87,7 @@ export const sellStyle = {
         height: '30px !important',
         fontSize: '12px !important',
         fontWeight: '750 !important',
+        textTransform: 'Capitalize',
     },
     gridContainer : {
         marginTop: '50px', 
@@ -91,10 +95,94 @@ export const sellStyle = {
         justifyContent: 'center',
     },
     tableHead : {
-        fontSize: '16px !important',
-        fontWeight: '600 !important',
+        backgroundColor:"#f9f9f9 !important",
+        color:'#525f7f !important',
+        fontWeight:'bold',
+        fontSize:'15px',
     },
     filterHead : {
         color: '#7009ab',
     },
+    UnitHeaderText:{
+        fontFamily:"'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif",
+        fontSize: "23px",
+        fontWeight: "400",
+        margin:"10px 30px",
+        color: "#384460 !important",
+    },
+    UnitSubHeaderText:{
+        fontSize: "15px",
+        display: "inline-block",
+        paddingLeft: "4px",
+        fontWeight: "300",
+        lineHeight: "1",
+        color: "#777",
+    },
+    boxheadertxt:{
+        fontFamily: "'Source Sans Pro',sans-serif",
+        fontSize: "18px",
+        margin: "0",
+        lineHeight: "1",
+        color:" #32325d !important",
+    },
+    tablecontainer:{
+        boxShadow:'none !important',
+    },
+    ImportContainer:{
+        backgroundColor:'white !important',
+        borderTop: '5px solid #7009AB;',
+        height:'max-content',
+        borderRadius:'5px',
+        padding:'30px',
+        margin:'0px 20px',
+        boxShadow: '6px 6px 6px 9px #dedbdbae',
+        },
+        importheadtext:{
+            fontSize:'20px !important',
+        },
+        importsubheadtext:{
+            margin:'0',
+        },
+        importTabledata:{
+            fontSize: '14px',
+            color: '#0b1e4c !important',
+        },
+        importTableBoldText:{
+            fontSize: 'small',
+            fontWeight: 'bolder',
+        },
+        textInput : {
+            padding: '10px',
+            '& .MuiOutlinedInput-notchedOutline': {
+                border: '1px solid #b97df0',
+            },
+        },
+        actionsdropdown:{
+            backgroundColor:"#b97df0",
+            fontSize: 11,
+            "&:hover":{
+                backgroundColor: "#fff",
+                color: "#b97df0"
+            }
+        },
+        buttonPaid : {
+            backgroundColor: '#98D973 !important',
+            color: '#fff !important',
+            height: '25px !important',
+        },
+        spanIcons : {
+            fontSize: '24px', 
+            paddingTop: '0px !important', 
+            paddingLeft: '6px',
+            paddingRight: '2px',
+            paddingBottom: '38px !important',
+            margin: 'auto', 
+            border: '1px solid #b97df0', 
+            width: '45px !important', 
+            height: '41px', 
+            borderRadius: '2px', 
+            backgroundColor: 'white', 
+            color: '#fff' ,
+        }
+        
 }
