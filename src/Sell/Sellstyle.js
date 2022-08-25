@@ -97,7 +97,7 @@ export const sellStyle = {
     tableHead : {
         backgroundColor:"#f9f9f9 !important",
         color:'#525f7f !important',
-        fontWeight:'bold',
+        fontWeight:'bold !important',
         fontSize:'15px',
     },
     filterHead : {
@@ -136,53 +136,90 @@ export const sellStyle = {
         padding:'30px',
         margin:'0px 20px',
         boxShadow: '6px 6px 6px 9px #dedbdbae',
+    },
+    importheadtext:{
+        fontSize:'20px !important',
+    },
+    importsubheadtext:{
+        margin:'0',
+    },
+    importTabledata:{
+        fontSize: '14px',
+        color: '#0b1e4c !important',
+    },
+    importTableBoldText:{
+        fontSize: 'small',
+        fontWeight: 'bolder',
+    },
+    textInput : {
+        padding: '20px',
+        '& .MuiOutlinedInput-notchedOutline': {
+            border: '1px solid #b97df0',
         },
-        importheadtext:{
-            fontSize:'20px !important',
-        },
-        importsubheadtext:{
-            margin:'0',
-        },
-        importTabledata:{
-            fontSize: '14px',
-            color: '#0b1e4c !important',
-        },
-        importTableBoldText:{
-            fontSize: 'small',
-            fontWeight: 'bolder',
-        },
-        textInput : {
-            padding: '10px',
-            '& .MuiOutlinedInput-notchedOutline': {
-                border: '1px solid #b97df0',
-            },
-        },
-        actionsdropdown:{
-            backgroundColor:"#b97df0",
-            fontSize: 11,
-            "&:hover":{
-                backgroundColor: "#fff",
-                color: "#b97df0"
-            }
-        },
-        buttonPaid : {
-            backgroundColor: '#98D973 !important',
-            color: '#fff !important',
-            height: '25px !important',
-        },
-        spanIcons : {
-            fontSize: '24px', 
-            paddingTop: '0px !important', 
-            paddingLeft: '6px',
-            paddingRight: '2px',
-            paddingBottom: '38px !important',
-            margin: 'auto', 
-            border: '1px solid #b97df0', 
-            width: '45px !important', 
-            height: '41px', 
-            borderRadius: '2px', 
-            backgroundColor: 'white', 
-            color: '#fff' ,
+    },
+    actionsdropdown:{
+        backgroundColor:"#b97df0",
+        fontSize: 11,
+        "&:hover":{
+            backgroundColor: "#fff",
+            color: "#b97df0"
         }
-        
+    },
+    buttonPaid : {
+        backgroundColor: '#98D973 !important',
+        color: '#fff !important',
+        height: '25px !important',
+    },
+    spanInfoIcons : {
+        fontSize: '18px', 
+        paddingTop: '0px !important', 
+        paddingLeft: '1px',
+        paddingRight: '2px',
+        margin: 'auto', 
+        border: '1px solid #b97df0', 
+        width: '45px !important', 
+        height: '40px !important', 
+        borderRadius: '2px', 
+        backgroundColor: 'white', 
+        color: '#7009ab' ,
+    },
+    spanIcons : {
+        ontSize: '24px', 
+        paddingTop: '5px !important', 
+        paddingLeft: '11px',
+        paddingRight: '1px',
+        margin: 'auto', 
+        border: '1px solid #b97df0', 
+        width: '45px !important', 
+        height: '40px', 
+        borderRadius: '2px', 
+        backgroundColor: 'white', 
+        color: '#7009ab' ,
+    },
+    spanLoc : {
+        ontSize: '24px', 
+        paddingTop: '5px !important', 
+        paddingLeft: '6px',
+        paddingRight: '1px',
+        margin: 'auto', 
+        border: '1px solid #b97df0', 
+        width: '45px !important', 
+        height: '40px', 
+        borderRadius: '2px', 
+        backgroundColor: 'white', 
+        color: '#7009ab' ,
+    },
+    uploadBtn : {
+        border:'1px solid #b97df0 !important',
+        borderRadius: '7px !important',
+        width: '159px !important',
+        fontSize: '11px !important',
+        color: '#7009ab !important',
+        fontWeight: '600 !important',
+            '&:hover' : {
+                backgroundColor: '#7009ab !important',
+                color: '#fff !important',
+            },
+    },
+    
 }

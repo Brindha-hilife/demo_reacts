@@ -1,22 +1,47 @@
 import React, { useState } from 'react';
 import { sellStyle } from '../Sellstyle';
 import {
-    Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem,
-    Typography, FormGroup, FormControlLabel, Checkbox, Button, TextareaAutosize, Tooltip, IconButton, NativeSelect, InputAdornment
+    Box, Container, Grid, FormControl, InputLabel, OutlinedInput, Select, MenuItem, Paper, TableCell, TextareaAutosize, InputAdornment,
+    Typography, FormGroup, FormControlLabel, Checkbox, Button, Table, Tooltip, IconButton, TableContainer, TableHead, TableRow, TableBody
 } from '@mui/material';
-import { FcInfo  } from "react-icons/fc";
-import { FaInfo } from "react-icons/fa";
+import { FcInfo } from "react-icons/fc";
+import { FaInfo, FaExternalLinkAlt, FaSearch, FaPlus, FaMoneyBillAlt, FaUserAlt, FaUserSecret, FaTable } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { makeStyles,} from "@material-ui/core/styles";
 
 function Salescreate() {
 
     // ******** Text field ******** //
-    const [productAdd, setProductAdd] = useState({
-        productAddname: "", productAddsku: "", productAddbarcode: "", productAddunit: "",
-        productAddbrand: "", productAddcategory: "", productAddsubcat: "", productAddbusinessloc: "",
-        productAddalert: "", productAddapplicable: "", productAddsellingtax: "", productAddproducttype: "",
-        productAddexc: "", productAddinc: "", productAddmarg: "", productAddexctax: "", productAddinctax: "",
-
+    const [saleAdd, setSaleAdd] = useState({
+        saleAddLoc: "", saleAddSelect: "", saleAddPayTerm: "", saleAddPaySelect: "",
+        saleAddStatus: "", saleAddInvoiceSh: "", saleAddInvoiceNo: "", saleAddTable: "",
+        saleAddStaff: "", saleAddDisType: "", saleAddDisAmt: "", saleAddOrdTax: "",
+        saleAddSell: "", saleAddShipDet: "", saleAddShipAdd: "", saleAddShipChrg: "", saleAddShipStatus: "",
+        saleAddDeliveredTo:"", saleAddAmt:"", saleAddPayMethod:"", saleAddPayAcc:"", saleAddCrdNo:"", saleAddCrdName:"",
+        saleAddCrdTransNo:"", saleAddCrdType:"", saleAddMonth:"", saleAddYear:"", saleAddSecCode:"", saleAddChequeNo:"",
+        saleAddBankAccNo:"",saleAddTrans:"",saleAddPayNote:"",
     });
+
+    // Tooltip function
+    const useStyles = makeStyles(theme => ({
+        arrow: {
+            fontSize: 25,
+            color: "7009AB !important",
+            "&::before": {
+              backgroundColor: "7009AB !important",
+              boxShadow: '6px 6px 6px 9px #dedbdbae',
+            }
+          },
+         tooltip: {
+            fontSize:"17px !important",
+            color: "#7009AB !important",
+            backgroundColor: "white !important",
+            boxShadow: '6px 6px 6px 9px #dedbdbae',
+            padding:"20px",
+         }
+        }));
+        const classes = useStyles();
 
     return (
         <Box>
@@ -29,22 +54,23 @@ function Salescreate() {
                         <Grid container >
                             <Grid item md={4} sm={6} xs={12} sx={{ width: '350px' }}>
                                 <Grid sx={{ display: 'flex' }}  >
-                                    <Grid sx={sellStyle.spanIcons}><FcInfo /></Grid>
+                                    <Grid sx={sellStyle.spanLoc}><LocationOnIcon /></Grid>
                                     <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                        <InputLabel id="demo-select-small">xxx</InputLabel>
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={productAdd.productAddbrand}
-                                            onChange={(e) => { setProductAdd({ ...productAdd, productAddbrand: e.target.value }) }} label="Brand"
+                                            value={saleAdd.saleAddLoc}
+                                            onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddLoc: e.target.value }) }}
+                                            label="xxx"
                                             fullWidth
                                         >
-                                            <MenuItem value=""><em>Please Select</em></MenuItem>
-                                            <MenuItem value={1}>yyy</MenuItem>
-                                            <MenuItem value={2}>xxx</MenuItem>
+                                            <MenuItem value={1}>xxx</MenuItem>
+                                            <MenuItem value={2}>yyy</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <Grid sx={sellStyle.spanIcons}>
-                                        <Tooltip title="Business location from where your want to sell">
+                                    <Grid sx={sellStyle.spanInfoIcons}>
+                                        <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="Business location from where your want to sell" arrow>
                                             <IconButton>
                                                 <FcInfo />
                                             </IconButton>
@@ -60,30 +86,34 @@ function Salescreate() {
                     <Grid container spacing={2} sx={sellStyle.textInput}>
                         <Grid item md={4} sm={6} xs={12}>
                             <Grid sx={{ display: 'flex' }}  >
-                                <Grid sx={sellStyle.spanIcons}><FaInfo /></Grid>
+                                <Grid sx={sellStyle.spanIcons}><FaExternalLinkAlt /></Grid>
                                 <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
-                                    <InputLabel id="demo-select-small">Discount Type *</InputLabel>
+                                    <InputLabel id="demo-select-small">Select types of service</InputLabel>
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productAdd.productAddbrand}
-                                        onChange={(e) => { setProductAdd({ ...productAdd, productAddbrand: e.target.value }) }} label="Brand"
+                                        value={saleAdd.saleAddSelect}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddSelect: e.target.value }) }}
+                                        label="Select types of service"
                                         fullWidth
-                                        label="Discount Type *"
                                     >
-                                        <MenuItem value=""><em>Please Select</em></MenuItem>
-                                        <MenuItem value={1}>yyy</MenuItem>
-                                        <MenuItem value={2}>xxx</MenuItem>
+                                        <MenuItem value={1}>Select types of service</MenuItem>
                                     </Select>
                                 </FormControl>
-                                <Grid sx={sellStyle.spanIcons}><FcInfo /></Grid>
+                                <Grid sx={sellStyle.spanInfoIcons}>
+                                    <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="Type of service means services like dine-in, parcel, home delivery, third party delivery etx." arrow>
+                                        <IconButton>
+                                            <FcInfo />
+                                        </IconButton>
+                                    </Tooltip>
+                                </Grid>
                             </Grid>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}></Grid>
                         <Grid item md={4} sm={6} xs={12}>
                             <FormGroup>
                                 <span><FormControlLabel control={<Checkbox />} label="Subscribe?" />
-                                    <Tooltip title="If subscribed this invoice will be automatically generated at regular intervals. You can disable this feature in Settings > Business Settings > Modules">
+                                    <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="If subscribed this invoice will be automatically generated at regular intervals. You can disable this feature in Settings > Business Settings > Modules" arrow>
                                         <IconButton>
                                             <FcInfo />
                                         </IconButton>
@@ -91,26 +121,272 @@ function Salescreate() {
                                 </span>
                             </FormGroup>
                         </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaUserAlt /></Grid>
+                                <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                    <InputLabel id="demo-select-small">Customer</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select-small"
+                                        // value={saleAdd.saleAddb}
+                                        // onChange={(e) => { setSaleAdd({ ...saleAdd, saleAddbrand: e.target.value }) }}
+                                        label="Customer"
+                                        fullWidth
+                                    >
+                                        <MenuItem value={1}>Walk-in Customer</MenuItem>
+                                    </Select>
+                                </FormControl>
+                                <Grid sx={sellStyle.spanInfoIcons}>
+                                    <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="Type of service means services like dine-in, parcel, home delivery, third party delivery etx." arrow>
+                                        <IconButton>
+                                            <FcInfo />
+                                        </IconButton>
+                                    </Tooltip>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={{ width: '210px' }}>
+                                    <FormControl variant="outlined" size="small" fullWidth>
+                                        <InputLabel htmlFor="outlined-adornment-password">Pay Term</InputLabel>
+                                        <OutlinedInput
+                                            id="outlined-adornment-password"
+                                            endAdornment={
+                                                <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title='Payments to be paid for purchases/sales within the given time period. All upcoming or due payments will be displayed in dashboard - Payment Due section'  arrow> 
+                                                    <InputAdornment position="end">
+                                                        <IconButton
+                                                            aria-label="toggle password visibility"
+                                                            edge="end"
+                                                            value={saleAdd.saleAddPayTerm}
+                                                            onChange={(e) => { setSaleAdd({ ...saleAdd, saleAddPayTerm: e.target.value }) }}
+                                                        >
+                                                            <FcInfo />
+                                                        </IconButton>
+                                                    </InputAdornment>
+                                                </Tooltip>
+                                            }
+                                            label="Pay Term"
+                                        />
+                                    </FormControl>
+                                </Grid>
+                                <FormControl size="small" sx={{ display: 'flex', }} fullWidth>
+                                    <InputLabel htmlFor="component-outlined" >Please Select</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select-small"
+                                        value={saleAdd.saleAddPaySelect}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddPaySelect: e.target.value }) }}
+                                        label="Please Select"
+                                        fullWidth
+                                    >
+                                        <MenuItem value={1}><em>Please Select</em></MenuItem>
+                                        <MenuItem value={2}>Month</MenuItem>
+                                        <MenuItem value={3}>Days</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" ></InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    // value={saleAdd.saleAddname}
+                                    // onChange={(e) => { setSaleAdd({ ...saleAdd, saleAddname: e.target.value }) }}
+                                    label="Sale Date *"
+                                    type='date'
+                                />
+                            </FormControl>
+                        </Grid>
+
+
+                        <Grid item md={12} sm={12} xs={12}>
+                            <Grid container spacing={3}>
+                                <Grid item md={4} sm={6} xs={12}>
+                                    <Grid display="block">
+                                        <Typography variant='subtitle1'><b>Billing Address:</b> <br />Walk-in Customer</Typography>
+                                        <br />
+                                        <Typography variant='subtitle1'><b>Shipping Address:</b> <br /> Walk-in Customer,</Typography>
+                                    </Grid>
+                                </Grid>
+                                <Grid item md={8} sm={6} xs={12}>
+
+                                    <Grid item md={12} sm={12} xs={12}>
+                                        <Grid container spacing={3}>
+                                            <Grid item md={8} sm={6} xs={12}>
+                                                <FormControl size="small" fullWidth>
+                                                    <InputLabel htmlFor="component-outlined" >Status</InputLabel>
+                                                    <Select
+                                                        labelId="demo-select-small"
+                                                        id="demo-select-small"
+                                                        value={saleAdd.saleAddStatus}
+                                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddStatus: e.target.value }) }}
+                                                        label="Status"
+                                                        fullWidth
+                                                    >
+                                                        <MenuItem value={1}><em>Please Select</em></MenuItem>
+                                                        <MenuItem value={2}>Final</MenuItem>
+                                                        <MenuItem value={3}>Draft</MenuItem>
+                                                        <MenuItem value={4}>Quotation</MenuItem>
+                                                        <MenuItem value={5}>Proforma</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Grid>
+                                            <Grid item md={4} sm={6} xs={12}>
+                                                <FormControl size="small" sx={{ display: 'flex', }} fullWidth>
+                                                    <InputLabel htmlFor="component-outlined" >Invoice Scheme</InputLabel>
+                                                    <Select
+                                                        labelId="demo-select-small"
+                                                        id="demo-select-small"
+                                                        value={saleAdd.saleAddInvoiceSh}
+                                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddInvoiceSh: e.target.value }) }}
+                                                        label="Invoice Scheme"
+                                                        fullWidth
+                                                    >
+                                                        <MenuItem value={1}><em>Please Select</em></MenuItem>
+                                                        <MenuItem value={2}>Defaul</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Grid>
+
+                                            <Grid item md={12} sm={12} xs={12}>
+                                                <Grid container spacing={3}>
+                                                    <Grid item md={7} sm={12} xs={12}>
+                                                        <FormControl size="small" fullWidth >
+                                                            <InputLabel htmlFor="component-outlined" >Invoice No</InputLabel>
+                                                            <OutlinedInput
+                                                                id="component-outlined"
+                                                                value={saleAdd.saleAddInvoiceNo}
+                                                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddInvoiceNo: e.target.value }) }}
+                                                                label="Invoice No"
+                                                            />
+                                                        </FormControl>
+                                                        <Typography variant='body2' sx={{ opacity: '0.9', mt: 1 }}>Keep blank to auto generate</Typography>
+                                                    </Grid>
+                                                    <Grid item md={5} sm={12} xs={12}>
+                                                        <FormControl size="small" fullWidth>
+                                                            <Button component="label" sx={sellStyle.uploadBtn}> Upload File
+                                                                <input type="file" hidden />
+                                                            </Button>
+                                                            <Typography variant='body2' sx={{ opacity: '0.9', mt: 1 }}>
+                                                                Max File size: 5MB <br />
+                                                                Allowed File: .pdf, .csv, .zip, .doc, .docx, .jpeg, .jpg, .png
+                                                            </Typography>
+                                                        </FormControl>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaTable /></Grid>
+                                <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                    <InputLabel id="demo-select-small">Select Table</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select-small"
+                                        value={saleAdd.saleAddTable}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddTable: e.target.value }) }}
+                                        label="Select Table"
+                                        fullWidth
+                                    >
+                                        <MenuItem value={1}>Select Table</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaUserSecret /></Grid>
+                                <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                    <InputLabel id="demo-select-small">Select Service Staff</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select-small"
+                                        value={saleAdd.saleAddStaff}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddStaff: e.target.value }) }}
+                                        label="Select Service Staff"
+                                        fullWidth
+                                    >
+                                        <MenuItem value={1}>Select Service Staff</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                        </Grid>
 
                     </Grid>
-                </Box>
+                </Box><br />
+                <Box sx={sellStyle.subContainer} style={{ minHeight: '600px' }}>
+                    <Grid container style={{ justifyContent: "center", }} sx={sellStyle.textInput}>
+                        <Grid md={8} sx={12} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}>
+                                    < FaSearch />
+                                </Grid>
+                                <FormControl size="small" fullWidth >
+                                    <InputLabel id="demo-select-small">Enter Product name / SKU / Scan bar code</InputLabel>
+                                    <OutlinedInput
+                                        id="component-outlined"
+                                        value={saleAdd.saleAddbrand}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddbrand: e.target.value }) }}
+                                        type="search"
+                                        label="Enter Product name / SKU / Scan bar code"
+                                    />
+                                </FormControl>
+                                <Grid sx={sellStyle.spanIcons}><FaPlus /></Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <br />
+                    <TableContainer component={Paper} sx={sellStyle.tablecontainer}>
+                        <Table aria-label="customized table" id="">
+                            <TableHead >
+                                <TableRow >
+                                    <TableCell sx={sellStyle.tableHead}>Product</TableCell>
+                                    <TableCell sx={sellStyle.tableHead}>Quantity</TableCell>
+                                    <TableCell sx={sellStyle.tableHead}>Unit Price</TableCell>
+                                    <TableCell sx={sellStyle.tableHead}>Discount</TableCell>
+                                    <TableCell sx={sellStyle.tableHead}>Subtotal</TableCell>
+                                    <TableCell sx={sellStyle.tableHead}><AiOutlineClose /></TableCell>
+                                </TableRow>
+                            </TableHead><br />
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell></TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell align="right"><b>Items:</b> 0.00</TableCell>
+                                    <TableCell align="right"><b>Total:</b> 0.00</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer><br />
+                </Box><br />
                 <Box sx={sellStyle.subContainer}>
                     <Grid container spacing={3} sx={sellStyle.textInput}>
                         <Grid item md={4} sm={6} xs={12}>
                             <Grid sx={{ display: 'flex' }}  >
                                 <Grid sx={sellStyle.spanIcons}><FaInfo /></Grid>
                                 <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
-                                    <InputLabel id="demo-select-small">Brand</InputLabel>
+                                    <InputLabel id="demo-select-small">Discount Type *</InputLabel>
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={productAdd.productAddbrand}
-                                        onChange={(e) => { setProductAdd({ ...productAdd, productAddbrand: e.target.value }) }} label="Brand"
+                                        value={saleAdd.saleAddDisType}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddDisType: e.target.value }) }}
+                                        label="Discount Type *"
                                         fullWidth
                                     >
                                         <MenuItem value=""><em>Please Select</em></MenuItem>
-                                        <MenuItem value={1}>yyy</MenuItem>
-                                        <MenuItem value={2}>xxx</MenuItem>
+                                        <MenuItem value={1}>Fixed</MenuItem>
+                                        <MenuItem value={2}>Percentage</MenuItem>
                                     </Select>
                                 </FormControl>
                             </Grid>
@@ -119,41 +395,380 @@ function Salescreate() {
                             <Grid sx={{ display: 'flex' }}  >
                                 <Grid sx={sellStyle.spanIcons}><FaInfo /></Grid>
                                 <FormControl size="small" fullWidth >
-                                <InputLabel htmlFor="component-outlined" >Product Name *</InputLabel>
-                                <OutlinedInput
-                                    id="component-outlined"
-                                    value={productAdd.productAddname}
-                                    onChange={(e) => { setProductAdd({ ...productAdd, productAddname: e.target.value }) }}
-                                    label="Product Name *"
-                                />
-                            </FormControl>
+                                    <InputLabel htmlFor="component-outlined" >Discount Amount *</InputLabel>
+                                    <OutlinedInput
+                                        id="component-outlined"
+                                        value={saleAdd.saleAddDisAmt}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddDisAmt: e.target.value }) }}
+                                        label="Discount Amount *"
+                                    />
+                                </FormControl>
                             </Grid>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}>
                             <Grid display="block">
-                                
                                 <Typography variant='subtitle1'><b>Discount Amount:</b> (-) 0.00</Typography>
                                 <br />
-                                
                                 <Typography variant='subtitle1'><b>Order Tax:</b> (+) 0.00</Typography>
-                               
                             </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaInfo /></Grid>
+                                <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                    <InputLabel id="demo-select-small">Order Tax *</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select-small"
+                                        value={saleAdd.saleAddOrdTax}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddOrdTax: e.target.value }) }}
+                                        label="Order Tax *"
+                                        fullWidth
+                                    >
+                                        <MenuItem value=""><em>Please Select</em></MenuItem>
+                                        <MenuItem value={1}>Fixed</MenuItem>
+                                        <MenuItem value={2}>Percentage</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={12} sm={12} xs={12}>
+                            <InputLabel id="demo-select-small" sx={{ m: 1 }}>Sell Note</InputLabel>
+                            <FormControl size="small" fullWidth >
+                                <TextareaAutosize aria-label="minimum height" minRows={3} style={{ border: '1px solid #b97df0' }} 
+                                value={saleAdd.saleAddSell}
+                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddSell: e.target.value }) }}
+                                />
+                            </FormControl>
                         </Grid>
                     </Grid>
+                </Box><br />
 
-                </Box>
                 <Box sx={sellStyle.subContainer}>
-
-                </Box>
-                <Box sx={sellStyle.subContainer}>
-
-                </Box>
-                <Grid container sx={sellStyle.gridContainer}>
-                            <Grid >
-                                <Button sx={sellStyle.buttonAdd}>Save</Button>
-                                <Button sx={sellStyle.buttonAdd}>Save And Print </Button>
+                    <Grid container spacing={3} sx={sellStyle.textInput}>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <InputLabel id="demo-select-small" sx={{ m: 1 }}>Shipping Details</InputLabel>
+                            <FormControl size="small" fullWidth >
+                                <TextareaAutosize aria-label="minimum height" placeholder='Shipping Details' minRows={3} style={{ border: '1px solid #b97df0' }} 
+                                value={saleAdd.saleAddShipDet}
+                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipDet: e.target.value }) }}/>
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <InputLabel id="demo-select-small" sx={{ m: 1 }}>Shipping Address</InputLabel>
+                            <FormControl size="small" fullWidth >
+                                <TextareaAutosize aria-label="minimum height" placeholder='Shipping Address' minRows={3} style={{ border: '1px solid #b97df0' }} 
+                                value={saleAdd.saleAddShipAdd}
+                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipAdd: e.target.value }) }}/>
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12} sx={{ paddingTop: '64px !important' }}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaInfo /></Grid>
+                                <FormControl size="small" fullWidth >
+                                    <InputLabel htmlFor="component-outlined" >Shipping Charges</InputLabel>
+                                    <OutlinedInput
+                                        id="component-outlined"
+                                        value={saleAdd.saleAddShipChrg}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipChrg: e.target.value }) }}
+                                        label="Shipping Charges"
+                                    />
+                                </FormControl>
                             </Grid>
                         </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                <InputLabel id="demo-select-small">Shipping Status</InputLabel>
+                                <Select
+                                    labelId="demo-select-small"
+                                    id="demo-select-small"
+                                    value={saleAdd.saleAddShipStatus}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipStatus: e.target.value }) }}
+                                    label="Shipping Status"
+                                    fullWidth
+                                >
+                                    <MenuItem value=""><em>Please Select</em></MenuItem>
+                                    <MenuItem value={1}>Ordered</MenuItem>
+                                    <MenuItem value={2}>Packed</MenuItem>
+                                    <MenuItem value={3}>Shipped</MenuItem>
+                                    <MenuItem value={4}>Delivered</MenuItem>
+                                    <MenuItem value={5}>Cancelled</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Delivered to</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddDeliveredTo}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddDeliveredTo: e.target.value }) }}
+                                    label="Delivered To"
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <FormControl size="small" fullWidth>
+                                <Button component="label" sx={sellStyle.uploadBtn}> Upload File
+                                    <input type="file" hidden />
+                                </Button>
+                                <Typography variant='body2' sx={{ opacity: '0.9', mt: 1 }}>
+                                    Max File size: 5MB <br />
+                                    Allowed File: .pdf, .csv, .zip, .doc, .docx, .jpeg, .jpg, .png
+                                </Typography>
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={8} sm={6} sx={12}></Grid>
+                        <Grid item md={4} sm={6} sx={12}>
+                            <Typography variant='subtitle1'><b>Total Payable:</b> 0.00</Typography>
+                        </Grid>
+
+
+                    </Grid>
+                </Box><br />
+                <Box sx={sellStyle.subContainer}>
+                    <Typography variant="h6" >Add payment</Typography>
+                    <Grid container spacing={3} sx={sellStyle.textInput}>
+                        <Grid item md={12} sm={12} xs={12}>
+                            <Typography variant="body2" ><b>Advance Balance:</b> ₹ 0.00</Typography>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaMoneyBillAlt /></Grid>
+                                <FormControl size="small" fullWidth >
+                                    <InputLabel htmlFor="component-outlined" >Amount *</InputLabel>
+                                    <OutlinedInput
+                                        id="component-outlined"
+                                        value={saleAdd.saleAddAmt}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddAmt: e.target.value }) }}
+                                        label="Amount *"
+                                        type='number'
+                                    />
+                                </FormControl>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12} >
+                            <Grid sx={{ display: 'flex' }}  >
+                                {/* <Grid sx={sellStyle.spanIcons}><FaMoneyBillAlt /></Grid> */}
+                                <FormControl size="small" fullWidth >
+                                    <InputLabel htmlFor="component-outlined" ></InputLabel>
+                                    <OutlinedInput
+                                        id="component-outlined"
+                                        type='date'
+                                        // value={saleAdd.saleAddname}
+                                        // onChange={(e) => { setSaleAdd({ ...saleAdd, saleAddname: e.target.value }) }}
+                                    // label="Shipping Charges"
+                                    />
+                                </FormControl>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaMoneyBillAlt /></Grid>
+                                <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                    <InputLabel id="demo-select-small">Payment Method *</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select-small"
+                                        value={saleAdd.saleAddPayMethod}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddPayMethod: e.target.value }) }}
+                                        label="Payment Method *"
+                                        fullWidth
+                                    >
+                                        <MenuItem value="">Advance</MenuItem>
+                                        <MenuItem value={1}>Cash</MenuItem>
+                                        <MenuItem value={2}>Card</MenuItem>
+                                        <MenuItem value={2}>Cheque</MenuItem>
+                                        <MenuItem value={2}>Bank Transfer</MenuItem>
+                                        <MenuItem value={2}>Other</MenuItem>
+                                        <MenuItem value={2}>Custom Payment 1</MenuItem>
+                                        <MenuItem value={2}>Custom Payment 2</MenuItem>
+                                        <MenuItem value={2}>Custom Payment 3</MenuItem>
+                                        <MenuItem value={2}>Custom Payment 4</MenuItem>
+                                        <MenuItem value={2}>Custom Payment 5</MenuItem>
+                                        <MenuItem value={2}>Custom Payment 6</MenuItem>
+                                        <MenuItem value={2}>Custom Payment 7</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Grid sx={{ display: 'flex' }}  >
+                                <Grid sx={sellStyle.spanIcons}><FaMoneyBillAlt /></Grid>
+                                <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                    <InputLabel id="demo-select-small">Payment Account</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small"
+                                        id="demo-select-small"
+                                        value={saleAdd.saleAddPayAcc}
+                                        onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddPayAcc: e.target.value }) }}
+                                        label="Payment Account"
+                                        fullWidth
+                                    >
+                                        <MenuItem value=""><em>None</em></MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={8} sm={12} xs={12}></Grid>
+
+                        {/* ****** Dropdown options ****** */}
+                        {/* ****** Card Section ****** */}
+                        <Grid item md={4} sm={6} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Card Number</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddCrdNo}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddCrdNo: e.target.value }) }}
+                                    label="Card Number"
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Card Holder Name</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddCrdName}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddCrdName: e.target.value }) }}
+                                    label="Card Holder Name"
+                                    type="text"
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={4} sm={6} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Card Transaction No</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddCrdTransNo}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddCrdTransNo: e.target.value }) }}
+                                    label="Card Transaction No"
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={3} sm={12} xs={12}>
+                            <FormControl size="small" fullWidth sx={{ display: 'flex' }}>
+                                <InputLabel id="demo-select-small">Card Type</InputLabel>
+                                <Select
+                                    labelId="demo-select-small"
+                                    id="demo-select-small"
+                                    value={saleAdd.saleAddCrdType}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddCrdType: e.target.value }) }}
+                                    label="Card Type"
+                                    fullWidth
+                                >
+                                    <MenuItem value="">Credit Card</MenuItem>
+                                    <MenuItem value={1}>Debit Card</MenuItem>
+                                    <MenuItem value={2}>Visa</MenuItem>
+                                    <MenuItem value={3}>MasterCard</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={3} sm={12} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Month</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddMonth}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddMonth: e.target.value }) }}
+                                    label="Month"
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={3} sm={12} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Year</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddYear}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddYear: e.target.value }) }}
+                                    label="Year"
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item md={3} sm={12} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Security Code</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddSecCode}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddSecCode: e.target.value }) }}
+                                    label="Security Code"
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+
+                        {/* ****** Cheque Section ****** */}
+                        <Grid item md={12} sm={12} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Cheque No.</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddChequeNo}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddChequeNo: e.target.value }) }}
+                                    label="Cheque No."
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+
+                        {/* ****** Bank Section ****** */}
+                        <Grid item md={12} sm={12} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Bank Account No.</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddBankAccNo}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddBankAccNo: e.target.value }) }}
+                                    label="Bank Account No."
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+
+                        {/* ****** Transaction Section ****** */}
+                        <Grid item md={12} sm={12} xs={12}>
+                            <FormControl size="small" fullWidth >
+                                <InputLabel htmlFor="component-outlined" >Transaction No.</InputLabel>
+                                <OutlinedInput
+                                    id="component-outlined"
+                                    value={saleAdd.saleAddTrans}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddTrans: e.target.value }) }}
+                                    label="Transaction No."
+                                    type='text'
+                                />
+                            </FormControl>
+                        </Grid>
+
+                        {/* *************** End ************ */}
+
+                        <Grid item md={12} sm={12} xs={12}>
+                            <InputLabel id="demo-select-small" sx={{ m: 1 }}>Payment Note</InputLabel>
+                            <FormControl size="small" fullWidth >
+                                <TextareaAutosize aria-label="minimum height" minRows={3} style={{ border: '1px solid #b97df0' }}
+                                value={saleAdd.saleAddPayNote}
+                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddPayNote: e.target.value }) }} />
+                            </FormControl><br /><br />
+                            <hr />
+                        </Grid>
+                        <Grid container style={{ justifyContent: "right", }} sx={sellStyle.textInput}>
+                            <Typography variant='subtitle1'><b>Balance:</b> ₹ 0.00</Typography>
+                        </Grid>
+                    </Grid>
+                </Box>
+                <Grid container sx={sellStyle.gridContainer}>
+                    <Grid >
+                        <Button sx={sellStyle.buttonAdd}>Save And Print</Button>
+                        <Button sx={sellStyle.buttonAdd}>Save  </Button>
+                    </Grid>
+                </Grid>
             </form >
         </Box >
     );
