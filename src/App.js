@@ -22,7 +22,10 @@ import React from 'react';
 // import Listquotationslist from './Sell/Listquotations/List';
 // import Draftslist from './Sell/Drafts/List';
 // import Poslist from './Sell/Pos/List';
-import Salescreate from './Sell/Allsales/Create';
+// import Salescreate from './Sell/Allsales/Create';
+// import Draftcreate from './Sell/Drafts/Create';
+// import Quotcreate from './Sell/Quotations/Create';
+import Poscreate from './Sell/Pos/Create';
 // import Saleslist from './Sell/Allsales/List';
 // import Forgot from './Forgot/Forgotpwd';
 // import Forgotcaptcha from './Forgot/Forgotcaptcha';
@@ -63,8 +66,10 @@ function App() {
 {/* <Draftslist /> */}
 {/* <Poslist /> */}
 {/* <Saleslist /> */}
-<Salescreate/>
-
+{/* <Salescreate/> */}
+{/* <Draftcreate/> */}
+{/* <Quotcreate /> */}
+<Poscreate />
 
         {/* <Demo /> */}
 {/* <Footer/> */}

@@ -5,10 +5,11 @@ import {
     Typography, FormGroup, FormControlLabel, Checkbox, Button, Table, Tooltip, IconButton, TableContainer, TableHead, TableRow, TableBody
 } from '@mui/material';
 import { FcInfo } from "react-icons/fc";
-import { FaInfo, FaExternalLinkAlt, FaSearch, FaPlus, FaMoneyBillAlt, FaUserAlt, FaUserSecret, FaTable } from "react-icons/fa";
+import { FaInfo, FaExternalLinkAlt, FaSearch, FaMoneyBillAlt, FaUserAlt, FaUserSecret, FaTable } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { makeStyles,} from "@material-ui/core/styles";
+import Searchplus from './Salesearchmod';
 
 function Salescreate() {
 
@@ -339,7 +340,7 @@ function Salescreate() {
                                         label="Enter Product name / SKU / Scan bar code"
                                     />
                                 </FormControl>
-                                <Grid sx={sellStyle.spanIcons}><FaPlus /></Grid>
+                               <Searchplus />
                             </Grid>
                         </Grid>
                     </Grid>

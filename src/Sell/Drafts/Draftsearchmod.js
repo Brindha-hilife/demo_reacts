@@ -15,7 +15,7 @@ import { FcInfo } from "react-icons/fc";
 import { makeStyles,} from "@material-ui/core/styles";
 
 
-function Salesearchmod() {
+function Draftsearchmod() {
 
     // ****** Sales Modal ****** //
     const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -59,13 +59,13 @@ function Salesearchmod() {
 
     // ****** Sales Modal Textfield ****** //
     // ****** Add Modal ****** //
-    const [salessearchmod, setSalessearchmod] = useState(false);
+    const [draftsearchmod, setDraftSearchmod] = useState(false);
 
-    const salePlusOpen = () => {
-        setSalessearchmod(true);
+    const draftPlusOpen = () => {
+        setDraftSearchmod(true);
     };
-    const salePlusClose = () => {
-        setSalessearchmod(false);
+    const draftPlusClose = () => {
+        setDraftSearchmod(false);
     };
 
 
@@ -78,11 +78,11 @@ function Salesearchmod() {
     }
 
     //Text field
-    const [saleSearch, setSaleSearch] = useState({
-        saleSearchname: "", saleSearchsku: "", saleSearchbarcode: "", saleSearchunit: "",
-        saleSearchbrand: "", saleSearchcategory: "", saleSearchsubcat: "", saleSearchbusinessloc: "",
-        saleSearchalert: "", saleSearchapplicable: "", saleSearchsellingtax: "", saleSearchproducttype: "",
-        saleSearchexc: "", saleSearchinc: "", saleSearchmarg: "", saleSearchexctax: "", saleSearchinctax: "",
+    const [draftSearch, setDraftSearch] = useState({
+        draftSearchname: "", draftSearchsku: "", draftSearchbarcode: "", draftSearchunit: "",
+        draftSearchbrand: "", draftSearchcategory: "", draftSearchsubcat: "", draftSearchbusinessloc: "",
+        draftSearchalert: "", draftSearchapplicable: "", draftSearchsellingtax: "", draftSearchproducttype: "",
+        draftSearchexc: "", draftSearchinc: "", draftSearchmarg: "", draftSearchexctax: "", draftSearchinctax: "",
 
     });
 
@@ -121,17 +121,17 @@ function Salesearchmod() {
     return (
         <Box>
             <Box>
-                <Grid sx={sellStyle.spanIcons} ><FaPlus onClick={salePlusOpen} /></Grid>
+                <Grid sx={sellStyle.spanIcons} ><FaPlus onClick={draftPlusOpen} /></Grid>
             </Box>
 
             <form action=''>
                 <BootstrapDialog
-                    onClose={salePlusClose}
+                    onClose={draftPlusClose}
                     aria-labelledby="customized-dialog-title1"
-                    open={salessearchmod}
+                    open={draftsearchmod}
                     maxWidth="lg"
                 >
-                    <BootstrapDialogTitle id="customized-dialog-title1" onClose={salePlusClose}>
+                    <BootstrapDialogTitle id="customized-dialog-title1" onClose={draftPlusClose}>
                         Add new product
                     </BootstrapDialogTitle>
                     <DialogContent dividers>
@@ -142,8 +142,8 @@ function Salesearchmod() {
                                         <InputLabel htmlFor="component-outlined" >Product Name *</InputLabel>
                                         <OutlinedInput
                                             id="component-outlined"
-                                            value={saleSearch.saleSearchname}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchname: e.target.value }) }}
+                                            value={draftSearch.draftSearchname}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchname: e.target.value }) }}
                                             label="Product Name *"
                                         />
                                     </FormControl>
@@ -159,8 +159,8 @@ function Salesearchmod() {
                                                         <IconButton
                                                             aria-label="toggle password visibility"
                                                             edge="end"
-                                                            value={saleSearch.saleSearchsku}
-                                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchsku: e.target.value }) }}
+                                                            value={draftSearch.draftSearchsku}
+                                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchsku: e.target.value }) }}
                                                         >
                                                             <FcInfo />
                                                         </IconButton>
@@ -177,8 +177,8 @@ function Salesearchmod() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={saleSearch.saleSearchbarcode}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchbarcode: e.target.value }) }}
+                                            value={draftSearch.draftSearchbarcode}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchbarcode: e.target.value }) }}
                                             label="Barcode type"
                                         >
                                             <MenuItem value="">
@@ -198,8 +198,8 @@ function Salesearchmod() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={saleSearch.saleSearchunit}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchunit: e.target.value }) }} label="Unit *"
+                                            value={draftSearch.draftSearchunit}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchunit: e.target.value }) }} label="Unit *"
                                             fullWidth
                                         >
                                             <MenuItem value="">
@@ -216,8 +216,8 @@ function Salesearchmod() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={saleSearch.saleSearchbrand}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchbrand: e.target.value }) }} label="Brand"
+                                            value={draftSearch.draftSearchbrand}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchbrand: e.target.value }) }} label="Brand"
                                             fullWidth
                                         >
                                             <MenuItem value="">
@@ -235,8 +235,8 @@ function Salesearchmod() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={saleSearch.saleSearchcategory}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchcategory: e.target.value }) }} label="Category"
+                                            value={draftSearch.draftSearchcategory}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchcategory: e.target.value }) }} label="Category"
                                         >
                                             <MenuItem value="">
                                                 <em>Please Select</em>
@@ -252,8 +252,8 @@ function Salesearchmod() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={saleSearch.saleSearchsubcat}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchsubcat: e.target.value }) }}
+                                            value={draftSearch.draftSearchsubcat}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchsubcat: e.target.value }) }}
                                             label="Sub Category"
                                         >
                                             <MenuItem value="">
@@ -280,8 +280,8 @@ function Salesearchmod() {
                                         <InputLabel htmlFor="component-outlined" >Alert quantity</InputLabel>
                                         <OutlinedInput
                                             id="component-outlined"
-                                            value={saleSearch.saleSearchname}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchname: e.target.value }) }}
+                                            value={draftSearch.draftSearchname}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchname: e.target.value }) }}
                                             label="Alert quantity"
                                         />
                                     </FormControl>
@@ -310,8 +310,8 @@ function Salesearchmod() {
                                         <InputLabel htmlFor="component-outlined" >Weight</InputLabel>
                                         <OutlinedInput
                                             id="component-outlined"
-                                            value={saleSearch.saleSearchname}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchname: e.target.value }) }}
+                                            value={draftSearch.draftSearchname}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchname: e.target.value }) }}
                                             label="Weight"
                                         />
                                     </FormControl>
@@ -326,8 +326,8 @@ function Salesearchmod() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={saleSearch.saleSearchapplicable}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchapplicable: e.target.value }) }}
+                                            value={draftSearch.draftSearchapplicable}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchapplicable: e.target.value }) }}
                                             label="Applicable Tax"
                                         >
                                             <MenuItem value="">
@@ -344,8 +344,8 @@ function Salesearchmod() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={saleSearch.saleSearchsellingtax}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchsellingtax: e.target.value }) }}
+                                            value={draftSearch.draftSearchsellingtax}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchsellingtax: e.target.value }) }}
                                             label="Selling Price Tax Type"
                                         >
                                             <MenuItem value="">
@@ -383,8 +383,8 @@ function Salesearchmod() {
                                         <InputLabel htmlFor="component-outlined" >Custom Field 1</InputLabel>
                                         <OutlinedInput
                                             id="component-outlined"
-                                            value={saleSearch.saleSearchname}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchname: e.target.value }) }}
+                                            value={draftSearch.draftSearchname}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchname: e.target.value }) }}
                                             label="Custom Field 1"
                                         />
                                     </FormControl>
@@ -394,8 +394,8 @@ function Salesearchmod() {
                                         <InputLabel htmlFor="component-outlined" >Custom Field 2</InputLabel>
                                         <OutlinedInput
                                             id="component-outlined"
-                                            value={saleSearch.saleSearchname}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchname: e.target.value }) }}
+                                            value={draftSearch.draftSearchname}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchname: e.target.value }) }}
                                             label="Custom Field 2"
                                         />
                                     </FormControl>
@@ -405,8 +405,8 @@ function Salesearchmod() {
                                         <InputLabel htmlFor="component-outlined" >Custom Field 3</InputLabel>
                                         <OutlinedInput
                                             id="component-outlined"
-                                            value={saleSearch.saleSearchname}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchname: e.target.value }) }}
+                                            value={draftSearch.draftSearchname}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchname: e.target.value }) }}
                                             label="Custom Field 3"
                                         />
                                     </FormControl>
@@ -416,8 +416,8 @@ function Salesearchmod() {
                                         <InputLabel htmlFor="component-outlined" >Custom Field 4</InputLabel>
                                         <OutlinedInput
                                             id="component-outlined"
-                                            value={saleSearch.saleSearchname}
-                                            onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchname: e.target.value }) }}
+                                            value={draftSearch.draftSearchname}
+                                            onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchname: e.target.value }) }}
                                             label="Custom Field 4"
                                         />
                                     </FormControl>
@@ -447,8 +447,8 @@ function Salesearchmod() {
                                                             <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                value={saleSearch.saleSearchexc}
-                                                                onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchexc: e.target.value }) }}
+                                                                value={draftSearch.draftSearchexc}
+                                                                onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchexc: e.target.value }) }}
                                                                 label="Exc. tax *"
                                                             />
                                                         </FormControl>
@@ -458,8 +458,8 @@ function Salesearchmod() {
                                                             <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                value={saleSearch.saleSearchinc}
-                                                                onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchinc: e.target.value }) }}
+                                                                value={draftSearch.draftSearchinc}
+                                                                onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchinc: e.target.value }) }}
                                                                 label="Inc. tax *"
                                                             />
                                                         </FormControl>
@@ -469,8 +469,8 @@ function Salesearchmod() {
                                                             <InputLabel htmlFor="component-outlined"></InputLabel>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                value={saleSearch.saleSearchmarg}
-                                                                onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchmarg: e.target.value }) }}
+                                                                value={draftSearch.draftSearchmarg}
+                                                                onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchmarg: e.target.value }) }}
                                                                 label="Marg"
                                                             />
                                                         </FormControl>
@@ -480,8 +480,8 @@ function Salesearchmod() {
                                                             <InputLabel htmlFor="component-outlined">Exc. tax *</InputLabel>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                value={saleSearch.saleSearchexctax}
-                                                                onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchexctax: e.target.value }) }}
+                                                                value={draftSearch.draftSearchexctax}
+                                                                onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchexctax: e.target.value }) }}
                                                                 label="Exc. tax *"
                                                             />
                                                         </FormControl>
@@ -489,8 +489,8 @@ function Salesearchmod() {
                                                             <InputLabel htmlFor="component-outlined">Inc. tax *</InputLabel>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                value={saleSearch.saleSearchinctax}
-                                                                onChange={(e) => { setSaleSearch({ ...saleSearch, SaleSearchinctax: e.target.value }) }}
+                                                                value={draftSearch.draftSearchinctax}
+                                                                onChange={(e) => { setDraftSearch({ ...draftSearch, DraftSearchinctax: e.target.value }) }}
                                                                 label="Inc. tax *"
                                                             />
                                                         </FormControl>
@@ -519,8 +519,8 @@ function Salesearchmod() {
                                                         <FormControl size="small" fullWidth>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                // value={saleSearch.saleSearchmarg}
-                                                                // onChange={(e) => { setSaleSearch({ ...saleSearch, saleSearchmarg: e.target.value }) }}
+                                                                // value={draftSearch.draftSearchmarg}
+                                                                // onChange={(e) => { setDraftSearch({ ...DraftSearch, draftSearchmarg: e.target.value }) }}
                                                                 label="0"
                                                             />
                                                         </FormControl>
@@ -529,8 +529,8 @@ function Salesearchmod() {
                                                         <FormControl size="small" fullWidth>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                // value={saleSearch.saleSearchmarg}
-                                                                // onChange={(e) => { setSaleSearch({ ...saleSearch, saleSearchmarg: e.target.value }) }}
+                                                                // value={draftSearch.draftSearchmarg}
+                                                                // onChange={(e) => { setDraftSearch({ ...DraftSearch, draftSearchmarg: e.target.value }) }}
                                                                 label="0"
                                                             />
                                                         </FormControl>
@@ -543,8 +543,8 @@ function Salesearchmod() {
                                                         <FormControl size="small" fullWidth>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                // value={saleSearch.saleSearchmarg}
-                                                                // onChange={(e) => { setSaleSearch({ ...saleSearch, saleSearchmarg: e.target.value }) }}
+                                                                // value={draftSearch.draftSearchmarg}
+                                                                // onChange={(e) => { setDraftSearch({ ...DraftSearch, draftSearchmarg: e.target.value }) }}
                                                                 label="0"
                                                             />
                                                         </FormControl>
@@ -553,8 +553,8 @@ function Salesearchmod() {
                                                         <FormControl size="small" fullWidth>
                                                             <OutlinedInput
                                                                 id="component-outlined"
-                                                                // value={saleSearch.saleSearchmarg}
-                                                                // onChange={(e) => { setSaleSearch({ ...saleSearch, saleSearchmarg: e.target.value }) }}
+                                                                // value={draftSearch.draftSearchmarg}
+                                                                // onChange={(e) => { setDraftSearch({ ...DraftSearch, draftSearchmarg: e.target.value }) }}
                                                                 label="0"
                                                             />
                                                         </FormControl>
@@ -570,7 +570,7 @@ function Salesearchmod() {
                     </DialogContent>
                     <DialogActions>
                         <Button autoFocus variant='contained' color="success">Save </Button>
-                        <Button onClick={salePlusClose} variant='contained' color="error">Close</Button>
+                        <Button onClick={draftPlusClose} variant='contained' color="error">Close</Button>
                     </DialogActions>
                 </BootstrapDialog>
             </form>
@@ -578,4 +578,4 @@ function Salesearchmod() {
     );
 }
 
-export default Salesearchmod;
+export default Draftsearchmod;

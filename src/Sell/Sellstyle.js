@@ -20,7 +20,7 @@ export const sellStyle = {
     },
     buttonAdd: {
         backgroundColor: '#7009ab !important',
-        color: 'white',
+        color: 'white !important',
         marginRight: '5px !important',
         height: '40px !important',
         padding: '10px !important',
@@ -220,6 +220,11 @@ export const sellStyle = {
                 backgroundColor: '#7009ab !important',
                 color: '#fff !important',
             },
+    },
+    tableHd : {
+        backgroundColor: '#7009ab !important',
+        fontSize: '20px !important',
+        color: '#fff !important',
     },
     
 }

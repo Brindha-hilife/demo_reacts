@@ -5,23 +5,23 @@ import {
     Typography, FormGroup, FormControlLabel, Checkbox, Button, Table, Tooltip, IconButton, TableContainer, TableHead, TableRow, TableBody
 } from '@mui/material';
 import { FcInfo } from "react-icons/fc";
-import { FaInfo, FaExternalLinkAlt, FaSearch, FaUserAlt, FaUserSecret, FaTable } from "react-icons/fa";
+import { FaInfo, FaExternalLinkAlt, FaSearch,  FaUserAlt, FaUserSecret, FaTable } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { makeStyles, } from "@material-ui/core/styles";
-import Draftsearchplus from './Draftsearchmod';
+import Quotsearchplus from './Quosearchmod';
 
-function Draftscreate() {
+function Quotcreate() {
 
     // ******** Text field ******** //
-    const [draftAdd, setDraftAdd] = useState({
-        draftAddLoc: "", draftAddSelect: "", draftAddPayTerm: "", draftAddPaySelect: "",
-        draftAddStatus: "", draftAddInvoiceSh: "", draftAddInvoiceNo: "", draftAddTable: "",
-        draftAddStaff: "", draftAddDisType: "", draftAddDisAmt: "", draftAddOrdTax: "",
-        draftAddSell: "", draftAddShipDet: "", draftAddShipAdd: "", draftAddShipChrg: "", draftAddShipStatus: "",
-        draftAddDeliveredTo: "", draftAddAmt: "", draftAddPayMethod: "", draftAddPayAcc: "", draftAddCrdNo: "", draftAddCrdName: "",
-        draftAddCrdTransNo: "", draftAddCrdType: "", draftAddMonth: "", draftAddYear: "", draftAddSecCode: "", draftAddChequeNo: "",
-        draftAddBankAccNo: "", draftAddTrans: "", draftAddPayNote: "",
+    const [quotAdd, setQuotAdd] = useState({
+        quotAddLoc: "", quotAddSelect: "", quotAddPayTerm: "", quotAddPaySelect: "",
+        quotAddStatus: "", quotAddInvoiceSh: "", quotAddInvoiceNo: "", quotAddTable: "",
+        quotAddStaff: "", quotAddDisType: "", quotAddDisAmt: "", quotAddOrdTax: "",
+        quotAddSell: "", quotAddShipDet: "", quotAddShipAdd: "", quotAddShipChrg: "", quotAddShipStatus: "",
+        quotAddDeliveredTo: "", quotAddAmt: "", quotAddPayMethod: "", quotAddPayAcc: "", quotAddCrdNo: "", quotAddCrdName: "",
+        quotAddCrdTransNo: "", quotAddCrdType: "", quotAddMonth: "", quotAddYear: "", quotAddSecCode: "", quotAddChequeNo: "",
+        quotAddBankAccNo: "", quotAddTrans: "", quotAddPayNote: "",
     });
 
     // Tooltip function
@@ -49,7 +49,7 @@ function Draftscreate() {
             <form action=''>
                 <Container sx={{ paddingTop: '10px', }}>
                     <Grid display="flex">
-                        <Typography variant="h6" sx={{ color: '#7009ab' }}>Add Draft</Typography>&ensp;
+                        <Typography variant="h6" sx={{ color: '#7009ab' }}>Add Quotation</Typography>&ensp;
                     </Grid><br />
                     <Box>
                         <Grid container >
@@ -61,8 +61,8 @@ function Draftscreate() {
                                         <Select
                                             labelId="demo-select-small"
                                             id="demo-select-small"
-                                            value={draftAdd.draftAddLoc}
-                                            onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddLoc: e.target.value }) }}
+                                            value={quotAdd.quotAddLoc}
+                                            onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddLoc: e.target.value }) }}
                                             label="xxx"
                                             fullWidth
                                         >
@@ -93,8 +93,8 @@ function Draftscreate() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={draftAdd.draftAddSelect}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddSelect: e.target.value }) }}
+                                        value={quotAdd.quotAddSelect}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddSelect: e.target.value }) }}
                                         label="Select types of service"
                                         fullWidth
                                     >
@@ -130,8 +130,8 @@ function Draftscreate() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        // value={draftAdd.draftAddb}
-                                        // onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddbrand: e.target.value }) }}
+                                        // value={quotAdd.quotAddb}
+                                        // onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddbrand: e.target.value }) }}
                                         label="Customer"
                                         fullWidth
                                     >
@@ -160,8 +160,8 @@ function Draftscreate() {
                                                         <IconButton
                                                             aria-label="toggle password visibility"
                                                             edge="end"
-                                                            value={draftAdd.draftAddPayTerm}
-                                                            onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddPayTerm: e.target.value }) }}
+                                                            value={quotAdd.quotAddPayTerm}
+                                                            onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddPayTerm: e.target.value }) }}
                                                         >
                                                             <FcInfo />
                                                         </IconButton>
@@ -177,8 +177,8 @@ function Draftscreate() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={draftAdd.draftAddPaySelect}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddPaySelect: e.target.value }) }}
+                                        value={quotAdd.quotAddPaySelect}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddPaySelect: e.target.value }) }}
                                         label="Please Select"
                                         fullWidth
                                     >
@@ -194,8 +194,8 @@ function Draftscreate() {
                                 <InputLabel htmlFor="component-outlined" ></InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    // value={draftAdd.draftAddname}
-                                    // onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddname: e.target.value }) }}
+                                    // value={quotAdd.quotAddname}
+                                    // onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddname: e.target.value }) }}
                                     label="Sale Date *"
                                     type='date'
                                 />
@@ -221,8 +221,8 @@ function Draftscreate() {
                                                     <Select
                                                         labelId="demo-select-small"
                                                         id="demo-select-small"
-                                                        value={draftAdd.draftAddInvoiceSh}
-                                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddInvoiceSh: e.target.value }) }}
+                                                        value={quotAdd.quotAddInvoiceSh}
+                                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddInvoiceSh: e.target.value }) }}
                                                         label="Invoice Scheme"
                                                         fullWidth
                                                     >
@@ -236,8 +236,8 @@ function Draftscreate() {
                                                     <InputLabel htmlFor="component-outlined" >Invoice No</InputLabel>
                                                     <OutlinedInput
                                                         id="component-outlined"
-                                                        value={draftAdd.draftAddInvoiceNo}
-                                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddInvoiceNo: e.target.value }) }}
+                                                        value={quotAdd.quotAddInvoiceNo}
+                                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddInvoiceNo: e.target.value }) }}
                                                         label="Invoice No"
                                                     />
                                                 </FormControl>
@@ -269,8 +269,8 @@ function Draftscreate() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={draftAdd.draftAddTable}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddTable: e.target.value }) }}
+                                        value={quotAdd.quotAddTable}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddTable: e.target.value }) }}
                                         label="Select Table"
                                         fullWidth
                                     >
@@ -287,8 +287,8 @@ function Draftscreate() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={draftAdd.draftAddStaff}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddStaff: e.target.value }) }}
+                                        value={quotAdd.quotAddStaff}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddStaff: e.target.value }) }}
                                         label="Select Service Staff"
                                         fullWidth
                                     >
@@ -311,13 +311,13 @@ function Draftscreate() {
                                     <InputLabel id="demo-select-small">Enter Product name / SKU / Scan bar code</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={draftAdd.draftAddbrand}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddbrand: e.target.value }) }}
+                                        value={quotAdd.quotAddbrand}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddbrand: e.target.value }) }}
                                         type="search"
                                         label="Enter Product name / SKU / Scan bar code"
                                     />
                                 </FormControl>
-                                <Draftsearchplus />
+                                <Quotsearchplus />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -357,8 +357,8 @@ function Draftscreate() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={draftAdd.draftAddDisType}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddDisType: e.target.value }) }}
+                                        value={quotAdd.quotAddDisType}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddDisType: e.target.value }) }}
                                         label="Discount Type *"
                                         fullWidth
                                     >
@@ -376,8 +376,8 @@ function Draftscreate() {
                                     <InputLabel htmlFor="component-outlined" >Discount Amount *</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={draftAdd.draftAddDisAmt}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddDisAmt: e.target.value }) }}
+                                        value={quotAdd.quotAddDisAmt}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddDisAmt: e.target.value }) }}
                                         label="Discount Amount *"
                                     />
                                 </FormControl>
@@ -398,8 +398,8 @@ function Draftscreate() {
                                     <Select
                                         labelId="demo-select-small"
                                         id="demo-select-small"
-                                        value={draftAdd.draftAddOrdTax}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddOrdTax: e.target.value }) }}
+                                        value={quotAdd.quotAddOrdTax}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddOrdTax: e.target.value }) }}
                                         label="Order Tax *"
                                         fullWidth
                                     >
@@ -414,8 +414,8 @@ function Draftscreate() {
                             <InputLabel id="demo-select-small" sx={{ m: 1 }}>Sell Note</InputLabel>
                             <FormControl size="small" fullWidth >
                                 <TextareaAutosize aria-label="minimum height" minRows={3} style={{ border: '1px solid #b97df0' }}
-                                    value={draftAdd.draftAddSell}
-                                    onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddSell: e.target.value }) }}
+                                    value={quotAdd.quotAddSell}
+                                    onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddSell: e.target.value }) }}
                                 />
                             </FormControl>
                         </Grid>
@@ -428,16 +428,16 @@ function Draftscreate() {
                             <InputLabel id="demo-select-small" sx={{ m: 1 }}>Shipping Details</InputLabel>
                             <FormControl size="small" fullWidth >
                                 <TextareaAutosize aria-label="minimum height" placeholder='Shipping Details' minRows={3} style={{ border: '1px solid #b97df0' }}
-                                    value={draftAdd.draftAddShipDet}
-                                    onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddShipDet: e.target.value }) }} />
+                                    value={quotAdd.quotAddShipDet}
+                                    onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddShipDet: e.target.value }) }} />
                             </FormControl>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}>
                             <InputLabel id="demo-select-small" sx={{ m: 1 }}>Shipping Address</InputLabel>
                             <FormControl size="small" fullWidth >
                                 <TextareaAutosize aria-label="minimum height" placeholder='Shipping Address' minRows={3} style={{ border: '1px solid #b97df0' }}
-                                    value={draftAdd.draftAddShipAdd}
-                                    onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddShipAdd: e.target.value }) }} />
+                                    value={quotAdd.quotAddShipAdd}
+                                    onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddShipAdd: e.target.value }) }} />
                             </FormControl>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12} sx={{ paddingTop: '64px !important' }}>
@@ -447,8 +447,8 @@ function Draftscreate() {
                                     <InputLabel htmlFor="component-outlined" >Shipping Charges</InputLabel>
                                     <OutlinedInput
                                         id="component-outlined"
-                                        value={draftAdd.draftAddShipChrg}
-                                        onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddShipChrg: e.target.value }) }}
+                                        value={quotAdd.quotAddShipChrg}
+                                        onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddShipChrg: e.target.value }) }}
                                         label="Shipping Charges"
                                     />
                                 </FormControl>
@@ -460,8 +460,8 @@ function Draftscreate() {
                                 <Select
                                     labelId="demo-select-small"
                                     id="demo-select-small"
-                                    value={draftAdd.draftAddShipStatus}
-                                    onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddShipStatus: e.target.value }) }}
+                                    value={quotAdd.quotAddShipStatus}
+                                    onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddShipStatus: e.target.value }) }}
                                     label="Shipping Status"
                                     fullWidth
                                 >
@@ -479,8 +479,8 @@ function Draftscreate() {
                                 <InputLabel htmlFor="component-outlined" >Delivered to</InputLabel>
                                 <OutlinedInput
                                     id="component-outlined"
-                                    value={draftAdd.draftAddDeliveredTo}
-                                    onChange={(e) => { setDraftAdd({ ...draftAdd, DraftAddDeliveredTo: e.target.value }) }}
+                                    value={quotAdd.quotAddDeliveredTo}
+                                    onChange={(e) => { setQuotAdd({ ...quotAdd, QuotAddDeliveredTo: e.target.value }) }}
                                     label="Delivered To"
                                 />
                             </FormControl>
@@ -515,4 +515,4 @@ function Draftscreate() {
     );
 }
 
-export default Draftscreate;
+export default Quotcreate;
