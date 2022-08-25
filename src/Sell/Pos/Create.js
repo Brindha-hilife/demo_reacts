@@ -7,7 +7,6 @@ import {
 import { FcInfo } from "react-icons/fc";
 import { FaInfo, FaExternalLinkAlt, FaSearch, FaUserAlt, FaUserSecret, FaTable, FaPauseCircle, FaWindowMaximize, FaCalculator, FaBriefcase, FaRegWindowClose, FaBackward } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { makeStyles, } from "@material-ui/core/styles";
 // import Draftsearchplus from './Draftsearchmod';
 
