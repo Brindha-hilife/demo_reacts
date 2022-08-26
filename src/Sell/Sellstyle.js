@@ -171,7 +171,7 @@ export const sellStyle = {
         height: '25px !important',
     },
     spanInfoIcons : {
-        fontSize: '18px', 
+        fontSize: '16px', 
         paddingTop: '0px !important', 
         paddingLeft: '1px',
         paddingRight: '2px',
@@ -184,7 +184,7 @@ export const sellStyle = {
         color: '#7009ab' ,
     },
     spanIcons : {
-        ontSize: '24px', 
+        fontSize: '16px', 
         paddingTop: '5px !important', 
         paddingLeft: '11px',
         paddingRight: '1px',
@@ -197,7 +197,7 @@ export const sellStyle = {
         color: '#7009ab' ,
     },
     spanLoc : {
-        ontSize: '24px', 
+        ontSize: '16px', 
         paddingTop: '5px !important', 
         paddingLeft: '6px',
         paddingRight: '1px',
@@ -226,5 +226,43 @@ export const sellStyle = {
         fontSize: '20px !important',
         color: '#fff !important',
     },
-    
+    btnExpress : {
+        backgroundColor: ' #605ca8',
+        color:'white',
+        fontSize: '11px',
+        fontWeight: 'bold',
+    },
+    btnPause : {
+        backgroundColor: '#ffad46',
+        color: 'white',
+        marginLeft: '5px',
+    },
+    btnMax : {
+        backgroundColor:'#337ab7',
+        color: 'white',
+        marginLeft: '5px',
+    },
+    btnCal : {
+        backgroundColor: '#5cb85c',
+        color: 'white',
+        marginLeft: '5px',
+    },
+    btnClose : {
+        backgroundColor: '#d9534f',
+        color: 'white',
+        marginLeft: '5px',
+    },
+    btnBack : {
+        backgroundColor: '#31b0d5',
+        color: 'white',
+        marginLeft: '5px',
+    },
+    imgBox : {
+        backgroundColor:'white',
+        width: '150px',
+        height:'125px',
+        justifyContent:'center',
+        textAlign: 'center',
+        padding: '5px',
+    }
 }
