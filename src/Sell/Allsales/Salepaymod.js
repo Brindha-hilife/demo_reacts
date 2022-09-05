@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { sellStyle } from '../Sellstyle';
 import { styled } from '@mui/material/styles';
-import { Box, Grid, Button, Dialog, DialogTitle, DialogContent, DialogActions, IconButton, Paper, Typography, TableHead, TableRow, TableCell, TableBody, Table, TableContainer} from '@mui/material';
+import { Box, Grid, Button, Dialog, DialogTitle, DialogContent, DialogActions, IconButton, Paper, Typography, TableHead, TableRow, TableCell, TableBody, Table, TableContainer } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { FaTrash, FaEdit, FaEye, } from 'react-icons/fa';
@@ -123,9 +123,9 @@ function Salespayment() {
                                         <TableCell>test</TableCell>
                                         <TableCell>test</TableCell>
                                         <TableCell>
-                                            <Button sx={{ backgroundColor: '#5bc0de', borderColor: '#46b8da', color: 'white'}}><FaEdit/></Button>
-                                            <Button sx={{ backgroundColor: '#d9534f', borderColor: '#d43f3a', color: 'white'}}><FaTrash/></Button>
-                                            <Button sx={{ backgroundColor: '#337ab7', borderColor: '#2e6da4', color: 'white'}}><FaEye/></Button>
+                                            <Button sx={{ backgroundColor: '#5bc0de', borderColor: '#46b8da', color: 'white' }}><FaEdit /></Button>
+                                            <Button sx={{ backgroundColor: '#d9534f', borderColor: '#d43f3a', color: 'white' }}><FaTrash /></Button>
+                                            <Button sx={{ backgroundColor: '#337ab7', borderColor: '#2e6da4', color: 'white' }}><FaEye /></Button>
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { sellStyle } from '../Sellstyle';
 import { styled } from '@mui/material/styles';
-import { Box, Grid, Button, Dialog, DialogTitle, DialogContent, DialogActions, IconButton, Paper, Typography, TableHead, TableRow, TableCell, TableBody, Table, TableContainer} from '@mui/material';
+import { Box, Grid, Button, Dialog, DialogTitle, DialogContent, DialogActions, IconButton, Paper, Typography, TableHead, TableRow, TableCell, TableBody, Table, TableContainer } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { FaTrash, FaEdit, FaEye, } from 'react-icons/fa';
@@ -10,59 +10,59 @@ import { FaTrash, FaEdit, FaEye, } from 'react-icons/fa';
 function Pospayment() {
 
     // ****** Sales Modal ****** //
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-    '& .MuiDialogContent-root': {
-        padding: theme.spacing(2),
-    },
-    '& .MuiDialogActions-root': {
-        padding: theme.spacing(1),
-    },
-}));
+    const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+        '& .MuiDialogContent-root': {
+            padding: theme.spacing(2),
+        },
+        '& .MuiDialogActions-root': {
+            padding: theme.spacing(1),
+        },
+    }));
 
-const BootstrapDialogTitle = (props) => {
-    const { children, onClose, ...other } = props;
+    const BootstrapDialogTitle = (props) => {
+        const { children, onClose, ...other } = props;
 
-    return (
-        <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
-            {children}
-            {onClose ? (
-                <IconButton
-                    aria-label="close"
-                    onClick={onClose}
-                    sx={{
-                        position: 'absolute',
-                        right: 8,
-                        top: 8,
-                        color: (theme) => theme.palette.grey[500],
-                    }}
-                >
-                    <CloseIcon />
-                </IconButton>
-            ) : null}
-        </DialogTitle>
-    );
-};
+        return (
+            <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+                {children}
+                {onClose ? (
+                    <IconButton
+                        aria-label="close"
+                        onClick={onClose}
+                        sx={{
+                            position: 'absolute',
+                            right: 8,
+                            top: 8,
+                            color: (theme) => theme.palette.grey[500],
+                        }}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                ) : null}
+            </DialogTitle>
+        );
+    };
 
-BootstrapDialogTitle.propTypes = {
-    children: PropTypes.node,
-    onClose: PropTypes.func.isRequired,
-};
+    BootstrapDialogTitle.propTypes = {
+        children: PropTypes.node,
+        onClose: PropTypes.func.isRequired,
+    };
 
 
-// ****** Sales Modal Textfield ****** //
-// ****** Add Modal ****** //
-const [posModPay, setPosModPay] = useState(false);
+    // ****** Sales Modal Textfield ****** //
+    // ****** Add Modal ****** //
+    const [posModPay, setPosModPay] = useState(false);
 
-const posModPayOpen = () => {
-    setPosModPay(true);
-};
-const posPayClose = () => {
-    setPosModPay(false);
-};
+    const posModPayOpen = () => {
+        setPosModPay(true);
+    };
+    const posPayClose = () => {
+        setPosModPay(false);
+    };
 
-// const [salesComnAddForm, setSalesComnAddForm] = useState({
-//     prefixadd: "", firstnamead: "", lastnameadd: "", emailadd: "", contactadd: "", addressadd: "", salescomnperadd: ""
-// });
+    // const [salesComnAddForm, setSalesComnAddForm] = useState({
+    //     prefixadd: "", firstnamead: "", lastnameadd: "", emailadd: "", contactadd: "", addressadd: "", salescomnperadd: ""
+    // });
 
 
 
@@ -122,9 +122,9 @@ const posPayClose = () => {
                                         <TableCell>test</TableCell>
                                         <TableCell>test</TableCell>
                                         <TableCell>
-                                            <Button sx={{ backgroundColor: '#5bc0de', borderColor: '#46b8da', color: 'white'}}><FaEdit/></Button>
-                                            <Button sx={{ backgroundColor: '#d9534f', borderColor: '#d43f3a', color: 'white'}}><FaTrash/></Button>
-                                            <Button sx={{ backgroundColor: '#337ab7', borderColor: '#2e6da4', color: 'white'}}><FaEye/></Button>
+                                            <Button sx={{ backgroundColor: '#5bc0de', borderColor: '#46b8da', color: 'white' }}><FaEdit /></Button>
+                                            <Button sx={{ backgroundColor: '#d9534f', borderColor: '#d43f3a', color: 'white' }}><FaTrash /></Button>
+                                            <Button sx={{ backgroundColor: '#337ab7', borderColor: '#2e6da4', color: 'white' }}><FaEye /></Button>
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>

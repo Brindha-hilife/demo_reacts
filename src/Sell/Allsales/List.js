@@ -336,7 +336,7 @@ function Saleslist() {
                                             onClose={paidModClose}
                                         >
                                             <MenuItem onClick={paidModClose} disableRipple><FaEye />&ensp;View</MenuItem>
-                                            <MenuItem onClick={paidModClose} disableRipple><FaEdit />&ensp;Edit</MenuItem> 
+                                            <MenuItem onClick={paidModClose} disableRipple><FaEdit />&ensp;Edit</MenuItem>
                                             <MenuItem onClick={paidModClose} disableRipple><FaTrash />&ensp;Delete</MenuItem>
                                             <MenuItem onClick={paidModClose} disableRipple><FaTruck />&ensp;Edit Shipping</MenuItem>
                                             <MenuItem onClick={paidModClose} disableRipple><FaPrint />&ensp;Print Invoice</MenuItem>
@@ -345,8 +345,8 @@ function Saleslist() {
                                             <MenuItem onClick={paidModClose} disableRipple><FaMoneyBillAlt />&ensp;View Payments</MenuItem>
                                             <MenuItem onClick={paidModClose} disableRipple><FaCopy />&ensp;Duplicate Sell</MenuItem>
                                             <MenuItem onClick={paidModClose} disableRipple><FaUndo />&ensp;Sell Return</MenuItem>
-                                            <MenuItem onClick={paidModClose} disableRipple><FaEye />&ensp;Invoice URL</MenuItem>   
-                                            <MenuItem onClick={paidModClose} disableRipple><FaEnvelope />&ensp;New Sale Notification</MenuItem>                                                  
+                                            <MenuItem onClick={paidModClose} disableRipple><FaEye />&ensp;Invoice URL</MenuItem>
+                                            <MenuItem onClick={paidModClose} disableRipple><FaEnvelope />&ensp;New Sale Notification</MenuItem>
                                         </StyledMenu>
                                     </StyledTableCell>
                                     <StyledTableCell align="left">test</StyledTableCell>
@@ -372,34 +372,34 @@ function Saleslist() {
                                     <StyledTableCell align="left">test</StyledTableCell>
                                 </StyledTableRow>
                             </TableBody>
-                            <TableFooter sx={{background:'#8080806e',height:'75px'}}>
-                            <TableRow className="table2_total">
-                            <StyledTableCell
-                                    colSpan={6}
-                                    align="right"
-                                    padding="250px"
-                                    sx={{ fontWeight: 700, fontSize: 18, color: "black", alignItems: 'center', justifyContent: 'center', textAlign:'center'}}
-                                >
-                                    Total:{" "}
-                                </StyledTableCell>
-                                <StyledTableCell align="center" colSpan={1} sx={{fontSize:'14px', fontWeight:'700'}}>Paid - 2</StyledTableCell>
-                                <StyledTableCell align="center" colSpan={1} sx={{fontSize:'14px', fontWeight:'700'}}>Cash - 2</StyledTableCell>
-                                <StyledTableCell colSpan={1} sx={{fontSize:'14px', fontWeight:'700'}}>₹ 0.00</StyledTableCell>
-                                <StyledTableCell colSpan={1} sx={{fontSize:'14px', fontWeight:'700'}}>₹ 0.00</StyledTableCell>
-                                <StyledTableCell colSpan={1} sx={{fontSize:'14px', fontWeight:'700'}}>₹ 0.00</StyledTableCell>
-                                <StyledTableCell colSpan={1} sx={{fontSize:'14px', fontWeight:'700'}}>₹ 0.00</StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell> 
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                                <StyledTableCell colSpan={1}></StyledTableCell>
-                            </TableRow>
-                        </TableFooter>
+                            <TableFooter sx={{ background: '#8080806e', height: '75px' }}>
+                                <TableRow className="table2_total">
+                                    <StyledTableCell
+                                        colSpan={6}
+                                        align="right"
+                                        padding="250px"
+                                        sx={{ fontWeight: 700, fontSize: 18, color: "black", alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
+                                    >
+                                        Total:{" "}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="center" colSpan={1} sx={{ fontSize: '14px', fontWeight: '700' }}>Paid - 2</StyledTableCell>
+                                    <StyledTableCell align="center" colSpan={1} sx={{ fontSize: '14px', fontWeight: '700' }}>Cash - 2</StyledTableCell>
+                                    <StyledTableCell colSpan={1} sx={{ fontSize: '14px', fontWeight: '700' }}>₹ 0.00</StyledTableCell>
+                                    <StyledTableCell colSpan={1} sx={{ fontSize: '14px', fontWeight: '700' }}>₹ 0.00</StyledTableCell>
+                                    <StyledTableCell colSpan={1} sx={{ fontSize: '14px', fontWeight: '700' }}>₹ 0.00</StyledTableCell>
+                                    <StyledTableCell colSpan={1} sx={{ fontSize: '14px', fontWeight: '700' }}>₹ 0.00</StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                    <StyledTableCell colSpan={1}></StyledTableCell>
+                                </TableRow>
+                            </TableFooter>
                         </Table>
                     </TableContainer>
                 </Box>

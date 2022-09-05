@@ -148,17 +148,17 @@ function Useradd() {
                         <Grid item md={7} sm={6} xs={12}>
                             <FormControl size="small" fullWidth>
                                 <InputLabel htmlFor="uncontrolled-native">Role *
-                                    <Tooltip title="Admin can access all location " style={{fontSize:'32px'}}>
+                                    <Tooltip title="Admin can access all location " style={{ fontSize: '32px' }}>
                                         <IconButton>
                                             <FcInfo />
                                         </IconButton>
                                     </Tooltip></InputLabel>
                                 <NativeSelect
-                                defaultValue={0}
+                                    defaultValue={0}
                                     inputProps={{
                                         name: 'Role',
                                         id: 'uncontrolled-native',
-                                        
+
                                     }}
                                     value={useraddform.role}
                                     onChange={(e) => { setUseraddform({ ...useraddform, Role: e.target.value }) }}

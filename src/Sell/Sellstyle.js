@@ -90,7 +90,7 @@ export const sellStyle = {
         textTransform: 'Capitalize',
     },
     gridContainer : {
-        marginTop: '50px', 
+        marginTop: '10px', 
         marginBottom: '20px',
         justifyContent: 'center',
     },
@@ -231,21 +231,22 @@ export const sellStyle = {
         color:'white',
         fontSize: '11px',
         fontWeight: 'bold',
+        margin:'5px',
     },
     btnPause : {
         backgroundColor: '#ffad46',
         color: 'white',
-        marginLeft: '5px',
+        margin:'5px',
     },
     btnMax : {
         backgroundColor:'#337ab7',
         color: 'white',
-        marginLeft: '5px',
+        margin:'5px',
     },
     btnCal : {
         backgroundColor: '#5cb85c',
         color: 'white',
-        marginLeft: '5px',
+        margin:'5px',
     },
     btnClose : {
         backgroundColor: '#d9534f',
@@ -255,7 +256,7 @@ export const sellStyle = {
     btnBack : {
         backgroundColor: '#31b0d5',
         color: 'white',
-        marginLeft: '5px',
+        margin:'5px',
     },
     imgBox : {
         backgroundColor:'white',
@@ -264,5 +265,66 @@ export const sellStyle = {
         justifyContent:'center',
         textAlign: 'center',
         padding: '5px',
-    }
+    },
+    btnSus : {
+        backgroundColor:'#f5365c',
+        color: 'white',
+        margin:'5px',
+    },
+    btnCred : {
+        backgroundColor:'#605ca8',
+        color:'white',
+        margin:'5px',
+    },
+    btnCard : {
+        backgroundColor:'#d81b60',
+        color: 'white',
+        margin:'5px',
+    },
+    btnMulti : {
+        backgroundColor:'#001f3f',
+        color:'white',
+        margin:'5px',
+    },
+    btnCash : {
+        backgroundColor: '#2dce89',
+        color: 'white',
+        margin:'5px',
+    },
+    btnCancel : {
+        backgroundColor:'#f5365c',
+        color:'white',
+        marginLeft:'5px',
+        height:'25px',
+        padding:'5px',
+        marginTop:'5px',
+        fontSize:'10px',
+    },
+    btnRec : {
+        backgroundColor:'#1572e8',
+        color:'white',
+        margin:'5px',
+    },
+    container_more: {
+        // marginTop: '20px',
+        // marginBottom: '10px',
+        justifyContent: 'center'
+    },
+    btnGrid : {
+        position:'fixed',
+        bottom:'0px',
+        width: '100%',
+        background:'#8080807d',
+        padding:'10px',
+        height:'50px !important',
+    },
+    btnDeactive : {
+        backgroundColor: '#ffad46',
+        color: 'white',
+        width:'150px',
+        height: '30px !important',
+        fontSize:'10px',
+        padding: '5px'
+    },
+
 }

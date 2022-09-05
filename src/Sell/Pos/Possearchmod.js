@@ -12,7 +12,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import MUIEditor, { MUIEditorState } from "react-mui-draft-wysiwyg";
 import { FaPlus } from "react-icons/fa";
 import { FcInfo } from "react-icons/fc";
-import { makeStyles,} from "@material-ui/core/styles";
+import { makeStyles, } from "@material-ui/core/styles";
 
 
 function PosSearchMod() {
@@ -57,7 +57,7 @@ function PosSearchMod() {
     };
 
 
-  
+
 
     // Text Editor
     const [editorState, setEditorState] = useState(
@@ -93,20 +93,20 @@ function PosSearchMod() {
             fontSize: 25,
             color: "7009AB !important",
             "&::before": {
-              backgroundColor: "7009AB !important",
-              boxShadow: '6px 6px 6px 9px #dedbdbae',
+                backgroundColor: "7009AB !important",
+                boxShadow: '6px 6px 6px 9px #dedbdbae',
             }
-          },
-         tooltip: {
-            fontSize:"17px !important",
+        },
+        tooltip: {
+            fontSize: "17px !important",
             color: "#7009AB !important",
             backgroundColor: "white !important",
             boxShadow: '6px 6px 6px 9px #dedbdbae',
-            padding:"20px",
-         }
-        }));
-        const classes = useStyles();
-  // ****** Sales Modal Textfield ****** //
+            padding: "20px",
+        }
+    }));
+    const classes = useStyles();
+    // ****** Sales Modal Textfield ****** //
     // ****** Add Modal ****** //
     const [posSearchMod, setPosSearchMod] = useState(false);
 
@@ -154,7 +154,7 @@ function PosSearchMod() {
                                         <OutlinedInput
                                             id="outlined-adornment-password"
                                             endAdornment={
-                                                <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} arrow title='"Unique product id or Stock Keeping Unit Keep it blank to automatically generate sku.You can modify sku prefix in Business settings.' placement="top">
+                                                <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} arrow title='"Unique product id or Stock Keeping Unit Keep it blank to automatically generate sku.You can modify sku prefix in Business settings.' placement="top">
                                                     <InputAdornment position="end">
                                                         <IconButton
                                                             aria-label="toggle password visibility"
@@ -267,7 +267,7 @@ function PosSearchMod() {
                                 <Grid item md={4} sm={6} xs={12}>
                                     <FormGroup>
                                         <span><FormControlLabel control={<Checkbox defaultChecked />} label="Manage Stock" />
-                                            <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} arrow title="Enable or disable stock management for a product. Stock Management should be disable mostly for services. Example: Hair-Cutting, Repairing, etc." placement="top">
+                                            <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} arrow title="Enable or disable stock management for a product. Stock Management should be disable mostly for services. Example: Hair-Cutting, Repairing, etc." placement="top">
                                                 <IconButton>
                                                     <FcInfo />
                                                 </IconButton>
@@ -358,7 +358,7 @@ function PosSearchMod() {
                                 <Grid item md={4} sm={12} xs={12}>
                                     <FormGroup>
                                         <span><FormControlLabel control={<Checkbox defaultChecked />} label="Enable Product description,  IMEI or Serial Number" />
-                                            <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} arrow title="Enable or disable adding product description, IMEI or Serial number while selling products in POS screen">
+                                            <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} arrow title="Enable or disable adding product description, IMEI or Serial number while selling products in POS screen">
                                                 <IconButton>
                                                     <FcInfo />
                                                 </IconButton>
@@ -369,7 +369,7 @@ function PosSearchMod() {
                                 <Grid item md={4} sm={12} xs={12}>
                                     <FormGroup>
                                         <span><FormControlLabel control={<Checkbox defaultChecked />} label="Not for selling" />
-                                            <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} arrow title="If Checked, product will not be displayed in sales screen for selling purposes">
+                                            <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} arrow title="If Checked, product will not be displayed in sales screen for selling purposes">
                                                 <IconButton>
                                                     <FcInfo />
                                                 </IconButton>
@@ -429,7 +429,7 @@ function PosSearchMod() {
                                                 <TableRow fullWidth>
                                                     <TableCell sx={sellStyle.tableHd} align="center" colSpan={2} fullWidth>Default Purchase Price</TableCell>
                                                     <TableCell sx={sellStyle.tableHd} align="center" fullWidth>x Margin (%)
-                                                        <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} arrow sx={{ zIndex: '1' }} title="Single product: Product with no variations.
+                                                        <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} arrow sx={{ zIndex: '1' }} title="Single product: Product with no variations.
                                                     Variable product: Product with variations such as size, color etc.
                                                     Combo product: A combination of multiple products, also called bundle product" placement="top">
                                                             <IconButton>

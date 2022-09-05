@@ -10,6 +10,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { makeStyles, } from "@material-ui/core/styles";
 import Draftsearchplus from './Draftsearchmod';
+import Draftcusmod from './Draftcusmod';
 
 function Draftscreate() {
 
@@ -138,13 +139,7 @@ function Draftscreate() {
                                         <MenuItem value={1}>Walk-in Customer</MenuItem>
                                     </Select>
                                 </FormControl>
-                                <Grid sx={sellStyle.spanInfoIcons}>
-                                    <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} title="Type of service means services like dine-in, parcel, home delivery, third party delivery etx." arrow>
-                                        <IconButton>
-                                            <FcInfo />
-                                        </IconButton>
-                                    </Tooltip>
-                                </Grid>
+                                <Grid sx={sellStyle.spanIcons}><Draftcusmod /></Grid>
                             </Grid>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}>
@@ -244,16 +239,16 @@ function Draftscreate() {
                                                 <Typography variant='body2' sx={{ opacity: '0.9', mt: 1 }}>Keep blank to auto generate</Typography>
                                             </Grid>
                                             <Grid item md={12} sm={12} xs={12}>
-                                                    <Grid item md={6} sm={12} xs={12}>
-                                                        <FormControl size="small" fullWidth>
-                                                            <Button component="label" sx={sellStyle.uploadBtn}> Upload File
-                                                                <input type="file" hidden />
-                                                            </Button>
-                                                            <Typography variant='body2' sx={{ opacity: '0.9', mt: 1 }}>
-                                                                Max File size: 5MB <br />
-                                                                Allowed File: .pdf, .csv, .zip, .doc, .docx, .jpeg, .jpg, .png
-                                                            </Typography>
-                                                        </FormControl>
+                                                <Grid item md={6} sm={12} xs={12}>
+                                                    <FormControl size="small" fullWidth>
+                                                        <Button component="label" sx={sellStyle.uploadBtn}> Upload File
+                                                            <input type="file" hidden />
+                                                        </Button>
+                                                        <Typography variant='body2' sx={{ opacity: '0.9', mt: 1 }}>
+                                                            Max File size: 5MB <br />
+                                                            Allowed File: .pdf, .csv, .zip, .doc, .docx, .jpeg, .jpg, .png
+                                                        </Typography>
+                                                    </FormControl>
                                                 </Grid>
                                             </Grid>
                                         </Grid>

@@ -8,7 +8,7 @@ import { FcInfo } from "react-icons/fc";
 import { FaInfo, FaExternalLinkAlt, FaSearch, FaMoneyBillAlt, FaUserAlt, FaUserSecret, FaTable } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { makeStyles,} from "@material-ui/core/styles";
+import { makeStyles, } from "@material-ui/core/styles";
 import Searchplus from './Salesearchmod';
 
 function Salescreate() {
@@ -19,9 +19,9 @@ function Salescreate() {
         saleAddStatus: "", saleAddInvoiceSh: "", saleAddInvoiceNo: "", saleAddTable: "",
         saleAddStaff: "", saleAddDisType: "", saleAddDisAmt: "", saleAddOrdTax: "",
         saleAddSell: "", saleAddShipDet: "", saleAddShipAdd: "", saleAddShipChrg: "", saleAddShipStatus: "",
-        saleAddDeliveredTo:"", saleAddAmt:"", saleAddPayMethod:"", saleAddPayAcc:"", saleAddCrdNo:"", saleAddCrdName:"",
-        saleAddCrdTransNo:"", saleAddCrdType:"", saleAddMonth:"", saleAddYear:"", saleAddSecCode:"", saleAddChequeNo:"",
-        saleAddBankAccNo:"",saleAddTrans:"",saleAddPayNote:"",
+        saleAddDeliveredTo: "", saleAddAmt: "", saleAddPayMethod: "", saleAddPayAcc: "", saleAddCrdNo: "", saleAddCrdName: "",
+        saleAddCrdTransNo: "", saleAddCrdType: "", saleAddMonth: "", saleAddYear: "", saleAddSecCode: "", saleAddChequeNo: "",
+        saleAddBankAccNo: "", saleAddTrans: "", saleAddPayNote: "",
     });
 
     // Tooltip function
@@ -30,19 +30,19 @@ function Salescreate() {
             fontSize: 25,
             color: "7009AB !important",
             "&::before": {
-              backgroundColor: "7009AB !important",
-              boxShadow: '6px 6px 6px 9px #dedbdbae',
+                backgroundColor: "7009AB !important",
+                boxShadow: '6px 6px 6px 9px #dedbdbae',
             }
-          },
-         tooltip: {
-            fontSize:"17px !important",
+        },
+        tooltip: {
+            fontSize: "17px !important",
             color: "#7009AB !important",
             backgroundColor: "white !important",
             boxShadow: '6px 6px 6px 9px #dedbdbae',
-            padding:"20px",
-         }
-        }));
-        const classes = useStyles();
+            padding: "20px",
+        }
+    }));
+    const classes = useStyles();
 
     return (
         <Box>
@@ -71,7 +71,7 @@ function Salescreate() {
                                         </Select>
                                     </FormControl>
                                     <Grid sx={sellStyle.spanInfoIcons}>
-                                        <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="Business location from where your want to sell" arrow>
+                                        <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} title="Business location from where your want to sell" arrow>
                                             <IconButton>
                                                 <FcInfo />
                                             </IconButton>
@@ -102,7 +102,7 @@ function Salescreate() {
                                     </Select>
                                 </FormControl>
                                 <Grid sx={sellStyle.spanInfoIcons}>
-                                    <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="Type of service means services like dine-in, parcel, home delivery, third party delivery etx." arrow>
+                                    <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} title="Type of service means services like dine-in, parcel, home delivery, third party delivery etx." arrow>
                                         <IconButton>
                                             <FcInfo />
                                         </IconButton>
@@ -114,7 +114,7 @@ function Salescreate() {
                         <Grid item md={4} sm={6} xs={12}>
                             <FormGroup>
                                 <span><FormControlLabel control={<Checkbox />} label="Subscribe?" />
-                                    <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="If subscribed this invoice will be automatically generated at regular intervals. You can disable this feature in Settings > Business Settings > Modules" arrow>
+                                    <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} title="If subscribed this invoice will be automatically generated at regular intervals. You can disable this feature in Settings > Business Settings > Modules" arrow>
                                         <IconButton>
                                             <FcInfo />
                                         </IconButton>
@@ -139,7 +139,7 @@ function Salescreate() {
                                     </Select>
                                 </FormControl>
                                 <Grid sx={sellStyle.spanInfoIcons}>
-                                    <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title="Type of service means services like dine-in, parcel, home delivery, third party delivery etx." arrow>
+                                    <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} title="Type of service means services like dine-in, parcel, home delivery, third party delivery etx." arrow>
                                         <IconButton>
                                             <FcInfo />
                                         </IconButton>
@@ -155,7 +155,7 @@ function Salescreate() {
                                         <OutlinedInput
                                             id="outlined-adornment-password"
                                             endAdornment={
-                                                <Tooltip classes={{ arrow: classes.arrow,tooltip: classes.tooltip }} title='Payments to be paid for purchases/sales within the given time period. All upcoming or due payments will be displayed in dashboard - Payment Due section'  arrow> 
+                                                <Tooltip classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} title='Payments to be paid for purchases/sales within the given time period. All upcoming or due payments will be displayed in dashboard - Payment Due section' arrow>
                                                     <InputAdornment position="end">
                                                         <IconButton
                                                             aria-label="toggle password visibility"
@@ -251,7 +251,6 @@ function Salescreate() {
                                                     </Select>
                                                 </FormControl>
                                             </Grid>
-
                                             <Grid item md={12} sm={12} xs={12}>
                                                 <Grid container spacing={3}>
                                                     <Grid item md={7} sm={12} xs={12}>
@@ -340,7 +339,7 @@ function Salescreate() {
                                         label="Enter Product name / SKU / Scan bar code"
                                     />
                                 </FormControl>
-                               <Searchplus />
+                                <Searchplus />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -436,9 +435,9 @@ function Salescreate() {
                         <Grid item md={12} sm={12} xs={12}>
                             <InputLabel id="demo-select-small" sx={{ m: 1 }}>Sell Note</InputLabel>
                             <FormControl size="small" fullWidth >
-                                <TextareaAutosize aria-label="minimum height" minRows={3} style={{ border: '1px solid #b97df0' }} 
-                                value={saleAdd.saleAddSell}
-                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddSell: e.target.value }) }}
+                                <TextareaAutosize aria-label="minimum height" minRows={3} style={{ border: '1px solid #b97df0' }}
+                                    value={saleAdd.saleAddSell}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddSell: e.target.value }) }}
                                 />
                             </FormControl>
                         </Grid>
@@ -450,17 +449,17 @@ function Salescreate() {
                         <Grid item md={4} sm={6} xs={12}>
                             <InputLabel id="demo-select-small" sx={{ m: 1 }}>Shipping Details</InputLabel>
                             <FormControl size="small" fullWidth >
-                                <TextareaAutosize aria-label="minimum height" placeholder='Shipping Details' minRows={3} style={{ border: '1px solid #b97df0' }} 
-                                value={saleAdd.saleAddShipDet}
-                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipDet: e.target.value }) }}/>
+                                <TextareaAutosize aria-label="minimum height" placeholder='Shipping Details' minRows={3} style={{ border: '1px solid #b97df0' }}
+                                    value={saleAdd.saleAddShipDet}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipDet: e.target.value }) }} />
                             </FormControl>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12}>
                             <InputLabel id="demo-select-small" sx={{ m: 1 }}>Shipping Address</InputLabel>
                             <FormControl size="small" fullWidth >
-                                <TextareaAutosize aria-label="minimum height" placeholder='Shipping Address' minRows={3} style={{ border: '1px solid #b97df0' }} 
-                                value={saleAdd.saleAddShipAdd}
-                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipAdd: e.target.value }) }}/>
+                                <TextareaAutosize aria-label="minimum height" placeholder='Shipping Address' minRows={3} style={{ border: '1px solid #b97df0' }}
+                                    value={saleAdd.saleAddShipAdd}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddShipAdd: e.target.value }) }} />
                             </FormControl>
                         </Grid>
                         <Grid item md={4} sm={6} xs={12} sx={{ paddingTop: '64px !important' }}>
@@ -556,8 +555,8 @@ function Salescreate() {
                                     <OutlinedInput
                                         id="component-outlined"
                                         type='date'
-                                        // value={saleAdd.saleAddname}
-                                        // onChange={(e) => { setSaleAdd({ ...saleAdd, saleAddname: e.target.value }) }}
+                                    // value={saleAdd.saleAddname}
+                                    // onChange={(e) => { setSaleAdd({ ...saleAdd, saleAddname: e.target.value }) }}
                                     // label="Shipping Charges"
                                     />
                                 </FormControl>
@@ -754,8 +753,8 @@ function Salescreate() {
                             <InputLabel id="demo-select-small" sx={{ m: 1 }}>Payment Note</InputLabel>
                             <FormControl size="small" fullWidth >
                                 <TextareaAutosize aria-label="minimum height" minRows={3} style={{ border: '1px solid #b97df0' }}
-                                value={saleAdd.saleAddPayNote}
-                                onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddPayNote: e.target.value }) }} />
+                                    value={saleAdd.saleAddPayNote}
+                                    onChange={(e) => { setSaleAdd({ ...saleAdd, SaleAddPayNote: e.target.value }) }} />
                             </FormControl><br /><br />
                             <hr />
                         </Grid>

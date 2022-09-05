@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { styled } from '@mui/material/styles';
-import { Box, Button, Grid, Typography, FormControl, InputLabel, Select, MenuItem, OutlinedInput, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-import { FaTrash, FaFileExcel, FaPrint, FaFilePdf, FaEdit, FaEye, FaFilter } from 'react-icons/fa';
-// import Sidebar from '../../../header/Sidebar';
+import React, {  useState } from 'react';
+import { Box, Button,Grid,Accordion,AccordionSummary,AccordionDetails, Typography, FormControl, InputLabel, Select, MenuItem, OutlinedInput, Table, TableBody, TableContainer, TableHead,  Paper } from '@mui/material';
+import { FaFileExcel, FaPrint, FaFilePdf, FaFilter } from 'react-icons/fa';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
-import { sellStyle } from '../Sellstyle';
-import MuiAccordion from "@mui/material/Accordion";
-import MuiAccordionSummary from "@mui/material/AccordionSummary";
-import MuiAccordionDetails from "@mui/material/AccordionDetails";
-
-
-function Listquotationslist() {
-
-    useEffect(() => {
-        document.body.classList.add('unitbody');
-    });
-
+import { userStyle } from '../../PageStyle';
+import Sidebar from '../../../header/Sidebar';
+import Footer from '../../../footer/Footer';
+import { StyledTableRow, StyledTableCell} from '../../Table';
+import  DateRangePicker  from '../../DateRangePicker';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+const Quotationlisttable = ()=>{
     //  JQUERY
     $(document).ready(function () {
         setTimeout(function () {
@@ -26,87 +21,25 @@ function Listquotationslist() {
             });
         }, 1000);
     });
-
-    // Table Style
-    const StyledTableCell = styled(TableCell)(({ theme }) => ({
-        [`&.${tableCellClasses.head}`]: {
-            backgroundColor: theme.palette.common.white,
-            color: theme.palette.common.black,
-        },
-        [`&.${tableCellClasses.body}`]: {
-            fontSize: 14,
-        },
-    }));
-    const StyledTableRow = styled(TableRow)(({ theme }) => ({
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
-        // hide last border
-        '&:last-child td, &:last-child th': {
-            border: 0,
-        },
-    }));
-
     // Filter
     // Filter Textarea
     const [listqutForm, setListqutForm] = useState({
-        listqutFormBusinessLoc: "", listqutFormCustomer: "", listqutFormDate: "", listqutFormUser: "", listqutFormPayStatus: "",
+        listqutFormBusinessLoc: "", listqutFormCustomer: "", listqutFormUser: "", listqutFormPayStatus: "",
         listqutFormShipStatus: "",
     });
-
-    // / Accordion style
-    const Accordion = styled((props) => (
-        <MuiAccordion disableGutters elevation={0} square {...props} />
-    ))(({ theme }) => ({
-        border: `1px solid ${theme.palette.divider}`,
-        padding: 0,
-        "&:not(:last-child)": {
-            borderBottom: 0,
-        },
-        "&:before": {
-            display: "none",
-        },
-    }));
-    // Accordion Header Style
-    const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(
-        ({ theme }) => ({
-            backgroundColor: "white",
-            flexDirection: "row-reverse",
-            "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-                transform: "rotate(90deg)",
-            },
-            "& .MuiAccordionSummary-content": {
-                marginLeft: theme.spacing(1),
-            },
-        })
-    );
-    // Accordion Body Style
-    const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-        padding: theme.spacing(3),
-        borderTop: "1px solid rgba(0, 0, 0, .125)",
-    }));
     // / Accordion expand
     const [expanded, setExpanded] = useState("panel1");
-    const filterPanel = (panel) => (event, newExpanded) => {
-        setExpanded(newExpanded ? panel : false);
-    };
-
+    const filterPanel = (panel) => (event, newExpanded) => { setExpanded(newExpanded ? panel : false); };
     return (
         <Box>
-            <Typography variant="h5" sx={sellStyle.UnitHeaderText}>List quotations</Typography>
-
+            <Typography sx={userStyle.HeaderText}>List quotations</Typography>
             {/* Filter */}
-            <Box sx={sellStyle.subContainer}>
-                <Box>
-                    <Accordion expanded={expanded === "panel1"} onChange={filterPanel("panel1")}>
-                        <AccordionSummary
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            <Typography sx={sellStyle.filterHead}><FaFilter sx={{ p: 0 }} /> Filters</Typography>
+            <Accordion expanded={expanded === "panel1"} onChange={filterPanel("panel1")} sx={userStyle.container}>
+                        <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" >
+                            <Typography sx={userStyle.importheadtext}><FaFilter sx={{ p: 0 }} /> Filters</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-                            <Grid container spacing={5} sx={sellStyle.textInput}>
+                            <Grid container spacing={5} sx={userStyle.textInput}>
                                 <Grid item md={3} sm={12} xs={12}>
                                     <FormControl size="small" fullWidth>
                                         <InputLabel id="demo-select-small">Business Location</InputLabel>
@@ -114,7 +47,7 @@ function Listquotationslist() {
                                             labelId="demo-select-small"
                                             id="demo-select-small"
                                             value={listqutForm.listqutFormBusinessLoc}
-                                            onChange={(e) => { setListqutForm({ ...listqutForm, ListqutFormBusinessLoc: e.target.value }) }}
+                                            onChange={(e) => { setListqutForm({ ...listqutForm, listqutFormBusinessLoc: e.target.value }) }}
                                             label="Business Location"
                                         >
                                             <MenuItem value="">All </MenuItem>
@@ -130,7 +63,7 @@ function Listquotationslist() {
                                             labelId="demo-select-small"
                                             id="demo-select-small"
                                             value={listqutForm.listqutFormCustomer}
-                                            onChange={(e) => { setListqutForm({ ...listqutForm, ListqutFormCustomer: e.target.value }) }}
+                                            onChange={(e) => { setListqutForm({ ...listqutForm, listqutFormCustomer: e.target.value }) }}
                                             label="Customer"
                                         >
                                             <MenuItem value="">All </MenuItem>
@@ -140,15 +73,8 @@ function Listquotationslist() {
                                     </FormControl>
                                 </Grid>
                                 <Grid item md={3} sm={12} xs={12}>
-                                    <FormControl size="small" fullWidth>
-                                        <InputLabel htmlFor="component-outlined"></InputLabel>
-                                        <OutlinedInput
-                                            id="component-outlined"
-                                            value={listqutForm.listqutFormDate}
-                                            onChange={(e) => { setListqutForm({ ...listqutForm, ListqutFormDate: e.target.value }) }}
-                                            label=""
-                                            type="date"
-                                        />
+                                    <FormControl fullWidth>
+                                        <DateRangePicker style={{ border: '1px solid #B97DF0',}} fullWidth />
                                     </FormControl>
                                 </Grid>
                                 <Grid item md={3} sm={12} xs={12}>
@@ -158,7 +84,7 @@ function Listquotationslist() {
                                             labelId="demo-select-small"
                                             id="demo-select-small"
                                             value={listqutForm.listqutFormUser}
-                                            onChange={(e) => { setListqutForm({ ...listqutForm, ListqutFormUser: e.target.value }) }}
+                                            onChange={(e) => { setListqutForm({ ...listqutForm, listqutFormUser: e.target.value }) }}
                                             label="User"
                                         >
                                             <MenuItem value="">All </MenuItem>
@@ -170,30 +96,27 @@ function Listquotationslist() {
                             </Grid>
                         </AccordionDetails>
                     </Accordion><br />
-                </Box>
-            </Box><br />
-
             {/* Table */}
-            <Box sx={sellStyle.container}>
+            <Box sx={userStyle.container}>
                 <Grid container spacing={2}>
                     <Grid item xs={8}></Grid>
                     <Grid item xs={4}>
-                        <Button sx={sellStyle.buttonAdd} ><Link to="/" style={{ textDecoration: 'none', color: 'white' }}> Add Quotation</Link></Button>
+                        <Button sx={userStyle.buttonAdd} ><Link to="/sell/quotationcreate" style={{ textDecoration: 'none', color: 'white' }}> ADD QUOTATION </Link></Button>
                     </Grid>
                 </Grid>
-                <Grid container sx={sellStyle.gridContainer}>
+                <Grid container sx={userStyle.gridcontainer}>
                     <Grid >
-                        <Button sx={sellStyle.exportBtnText}><FaFileExcel />&ensp;Export to CSV</Button>
-                        <Button sx={sellStyle.exportBtnText}><FaFileExcel />&ensp;Export to Excel</Button>
-                        <Button sx={sellStyle.exportBtnText}><FaPrint />&ensp;Print</Button>
-                        <Button sx={sellStyle.exportBtnText}><FaFilePdf />&ensp;Export to PDF</Button>
+                    <Button sx={userStyle.buttongrp}><FaFileExcel />&ensp;Export to CSV&ensp;</Button>
+                        <Button sx={userStyle.buttongrp}><FaFileExcel />&ensp;Export to Excel&ensp;</Button>
+                        <Button sx={userStyle.buttongrp}><FaPrint />&ensp;Print&ensp;</Button>
+                        <Button sx={userStyle.buttongrp}><FaFilePdf />&ensp;Export to PDF&ensp;</Button>
                     </Grid>
                 </Grid>
                 <Box>
-                    <TableContainer component={Paper} sx={sellStyle.tablecontainer}>
+                    <TableContainer component={Paper} sx={userStyle.tablecontainer}>
                         <Table sx={{ minWidth: 700 }} aria-label="customized table" id="listquotationtable">
                             <TableHead>
-                                <TableRow>
+                                <StyledTableRow>
                                     <StyledTableCell>Date</StyledTableCell>
                                     <StyledTableCell align="left">Reference No.</StyledTableCell>
                                     <StyledTableCell align="left">Customer name</StyledTableCell>
@@ -202,7 +125,7 @@ function Listquotationslist() {
                                     <StyledTableCell align="left">Total Items</StyledTableCell>
                                     <StyledTableCell align="left">Added By</StyledTableCell>
                                     <StyledTableCell align="left">Action</StyledTableCell>
-                                </TableRow>
+                                </StyledTableRow>
                             </TableHead>
                             <TableBody>
                                 <StyledTableRow>
@@ -214,9 +137,9 @@ function Listquotationslist() {
                                     <StyledTableCell align="left"></StyledTableCell>
                                     <StyledTableCell align="left"></StyledTableCell>
                                     <StyledTableCell >
-                                        <Button sx={sellStyle.buttonEdit}><Link to="/" style={{ textDecoration: 'none', color: '#fff' }}><FaEdit />&ensp;Edit</Link></Button>
-                                        <Button sx={sellStyle.buttonView}><FaEye />&ensp;View</Button>
-                                        <Button sx={sellStyle.buttonDelete}><FaTrash />&ensp;Delete</Button>
+                                    <Button sx={userStyle.buttonedit}><Link to="/" style={{ textDecoration: 'none', color: '#fff' }}><EditOutlinedIcon style={{fontSize:'large'}}/>&ensp;EDIT&ensp;</Link></Button>
+                                        <Button sx={userStyle.buttonview}><VisibilityOutlinedIcon style={{fontSize:'large'}}/>&ensp;VIEW&ensp;</Button>
+                                        <Button sx={userStyle.buttondelete}><DeleteOutlineOutlinedIcon style={{fontSize:'large'}}/>&ensp;DELETE&ensp;</Button>
                                     </StyledTableCell>
                                 </StyledTableRow>
                             </TableBody>
@@ -227,5 +150,19 @@ function Listquotationslist() {
         </Box>
     );
 }
-
-export default Listquotationslist;
+const Quotationlist = () => {
+  return (
+    <>
+           <Box sx={{display:'flex', }} >
+                <Sidebar />
+                <Box sx={{width:'100%',overflowX:'hidden'}}>
+                    <Box component="main" sx={{ padding: '30px',}}><br /><br />
+                        <Quotationlisttable /><br /><br />
+                        <Footer />
+                    </Box>
+                </Box>
+            </Box>
+         </>
+  );
+}
+export default Quotationlist;
