@@ -80,7 +80,7 @@ import 'jquery/dist/jquery.min.js';
 // import Rolescreate from './components/pages/user/roles/Create';
 // import Rolesedit from './components/pages/user/roles/Edit';
 // import Salesagent from './components/pages/user/salesagent/List';
-import Locationlist from './components/pages/sell/discount/List';
+import Locationlist from './components/pages/sell/pos/List';
 
 
 
